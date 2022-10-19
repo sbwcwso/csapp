@@ -1,0 +1,36 @@
+                            | # Execution begins at address 0 
+0x000:                      |   .pos 0
+0x000: 30f40002000000000000 |   irmovq stack, %rsp    # Set up stack pointer
+0x00a: 30f72000000000000000 |   irmovq ele1,%rdi
+0x014: 805000000000000000   |   call rsum_list    # sum_list(ele1)
+0x01d: 00                   |   halt      # Terminate program 
+                            | 
+0x020:                      | .align 8
+0x020:                      | ele1:
+0x020: 0a00000000000000     |   .quad 0x00a
+0x028: 3000000000000000     |   .quad ele2
+0x030:                      | ele2:
+0x030: b000000000000000     |   .quad 0x0b0
+0x038: 4000000000000000     |   .quad ele3
+0x040:                      | ele3:
+0x040: 000c000000000000     |   .quad 0xc00
+0x048: 0000000000000000     |   .quad 0
+                            | 
+                            | # long rsum_list(list_ptr ls)
+                            | # ls in %rdi
+0x050:                      | rsum_list:
+0x050: 6300                 |   xorq %rax, %rax  # val = 0
+0x052: 6277                 |   andq %rdi, %rdi  # set CC
+0x054: 738000000000000000   |   je done
+0x05d: 50670000000000000000 |   mrmovq (%rdi), %rsi  # get ls->val
+0x067: a06f                 |   pushq %rsi
+0x069: 50770800000000000000 |   mrmovq 0x8(%rdi), %rdi  # ls = ls-next;
+0x073: 805000000000000000   |   call rsum_list
+0x07c: b06f                 |   popq %rsi
+0x07e: 6060                 |   addq %rsi, %rax  # val += ls->val
+0x080:                      | done:
+0x080: 90                   |   ret
+                            | 
+                            | # Stack starts here and grows to lower addresses
+0x200:                      |   .pos 0x200
+0x200:                      | stack:
