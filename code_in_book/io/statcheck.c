@@ -1,4 +1,3 @@
-/* $begin statcheck */
 #include "csapp.h"
 
 int main (int argc, char **argv) 
@@ -27,4 +26,3 @@ int main (int argc, char **argv)
     printf("type: %s, read: %s\n", type, readok);
     exit(0);
 }
-/* $end statcheck */

@@ -2,7 +2,6 @@
  * rfork.c - Wrapper for fork() that introduces non-determinism
  *           in the order that the parent and child are executed
  */
-/* $begin rfork */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -48,4 +47,3 @@ pid_t Fork(void)
     /* Return the PID like a normal fork call */
     return pid;
 }
-/* $end rfork */

@@ -3,7 +3,6 @@
 	.globl	loop
 	.type	loop, @function
 loop:
-/* $begin 120-branch-s 6 */
 	movq	%rdi, %rax
 	jmp	.L2 ## line:asm:branch_s:jmp
 .L3:
@@ -12,7 +11,6 @@ loop:
 	testq	%rax, %rax
 	jg	.L3 ## line:asm:branch_s:jg
 	rep; ret ## line:asm:branch_s:ret
-/* $end 120-branch-s 6 */
 	.size	loop, .-loop
 	.globl	main
 	.type	main, @function

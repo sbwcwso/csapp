@@ -4,13 +4,11 @@
 
 #define ASIZE 1024
 
-/* $begin list_len */
 typedef struct ELE {
     struct ELE *next;
     long data;
 } list_ele, *list_ptr;
 
-/* $end list_len */
 
 list_ele main_list[ASIZE];
 
@@ -26,7 +24,6 @@ void mylink(long len)
     main_list[len-1].next = NULL;
 }
 
-/* $begin list_len */
 long list_len(list_ptr ls) {
     long len = 0;
     while (ls) {
@@ -35,7 +32,6 @@ long list_len(list_ptr ls) {
     }
     return len;
 }
-/* $end list_len */
 
 long list_len_clear(list_ptr ls)
 {
@@ -60,7 +56,6 @@ long list_sum_clear(list_ptr ls)
 }
 
 
-/* $begin list_sum */
 long list_sum(list_ptr ls)
 {
     long sum = 0;
@@ -69,9 +64,7 @@ long list_sum(list_ptr ls)
 	sum += ls->data;
     return sum;
 }
-/* $end list_sum */
 
-/* $begin list_sum2 */
 long list_sum2(list_ptr ls)
 {
     long sum = 0;
@@ -84,7 +77,6 @@ long list_sum2(list_ptr ls)
     }
     return sum;
 }
-/* $end list_sum2 */
 
 long pipe_sum2(list_ptr ls)
 {

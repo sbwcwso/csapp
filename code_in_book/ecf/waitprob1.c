@@ -1,7 +1,5 @@
 #include "csapp.h"
 
-/* $begin waitprob1 */
-/* $begin wasidewaitprob1 */
 int main() 
 {
     int status;
@@ -19,5 +17,3 @@ int main()
     printf("Bye\n");
     exit(2);
 }
-/* $end waitprob1 */
-/* $end wasidewaitprob1 */

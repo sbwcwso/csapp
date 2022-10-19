@@ -15,14 +15,12 @@ area:
 	.size	area, .-area
 	.globl	cel2fahr
 	.type	cel2fahr, @function
-/* $begin 540-cel2fahr-s 18 */
 # double cel2fahr(double temp)
 # temp in %xmm0
 cel2fahr:
 	vmulsd	.LC2(%rip), %xmm0, %xmm0  # Multiply by 1.8
 	vaddsd	.LC3(%rip), %xmm0, %xmm0  # Add 32.0
 	ret
-/* $end 540-cel2fahr-s 18 */
 	.size	cel2fahr, .-cel2fahr
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC5:
@@ -155,17 +153,13 @@ main:
 	.long	1413754136
 	.long	1074340347
 	.align 8
-/* $begin 540-cel2fahr-s 154 */
 .LC2: 	  ## line:asm:cel2fahr:label1.8
 	.long	3435973837  	   	  # Low-order 4 bytes of 1.8 # line:asm:cel2fahr:lo1.8
 	.long	1073532108 		  # High-order 4 bytes of 1.8 # line:asm:cel2fahr:hi1.8
-/* $end 540-cel2fahr-s 154 */
 	.align 8
-/* $begin 540-cel2fahr-s 158 */
 .LC3:	  ## line:asm:cel2fahr:label32
 	.long	0			  # Low-order 4 bytes of 32.0 # line:asm:cel2fahr:lo32
 	.long	1077936128 		  # High-order 4 bytes of 32.0 # line:asm:cel2fahr:hi32
-/* $end 540-cel2fahr-s 158 */
 	.align 8
 .LC4:
 	.long	0

@@ -2,7 +2,6 @@
 	.text
 	.globl	sum_element
 	.type	sum_element, @function
-/* $begin 360-fixarray-prob-s 5 */
 # long sum_element(long i, long j)
 # i in \rdireg{}, j in \rsireg{}
 sum_element:
@@ -14,9 +13,7 @@ sum_element:
 	movq	Q(,%rdi,8), %rax
 	addq	P(,%rdx,8), %rax
 	ret
-/* $end 360-fixarray-prob-s 5 */
 
-/* $begin 360-fixarray-ann-s 5 */
 # long sum_element(long i, long j)
 # i in \rdireg{}, j in \rsireg{}
 sum_element:
@@ -28,7 +25,6 @@ sum_element:
 	movq	Q(,%rdi,8), %rax	# Retrieve \(\memref{\startaddr{Q} + 8 (5j + i)}\)
 	addq	P(,%rdx,8), %rax	# Add \(\memref{\startaddr{P} + 8 (7i + j)}\)
 	ret
-/* $end 360-fixarray-ann-s 5 */
 
 	.size	sum_element, .-sum_element
 	.comm	Q,280,32

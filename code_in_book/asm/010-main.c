@@ -1,4 +1,3 @@
-/* $begin 010-multmain-c */
 #include <stdio.h>
 
 void multstore(long, long, long *);
@@ -14,5 +13,4 @@ long mult2(long a, long b) {
     long s = a * b;
     return s;
  }
-/* $end 010-multmain-c */
 

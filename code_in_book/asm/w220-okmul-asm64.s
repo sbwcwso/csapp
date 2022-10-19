@@ -1,4 +1,3 @@
-/* $begin w220-tmult_ok_asm */
 # Hand-generated code for tmult_ok	
 .globl tmult_ok_asm
 # int tmult_ok_asm(long x, int y, long *dest);	
@@ -14,9 +13,7 @@ tmult_ok_asm:
 # End of inserted code	
 	movzbl	%al, %eax
 	ret
-/* $end w220-tmult_ok_asm */
 
-/* $begin w220-umult_ok_asm */
 # Hand-generated code for umult_ok	
 .globl umult_ok_asm
 # int umult_ok_asm(unsigned long x, unsigned long y, unsigned long *dest);

@@ -39,7 +39,6 @@ gets:
 	.size	gets, .-gets
 	.globl	echo
 	.type	echo, @function
-/* $begin 450-bufdemo-nosp-s 42 */
 # void echo()
 echo:
 	subq	$24, %rsp	# Allocate 24 bytes on stack # line:asm:bufdemo:nosp:allocate
@@ -49,7 +48,6 @@ echo:
 	call	puts  		# Call puts
 	addq	$24, %rsp	# Deallocate stack space
 	ret	     		# Return		# line:asm:bufdemo:nosp:return
-/* $end 450-bufdemo-nosp-s 42 */
 	.size	echo, .-echo
 	.globl	good_echo
 	.type	good_echo, @function

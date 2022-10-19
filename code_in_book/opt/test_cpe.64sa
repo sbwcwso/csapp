@@ -32,7 +32,6 @@ psum1:
 	cmpq	$1, %rdx
 	jle	.L3
 	movl	$1, %eax
-/* $begin psum1-s 35 */
 # Inner loop of psum1
 # a in %rdi, i in %rax, cnt in %rdx
 .L5:				              # \textbf{loop:}
@@ -42,7 +41,6 @@ psum1:
 	addq	$1, %rax	       	      #   Increment i
 	cmpq	%rdx, %rax	       	      #   Compare i:cnt
 	jne	.L5   		       	      #   If !=, goto \textbf{loop}
-/* $end psum1-s 35 */
 .L3:
 	rep; ret
 tpsum1:
@@ -93,7 +91,6 @@ psum1a:
 	cmpq	$1, %rdx
 	jle	.L14
 	movl	$1, %eax
-/* $begin psum1a-s 92 */
 # Inner loop of psum1a
 # a in %rdi, i in %rax, cnt in %rdx, last_val in %xmm0
 .L16:				              # \textbf{loop:}
@@ -102,7 +99,6 @@ psum1a:
 	addq	$1, %rax	       	      #   Increment i
 	cmpq	%rdx, %rax	       	      #   Compare i:cnt
 	jne	.L16  		       	      #   If !=, goto \textbf{loop}
-/* $end psum1a-s 92 */
 .L14:
 	rep; ret
 tpsum1a:

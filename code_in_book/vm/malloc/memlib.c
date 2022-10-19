@@ -18,7 +18,6 @@
 #define MAX_HEAP (20*(1<<20))  /* 20 MB */
 
 
-/* $begin memlib */
 /* Private global variables */
 static char *mem_heap;     /* Points to first byte of heap */ 
 static char *mem_brk;      /* Points to last byte of heap plus 1 */
@@ -51,7 +50,6 @@ void *mem_sbrk(int incr)
     mem_brk += incr;
     return (void *)old_brk;
 }
-/* $end memlib */
 
 /* 
  * mem_deinit - free the storage used by the memory system model

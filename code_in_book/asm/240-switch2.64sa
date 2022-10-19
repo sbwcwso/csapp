@@ -2,7 +2,6 @@
 	.text
 	.globl	switch2
 	.type	switch2, @function
-/* $begin 240-switch2-s 5 */
 # void switch2(long x, long *dest)
 # x in \rdireg
 switch2:
@@ -10,11 +9,9 @@ switch2:
 	cmpq	$8, %rdi  ##line:asm:switch2:cmp
 	ja	.L2       ##line:asm:switch2:ja
 	jmp	*.L4(,%rdi,8)
-/* $end 240-switch2-s 5 */
 	.section	.rodata
 	.align 8
 	.align 4
-/* $begin 240-switch2-jt 13 */
 .L4:
 	.quad	.L9
 	.quad	.L5 ##line:asm:switch2:case0
@@ -25,7 +22,6 @@ switch2:
 	.quad	.L8
 	.quad	.L2 ##line:asm:switch2:case6
 	.quad	.L5 ##line:asm:switch2:case7
-/* $end 240-switch2-jt 13 */
 	.text
 .L5:
 	movl	$8, %eax

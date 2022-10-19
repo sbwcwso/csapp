@@ -33,37 +33,35 @@ int main(int argc, char **argv)
     nelems_per_thread = nelems / nthreads;
 
     /* Create peer threads and wait for them to finish */
-    for (i = 0; i < nthreads; i++) {                  //line:conc:psumarray:createloop1
-	myid[i] = i;                                  //line:conc:psumarray:createloop2
-	Pthread_create(&tid[i], NULL, sum_array, &myid[i]); //line:conc:psumarray:createloop3
-    }                                                 //line:conc:psumarray:createloop4
-    for (i = 0; i < nthreads; i++)                    //line:conc:psumarray:waitloop1
-	Pthread_join(tid[i], NULL);                   //line:conc:psumarray:waitloop2
+    for (i = 0; i < nthreads; i++) {                  
+	myid[i] = i;                                  
+	Pthread_create(&tid[i], NULL, sum_array, &myid[i]); 
+    }                                                 
+    for (i = 0; i < nthreads; i++)                    
+	Pthread_join(tid[i], NULL);                   
     
     /* Add up the partial sums computed by each thread */
-    for (i = 0; i < nthreads; i++)                    //line:conc:psumarray:sumloop1
-	result += psum[i];                            //line:conc:psumarray:sumloop2
+    for (i = 0; i < nthreads; i++)                    
+	result += psum[i];                            
 
     /* Check final answer */
-    if (result != (nelems * (nelems-1))/2)     //line:conc:psumarray:check1
-	printf("Error: result=%ld\n", result); //line:conc:psumarray:check2
+    if (result != (nelems * (nelems-1))/2)     
+	printf("Error: result=%ld\n", result); 
 
     exit(0);
 }
 
-/* $begin psumarraythread */
 /* Thread routine for psum-array.c */
 void *sum_array(void *vargp) 
 {
-    long myid = *((long *)vargp);          /* Extract the thread ID */ //line:conc:psumarray:extractid
-    long start = myid * nelems_per_thread; /* Start element index */ //line:conc:psumarray:getstart
-    long end = start + nelems_per_thread;  /* End element index */ //line:conc:psumarray:getend
+    long myid = *((long *)vargp);          /* Extract the thread ID */ 
+    long start = myid * nelems_per_thread; /* Start element index */ 
+    long end = start + nelems_per_thread;  /* End element index */ 
     long i;
 
-    for (i = start; i < end; i++) {        //line:conc:psumarray:threadsumloop1
-	psum[myid] += i;                   //line:conc:psumarray:threadsumloop2 
-    }	                                   //line:conc:psumarray:threadsumloop3
+    for (i = start; i < end; i++) {        
+	psum[myid] += i;                   
+    }	                                   
     return NULL;
 }
-/* $end psumarraythread */
 

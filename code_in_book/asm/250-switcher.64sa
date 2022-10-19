@@ -2,7 +2,6 @@
 	.text
 	.globl	switcher
 	.type	switcher, @function
-/* $begin 250-switcher-s 5 */
 # void switcher(long a, long b, long c, long *dest)
 # a in \rdireg, b in \rsireg{}, c in \rdxreg{}, d in \rcxreg
 switcher:
@@ -10,10 +9,8 @@ switcher:
 	ja	.L2  ## line:asm:switcher:gotodefault
 	jmp	*.L4(,%rdi,8)
 	.section	.rodata
-/* $end 250-switcher-s 5 */
 	.align 8
 	.align 4
-/* $begin 250-switcher-jt 12 */
 .L4:
 	.quad	.L3
 	.quad	.L2
@@ -23,9 +20,7 @@ switcher:
 	.quad	.L7
 	.quad	.L2
 	.quad	.L5
-/* $end 250-switcher-jt 12 */
 	.text
-/* $begin 250-switcher-s 22 */
 .L7:
 	xorq	$15, %rsi
 	movq	%rsi, %rdx ## line:asm:switcher:fallthrough
@@ -41,7 +36,6 @@ switcher:
 .L6:
 	movq	%rdi, (%rcx)
 	ret
-/* $end 250-switcher-s 22 */
 	.size	switcher, .-switcher
 	.section	.rodata.str1.1,"aMS",@progbits,1
 	.string	"Switcher(%d, %d, %d) --> %d\n"

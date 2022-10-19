@@ -1,6 +1,5 @@
 #include "csapp.h"
 
-/* $begin forkprob8 */
 void foo(int n) 
 {
     int i;
@@ -10,7 +9,6 @@ void foo(int n)
     printf("hello\n");
     exit(0);
 }
-/* $end forkprob8 */
 
 int main(int argc, char **argv)
 {

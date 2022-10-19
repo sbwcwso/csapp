@@ -2,7 +2,6 @@
 	.text
 	.globl	multstore
 	.type	multstore, @function
-/* $begin 010-mstore-annotate-s 5 */
 # void multstore(long x, long y, long *dest)
 # x in \rdireg{}, y in \rsireg{}, dest in \rdxreg{}
 multstore:
@@ -12,7 +11,6 @@ multstore:
 	movq	%rax, (%rbx)  # Store result at *dest
 	popq	%rbx          # Restore \rbxreg{}
 	ret                   # Return
-/* $end 010-mstore-annotate-s 5 */
 	.size	multstore, .-multstore
 	.ident	"GCC: (Ubuntu 4.8.1-2ubuntu1~12.04) 4.8.1"
 	.section	.note.GNU-stack,"",@progbits

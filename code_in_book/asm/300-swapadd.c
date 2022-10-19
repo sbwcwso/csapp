@@ -1,6 +1,5 @@
 #include <stdlib.h>
 
-/* $begin 300-swapadd-c */
 long swap_add(long *xp, long *yp)  
 { 
     long x = *xp; 
@@ -18,4 +17,3 @@ long caller()
     long diff = arg1 - arg2; 
     return sum * diff; 
 } 
-/* $end 300-swapadd-c */

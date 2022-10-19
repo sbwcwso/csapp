@@ -5,7 +5,6 @@
  *
  * Source: Henri Casanova, University of Hawaii
 */
-/* $begin rw3 */
 #include "csapp.h"
 
 #define N 10
@@ -43,4 +42,3 @@ void writer(void)
 	    V(&sem);
     }
 }
-/* $end rw3 */

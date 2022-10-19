@@ -3,7 +3,6 @@
 
 float x[8], y[8];
 
-/* $begin dotprod */
 float dotprod(float x[8], float y[8]) 
 {
     float sum = 0.0;
@@ -13,7 +12,6 @@ float dotprod(float x[8], float y[8])
 	sum += x[i] * y[i];
     return sum;
 }
-/* $end dotprod */
 
 int main()
 {

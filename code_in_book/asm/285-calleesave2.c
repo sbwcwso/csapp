@@ -1,5 +1,4 @@
 
-/* $begin 285-calleesave2-c */
 void Q();
 
 long P(long x) {
@@ -14,4 +13,3 @@ long P(long x) {
     Q();
     return a0 + a1 + a2 + a3 + a4 + a5 + a6 + a7;
 }
-/* $end 285-calleesave2-c */

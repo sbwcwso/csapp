@@ -35,7 +35,6 @@ SYMBOL TABLE:
 
 Disassembly of section .text:
 
-/* $begin main-relo-d 38 */
 0000000000000000 <main>:
    0:   48 83 ec 08             sub    $0x8,%rsp
    4:   be 02 00 00 00          mov    $0x2,%esi
@@ -46,4 +45,3 @@ Disassembly of section .text:
                         f: R_X86_64_PC32 sum-0x4      # Relocation entry
   13:   48 83 c4 08             add    $0x8,%rsp
   17:   c3                      retq   
-/* $end main-relo-d 38 */

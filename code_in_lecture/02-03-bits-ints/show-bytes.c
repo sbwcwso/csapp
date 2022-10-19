@@ -1,11 +1,8 @@
 /* show-bytes - prints byte representation of data */
 
-/* $begin show-bytes */
 #include <stdio.h>
-/* $end show-bytes */
 #include <stdlib.h>
 #include <string.h>
-/* $begin show-bytes */
 
 typedef unsigned char *byte_pointer;
 
@@ -27,10 +24,8 @@ void show_float(float x) {
 void show_pointer(void *x) {
     show_bytes((byte_pointer) &x, sizeof(void *));
 }
-/* $end show-bytes */
 
 
-/* $begin test-show-bytes */
 void test_show_bytes(int val) {
     int ival = val;
     float fval = (float) ival;
@@ -43,26 +38,21 @@ void test_show_bytes(int val) {
     printf("&ival:\n", ival);
     show_pointer(pval);
 }
-/* $end test-show-bytes */
 
 void simple_show_a() {
-/* $begin simple-show-a */
 int val = 0x87654321;
 byte_pointer valp = (byte_pointer) &val;
 show_bytes(valp, 1); /* A. */
 show_bytes(valp, 2); /* B. */
 show_bytes(valp, 3); /* C. */
-/* $end simple-show-a */
 }
 
 void simple_show_b() {
-/* $begin simple-show-b */
 int val = 0x12345678;
 byte_pointer valp = (byte_pointer) &val;
 show_bytes(valp, 1); /* A. */
 show_bytes(valp, 2); /* B. */
 show_bytes(valp, 3); /* C. */
-/* $end simple-show-b */
 }
 
 void float_eg() {
@@ -81,28 +71,22 @@ void float_eg() {
 }
 
 void string_ueg() {
-/* $begin show-ustring */
 const char *s = "ABCDEF";
 show_bytes((byte_pointer) s, strlen(s)); 
-/* $end show-ustring */
 }
 
 void string_leg() {
-/* $begin show-lstring */
 const char *s = "abcdef";
 show_bytes((byte_pointer) s, strlen(s)); 
-/* $end show-lstring */
 }
 
 void show_twocomp() 
 {
-/* $begin show-twocomp */
     short x = 12345; 
     short mx = -x; 
     
     show_bytes((byte_pointer) &x, sizeof(short)); 
     show_bytes((byte_pointer) &mx, sizeof(short)); 
-/* $end show-twocomp */
 }
 
 int main(int argc, char *argv[])

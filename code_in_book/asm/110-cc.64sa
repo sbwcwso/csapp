@@ -2,7 +2,6 @@
 	.text
 	.globl	comp
 	.type	comp, @function
-/* $begin 110-cc-s 5 */
 # int comp(data_t a, data_t b)
 # a in \rdireg{}, b in \rsireg{}
 comp:
@@ -10,7 +9,6 @@ comp:
 	setl	%al          # Set low order byte of \eaxreg{} to 0 or 1
 	movzbl	%al, %eax    # Clear rest of \eaxreg{} (and rest of \raxreg) # line:asm:cc:movzbl
 	ret
-/* $end 110-cc-s 5 */
 	.size	comp, .-comp
 	.globl	ge
 	.type	ge, @function

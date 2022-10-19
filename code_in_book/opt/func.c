@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* $begin func */
 long f();
 
 long func1() {
@@ -11,17 +10,13 @@ long func1() {
 long func2() {
     return 4*f();
 }
-/* $end func */
 
-/* $begin f */
 long counter = 0;
 
 long f() {
     return counter++;
 }
-/* $end f */
 
-/* $begin func1in */
 /* Result of inlining f in func1 */
 long func1in() {
     long t = counter++; /* +0 */
@@ -30,16 +25,13 @@ long func1in() {
     t += counter++;     /* +3 */
     return t;
 }
-/* $end func1in */
 
-/* $begin func1opt */
 /* Optimization of inlined code */
 long func1opt() {
     long t = 4 * counter + 6;
     counter += 4;
     return t;
 }
-/* $end func1opt */
 
 int main(int argc, char *argv[]) {
     int ival = 0;

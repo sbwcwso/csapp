@@ -1,7 +1,6 @@
 /*
  * echoclient.c - An echo client
  */
-/* $begin echoclientmain */
 #include "csapp.h"
 
 int main(int argc, char **argv) 
@@ -25,7 +24,6 @@ int main(int argc, char **argv)
 	Rio_readlineb(&rio, buf, MAXLINE);
 	Fputs(buf, stdout);
     }
-    Close(clientfd); //line:netp:echoclient:close
+    Close(clientfd); 
     exit(0);
 }
-/* $end echoclientmain */

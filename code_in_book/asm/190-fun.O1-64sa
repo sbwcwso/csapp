@@ -37,7 +37,6 @@ fun_a:
 	.size	fun_a, .-fun_a
 	.globl	fun_b
 	.type	fun_b, @function
-/* $begin 190-fun_b-s 40 */
 # long fun_b(unsigned long x)
 # x in \rdireg{}
 fun_b:
@@ -52,7 +51,6 @@ fun_b:
 	subq	$1, %rdx
 	jne	.L10
 	rep; ret
-/* $end 190-fun_b-s 40 */
 	.size	fun_b, .-fun_b
 	.globl	test_fun_b
 	.type	test_fun_b, @function

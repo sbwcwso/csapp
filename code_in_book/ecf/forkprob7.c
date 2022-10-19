@@ -1,4 +1,3 @@
-/* $begin forkprob7 */
 #include "csapp.h"
 int counter = 1;
 
@@ -14,4 +13,3 @@ int main()
     }
     exit(0);
 }
-/* $end forkprob7 */

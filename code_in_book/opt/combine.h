@@ -20,7 +20,6 @@ typedef int data_t;
 #endif
 
 #ifdef LONG
-/* $begin typedefint */
 typedef long data_t;
 /* $end typedefint */ 
 #define DATA_NAME "Long"
@@ -32,10 +31,8 @@ typedef char data_t;
 #endif
 
 #ifdef PROD
-/* $begin operprod */
 #define IDENT 1
 #define OP  *
-/* $end operprod */
 #define OP_NAME "Product"
 #else
 #ifdef DIV
@@ -43,10 +40,8 @@ typedef char data_t;
 #define IDENT 1
 #define OP_NAME "Divide"
 #else
-/* $begin operplus */
 #define IDENT 0
 #define OP  +
-/* $end operplus */
 #define OP_NAME "Sum"
 #endif /* DIV */
 #endif /* PROD */

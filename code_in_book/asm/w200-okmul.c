@@ -7,14 +7,11 @@ int tmult_ok_asm(long x, long y, long *dest);
 int umult_ok_asm(unsigned long x, unsigned long y, unsigned long *dest);
 long tmult_sat_asm(long x, long y);
 
-/* $begin w200-tmult_ok-proto-c */
 /* Multiply x and y.  Store result at dest.
    Return 1 if multiplication did not overflow
 */
 int tmult_ok(long x, long y, long *dest);
-/* $end w200-tmult_ok-proto-c */
 
-/* $begin w200-tmult_ok1-c */
 /* First attempt.  Does not work */ 
 int tmult_ok1(long x, long y, long *dest) 
 { 
@@ -23,9 +20,7 @@ int tmult_ok1(long x, long y, long *dest)
     asm("setae %al"); 
     return result; 
 } 
-/* $end w200-tmult_ok1-c */
 
-/* $begin w200-tmult_ok2-c */
 int tmult_ok2(long x, long y, long *dest) 
 { 
     int result; 
@@ -39,9 +34,7 @@ int tmult_ok2(long x, long y, long *dest)
 	);  
     return result; 
 } 
-/* $end w200-tmult_ok2-c */
 
-/* $begin w200-tmult_ok3-c */
 /* Uses extended asm to get reliable code */
 int tmult_ok3(long x, long y, long *dest) 
 {
@@ -54,9 +47,7 @@ int tmult_ok3(long x, long y, long *dest)
 
     return (int) bresult; 
 } 
-/* $end w200-tmult_ok3-c */
 
-/* $begin w200-tmult_ok4-c */
 /* Uses extended asm with explicit inclusion of imulq instruction */
 int tmult_ok4(long x, long y, long *dest) 
 {
@@ -70,18 +61,14 @@ int tmult_ok4(long x, long y, long *dest)
     *dest = y;
     return (int) bresult; 
 } 
-/* $end w200-tmult_ok4-c */
 
 
-/* $begin w200-umult_ok-proto-c */
 /* Multiply x and y.  Store result at dest.
    Return 1 if multiplication did not overflow
 */
 int umult_ok(unsigned long x, unsigned long y, unsigned long *dest);
-/* $end w200-umult_ok-proto-c */
 
 
-/* $begin w200-umult_ok-c */
 int umult_ok(unsigned long x, unsigned long y, unsigned long *dest) 
 { 
     unsigned char bresult; 
@@ -97,14 +84,10 @@ int umult_ok(unsigned long x, unsigned long y, unsigned long *dest)
 
     return (int) bresult; 
 } 
-/* $end w200-umult_ok-c */
 
-/* $begin w2-tmult_sat-proto-c */
 /* Compute x * y, saturating at TMin or TMax */
 long tmult_sat(long x, long y);
-/* $end w2-tmult_sat-proto-c */
 
-/* $begin w2-tmult_sat-c */
 /* Compute x * y, saturating at TMin or TMax */
 long tmult_sat(long x, long y) {
     /* Determine sign of x * y */
@@ -119,7 +102,6 @@ long tmult_sat(long x, long y) {
     prod = bok ? prod : oprod;
     return prod;
 }
-/* $end w2-tmult_sat-c */
 
 int main(int argc, char *argv[]) {
     long sx, sy, sdest, sprod;

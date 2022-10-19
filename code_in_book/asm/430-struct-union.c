@@ -1,4 +1,3 @@
-/* $begin 430-union3-decl-c */
 typedef union {
     struct {
 	long   u;
@@ -10,14 +9,11 @@ typedef union {
 	char  *p;
     } t2;
 } u_type;
-/* $end 430-union3-decl-c */
 
 #if 0
-/* $begin 430-union3-fun-c */
 void get(u_type *up, TYPE *dest) {
     *dest =  EXPR;
 }
-/* $end 430-union3-fun-c */
 #endif
 
 #define GETTER(name,type,expr) void name(u_type *up,type *dest) { *dest = expr; }

@@ -10,7 +10,6 @@ Program Header:
          filesz 0x00000000000001f8 memsz 0x00000000000001f8 flags r-x
   INTERP off    0x0000000000000238 vaddr 0x0000000000400238 paddr 0x0000000000400238 align 2**0
          filesz 0x000000000000001c memsz 0x000000000000001c flags r--
-/* $begin prog-exe-seghdr-d 13 */
    # Read-only code segment    
     LOAD off    0x0000000000000000 vaddr 0x0000000000400000 paddr 0x0000000000400000 align 2**21
          filesz 0x000000000000069c memsz 0x000000000000069c flags r-x
@@ -18,7 +17,6 @@ Program Header:
    # Read/write data segment    
     LOAD off    0x0000000000000df8 vaddr 0x0000000000600df8 paddr 0x0000000000600df8 align 2**21
          filesz 0x0000000000000228 memsz 0x0000000000000230 flags rw-
-/* $end prog-exe-seghdr-d 13 */
  DYNAMIC off    0x0000000000000e10 vaddr 0x0000000000600e10 paddr 0x0000000000600e10 align 2**3
          filesz 0x00000000000001d0 memsz 0x00000000000001d0 flags rw-
     NOTE off    0x0000000000000254 vaddr 0x0000000000400254 paddr 0x0000000000400254 align 2**2
@@ -312,16 +310,11 @@ Disassembly of section .text:
   4004ce:	90                   	nop
   4004cf:	90                   	nop
 
-/* $begin prog-exe-d 310 */
 00000000004004d0 <main>:
   4004d0:	48 83 ec 08          	sub    $0x8,%rsp
   4004d4:	be 02 00 00 00       	mov    $0x2,%esi
-/* $begin prog-exe-absrelo-d 313 */
   4004d9:	bf 18 10 60 00       	mov    $0x601018,%edi  # %edi = &array
-/* $end prog-exe-absrelo-d 313 */
-/* $begin prog-exe-pc32relo-d 314 */
   4004de:       e8 05 00 00 00          callq  4004e8 <sum>    # sum()
-/* $end prog-exe-pc32relo-d 314 */
   4004e3:	48 83 c4 08          	add    $0x8,%rsp
   4004e7:	c3                   	retq   
 
@@ -335,7 +328,6 @@ Disassembly of section .text:
   4004fd:	39 f2                	cmp    %esi,%edx
   4004ff:	7c f3                	jl     4004f4 <sum+0xc>
   400501:	f3 c3                	repz retq 
-/* $end prog-exe-d 310 */
   400503:	90                   	nop
   400504:	90                   	nop
   400505:	90                   	nop

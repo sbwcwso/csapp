@@ -1,11 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/* $begin sum */
 int sum(int x, int y) {
     return x + y;
 }
-/* $end sum */
 
 int main(int argc, char *argv[]) 
 {

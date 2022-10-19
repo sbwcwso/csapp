@@ -2,7 +2,6 @@
 	.text
 	.globl	absdiff_se
 	.type	absdiff_se, @function
-/* $begin 130-absdiff_se-s 5 */
 # long absdiff_se(long x, long y)
 # x in \rdireg, y in \rsireg
 absdiff_se:
@@ -17,7 +16,6 @@ absdiff_se:
 	movq	%rdi, %rax      
 	subq	%rsi, %rax         # result = x-y
 	ret                        # Return
-/* $end 130-absdiff_se-s 5 */
 	.size	absdiff_se, .-absdiff_se
 	.globl	gotodiff_se
 	.type	gotodiff_se, @function

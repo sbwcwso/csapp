@@ -2,7 +2,6 @@
 	.text
 	.globl	sp_init
 	.type	sp_init, @function
-/* $begin 390-struct2-s 5 */
 # void sp_init(struct prob *sp)
 # sp in \rdireg{}
 sp_init:
@@ -12,9 +11,7 @@ sp_init:
 	movq	%rax, (%rdi)
 	movq	%rdi, 16(%rdi)
 	ret
-/* $end 390-struct2-s 5 */
 
-/* $begin 390-struct2-ans-s 5 */
 # void sp_init(struct prob *sp)
 # sp in \rdireg{}
 sp_init:
@@ -24,7 +21,6 @@ sp_init:
 	movq	%rax, (%rdi)	# Store in sp->p
 	movq	%rdi, 16(%rdi)	# Store sp in sp->next
 	ret
-/* $end 390-struct2-ans-s 5 */
 
 	.size	sp_init, .-sp_init
 	.ident	"GCC: (Ubuntu 4.8.1-2ubuntu1~12.04) 4.8.1"

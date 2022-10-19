@@ -2,7 +2,6 @@
 	.text
 	.globl	proc
 	.type	proc, @function
-/* $begin 310-proc-s 5 */
 # void proc(a1, a1p, a2, a2p, a3, a3p, a4, a4p)
 # Arguments passed as follows:
 #   a1  in %rdi          (64 bits)
@@ -21,11 +20,9 @@ proc:
 	movl	8(%rsp), %edx	# Fetch a4    ( 8 bits)  # line:asm:proc:movl
 	addb	%dl, (%rax)	# *a4p += a4  ( 8 bits)
 	ret	     		# Return
-/* $end 310-proc-s 5 */
 	.size	proc, .-proc
 	.globl	call_proc
 	.type	call_proc, @function
-/* $begin 310-call_proc-s 16 */
 # long call_proc()
 call_proc:
 	# Set up arguments to proc
@@ -55,7 +52,6 @@ call_proc:
 	imulq	%rdx, %rax	 # Compute (x1+x2) * (x3-x4)
 	addq	$32, %rsp	 # Deallocate stack frame
 	ret	     		 # Return
-/* $end 310-call_proc-s 16 */
 	.size	call_proc, .-call_proc
 	.ident	"GCC: (Ubuntu 4.8.1-2ubuntu1~12.04) 4.8.1"
 	.section	.note.GNU-stack,"",@progbits

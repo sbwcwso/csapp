@@ -2,7 +2,6 @@
 	.text
 	.globl	fun
 	.type	fun, @function
-/* $begin w100-fun-s 5 */
 # int fun(int a, int *bp)
 # a at %ebp+8, bp at %ebp+12
 fun:
@@ -13,11 +12,9 @@ fun:
 	addl	8(%ebp), %eax		# Add a   # line:asm:32s:fun:line3
 	popl	%ebp			# Restore %ebp	    # line:asm:32s:fun:restoreebp
 	ret                             ## line:asm:32s:fun:ret
-/* $end w100-fun-s 5 */
 	.size	fun, .-fun
 	.globl	call_fun
 	.type	call_fun, @function
-/* $begin w100-call_fun-s 16 */
 # int call_fun(int x, int y)
 # x at %ebp+8, y at %ebp+12
 call_fun:
@@ -32,11 +29,9 @@ call_fun:
 	call	fun			# fun(x, &y)   		# line:asm:32s:call_fun:line6   
 	leave				# Deallocate & restore %ebp	    # line:asm:32s:call_fun:restoreebp
 	ret                             ## line:asm:32s:call_fun:ret
-/* $end w100-call_fun-s 16 */
 	.size	call_fun, .-call_fun
 	.globl	afun
 	.type	afun, @function
-/* $begin w100-afun-s 30 */
 # int afun(int t)
 # t at %ebp+8
 afun:
@@ -50,7 +45,6 @@ afun:
 	movl	-8(%ebp,%eax,4), %eax	# Get a[t]		# line:asm:32s:afun:line5
 	leave			 	# Deallocate & restore %ebp	    # line:asm:32s:afun:restoreebp
 	ret
-/* $end w100-afun-s 30 */
 	.size	afun, .-afun
 	.ident	"GCC: (Ubuntu 4.8.1-2ubuntu1~12.04) 4.8.1"
 	.section	.note.GNU-stack,"",@progbits

@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* $begin bufdemo-c */
 /* Implementation of library function gets() */
 char *gets(char *s)
 {
@@ -24,9 +23,7 @@ void echo()
     gets(buf);
     puts(buf);
 }
-/* $end bufdemo-c */
 
-/* $begin bufdemo-ans-c */
 /* Read input line and write it back */
 /* Code will work for any buffer size.  Bigger is more time-efficient */
 #define BUFSIZE 64
@@ -48,7 +45,6 @@ void good_echo()
         }
     }
 }
-/* $end bufdemo-ans-c */
 
 int main(int argc, char *argv[])
 {

@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-/* $begin rand */
 unsigned next_seed = 1;
 
 /* rand - return pseudorandom integer in the range 0..32767 */
@@ -15,7 +14,6 @@ void srand(unsigned new_seed)
 {
     next_seed = new_seed;
 } 
-/* $end rand */
 
 int main()
 {

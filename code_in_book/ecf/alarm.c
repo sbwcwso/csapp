@@ -1,4 +1,3 @@
-/* $begin alarm */
 #include "csapp.h"
 
 void handler(int sig) 
@@ -24,4 +23,3 @@ int main()
     }
     exit(0);
 }
-/* $end alarm */

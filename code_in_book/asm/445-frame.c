@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 /* Example of function requiring a stack frame */
-/* $begin 445-frame-c */
 long vframe(long n, long idx, long *q)  {
     long i;
     long *p[n];
@@ -11,7 +10,6 @@ long vframe(long n, long idx, long *q)  {
 	p[i] = q;
     return *p[idx];
 }
-/* $end 445-frame-c */
 
 long lframe(long n, long idx)  {
     long i;

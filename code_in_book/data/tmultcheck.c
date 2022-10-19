@@ -56,8 +56,6 @@ int test_cmult_ok(char x, char y) {
     int p = x*y;
     return p >= CHAR_MIN && p <= CHAR_MAX;
 }
-/* $begin tmult_ok */
-/* $begin tmult_ok2 */
 /* Determine whether arguments can be multiplied without overflow */
 int tmult_ok(int x, int y) {
     /* $end tmult_ok2 */
@@ -65,10 +63,7 @@ int tmult_ok(int x, int y) {
     /* Either x is zero, or dividing p by x gives y */
     return !x || p/x == y; 
 }
-/* $end tmult_ok */
 
-/* $begin tmult_ovf */
-/* $begin tmult_ovf2 */
 /* Determine whether multiplying will cause overflow */
 int tmult_ovf(int x, int y) {
     /* $end tmult_ovf2 */
@@ -76,27 +71,24 @@ int tmult_ovf(int x, int y) {
     /* x is nonzero, and dividing p by x does not gives y */
     return x && p/x != y; 
 }
-/* $end tmult_ovf */
   
 /* Determine whether arguments can be multiplied without overflow */
 int tmult_ok2(int x, int y) {
     /* $begin tmult_ok2 */
     /* Compute product without overflow */
-    int64_t pll = (int64_t) x*y; //line:data:prob:tmult_prod
+    int64_t pll = (int64_t) x*y; 
     /* See if casting to int preserves value */
     return pll == (int) pll;
 }
-/* $end tmult_ok2 */
 
 /* Determine whether multiplying will cause overflow */
 int tmult_ovf2(int x, int y) {
     /* $begin tmult_ovf2 */
     /* Compute product without overflow */
-    int64_t pll = (int64_t) x*y; //line:data:prob:tmult_prod
+    int64_t pll = (int64_t) x*y; 
     /* See if casting to int changes value */
     return pll != (int) pll;
 }
-/* $end tmult_ovf2 */
 
 /* Determine whether arguments can be multiplied without overflow */
 int bad_tmult_ok(int x, int y) {

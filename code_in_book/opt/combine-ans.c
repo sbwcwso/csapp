@@ -5,7 +5,6 @@
  */
 
 char combine5px8_descr[] = "GNU pointer code, unrolled by 8";
-/* $begin combine5px8-ans */
 void combine5px8(vec_ptr v, data_t *dest)
 {
     long length = vec_length(v); 
@@ -34,7 +33,6 @@ void combine5px8(vec_ptr v, data_t *dest)
     }
     *dest = x; 
 }
-/* $end combine5px8-ans */
 
 
 void register_combiners(void)

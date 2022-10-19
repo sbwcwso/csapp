@@ -2,7 +2,6 @@
 	.text
 	.globl	fun
 	.type	fun, @function
-/* $begin 400-struct-eg-s 5 */
 # long fun(struct ELE *ptr)
 # ptr in \rdireg{}
 fun:
@@ -15,9 +14,7 @@ fun:
 	testq	%rdi, %rdi
 	jne	.L3
 	rep; ret
-/* $end 400-struct-eg-s 5 */
 
-/* $begin 400-struct-eg-ann-s 5 */
 # long fun(struct ELE *ptr)
 # ptr in \rdireg{}
 fun:
@@ -30,7 +27,6 @@ fun:
 	testq	%rdi, %rdi	#   Test ptr  
 	jne	.L3   		#   If != NULL, goto \textbf{loop}
 	rep; ret
-/* $end 400-struct-eg-ann-s 5 */
 
 	.size	fun, .-fun
 	.ident	"GCC: (Ubuntu 4.8.1-2ubuntu1~12.04) 4.8.1"

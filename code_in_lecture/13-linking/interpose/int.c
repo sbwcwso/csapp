@@ -5,7 +5,6 @@
  * Note: be sure to compile unoptimized (-O0) so that gcc won't
  * optimize away the calls to malloc and free.
  */
-/* $begin interposemain */
 #include <stdio.h>
 #include <malloc.h>
 
@@ -15,4 +14,3 @@ int main()
     free(p);
     return(0); 
 }
-/* $end interposemain */

@@ -39,7 +39,6 @@ gets:
 	.size	gets, .-gets
 	.globl	echo
 	.type	echo, @function
-/* $begin 450-bufdemo-sp-s 42 */
 # void echo()
 echo:
 	subq	$24, %rsp	  #   Allocate 24 bytes on stack
@@ -57,7 +56,6 @@ echo:
 .L9:				  # \textbf{ok:}
 	addq	$24, %rsp	  #   Deallocate stack space
 	ret
-/* $end 450-bufdemo-sp-s 42 */
 	.size	echo, .-echo
 	.globl	good_echo
 	.type	good_echo, @function

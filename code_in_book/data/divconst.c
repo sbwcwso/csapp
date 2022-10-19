@@ -2,21 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* $begin div8 */
 int div8(int x) {
     /* Compute bias to be either 0 (x >= 0) or 7 (x < 0) */
     int bias = (x >> 31) & 0x7;
     return (x + bias) >> 3;
 }
-/* $end div8 */
 
-/* $begin div16 */
 int div16(int x) {
     /* Compute bias to be either 0 (x >= 0) or 15 (x < 0) */
     int bias = (x >> 31) & 0xF;
     return (x + bias) >> 4;
 }
-/* $end div16 */
 
 int div2k(int x, int k)
 {

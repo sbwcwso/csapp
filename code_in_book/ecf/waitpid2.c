@@ -1,4 +1,3 @@
-/* $begin waitpid2 */
 #include "csapp.h"
 #define N 2
 
@@ -9,12 +8,12 @@ int main()
 
     /* Parent creates N children */
     for (i = 0; i < N; i++) 
-	if ((pid[i] = Fork()) == 0)  /* Child */          //line:ecf:waitpid2:fork
+	if ((pid[i] = Fork()) == 0)  /* Child */          
 	    exit(100+i);
 
     /* Parent reaps N children in order */
     i = 0;
-    while ((retpid = waitpid(pid[i++], &status, 0)) > 0) { //line:ecf:waitpid2:waitpid
+    while ((retpid = waitpid(pid[i++], &status, 0)) > 0) { 
 	if (WIFEXITED(status))  
 	    printf("child %d terminated normally with exit status=%d\n",
 		   retpid, WEXITSTATUS(status));
@@ -28,4 +27,3 @@ int main()
 
     exit(0);
 }
-/* $end waitpid2 */

@@ -2,7 +2,6 @@
 	.text
 	.globl	funct1
 	.type	funct1, @function
-/* $begin 530-fexpr1-s 5 */
 # double funct1(arg1_t p, arg2_t q, arg3_t r, arg4_t s) 
 funct1:
 	vcvtsi2ssq	%rsi, %xmm2, %xmm2
@@ -13,9 +12,7 @@ funct1:
 	vcvtps2pd	%xmm0, %xmm0
 	vsubsd	%xmm1, %xmm0, %xmm0
 	ret
-/* $end 530-fexpr1-s 5 */
 
-/* $begin 530-fexpr1-ann-s 5 */
 # Refer to arguments as i1 (\rdireg{}), i2 (\esireg{})
 #                       f1 (\xmmreg{0}), and f2 (\xmmreg{1}) 
 #
@@ -29,12 +26,10 @@ funct1:
 	vcvtps2pd	%xmm0, %xmm0  	    # Convert to double
 	vsubsd	%xmm1, %xmm0, %xmm0	    # Compute i1 / (i2 + f1) - f2 (double)
 	ret
-/* $end 530-fexpr1-ann-s 5 */
 
 	.size	funct1, .-funct1
 	.globl	funct2
 	.type	funct2, @function
-/* $begin 530-fexpr2-s 17 */
 # double funct2(double w, int x, float y, long z)
 # w in %xmm0, x in \edireg{}, y in %xmm1, z in \rsireg{}
 funct2:
@@ -46,9 +41,7 @@ funct2:
 	vdivsd	%xmm1, %xmm0, %xmm0
 	vsubsd	%xmm0, %xmm2, %xmm0
 	ret
-/* $end 530-fexpr2-s 17 */
 
-/* $begin 530-fexpr2-ann-s 17 */
 # double funct2(double w, int x, float y, long z)
 # w in %xmm0, x in \edireg{}, y in %xmm1, z in \rsireg{}
 funct2:
@@ -60,12 +53,10 @@ funct2:
 	vdivsd	%xmm1, %xmm0, %xmm0  	     # Compute w/z
 	vsubsd	%xmm0, %xmm2, %xmm0	     # Subtract from x*y
 	ret	       	      		     # Return
-/* $end 530-fexpr2-ann-s 17 */
 
 	.size	funct2, .-funct2
 	.globl	funct3
 	.type	funct3, @function
-/* $begin 530-fexpr3-s 29 */
 # double funct3(int *ap, double b, long c, float *dp)
 # ap in \rdireg{}, b in %xmm0, c in \rsireg{}, dp in \rdxreg{}
 funct3:
@@ -85,9 +76,7 @@ funct3:
 	vunpcklps	%xmm0, %xmm0, %xmm0
 	vcvtps2pd	%xmm0, %xmm0
 	ret
-/* $end 530-fexpr3-s 29 */
 
-/* $begin 530-fexpr3-ann-s 29 */
 # double funct3(int *ap, double b, long c, float *dp)
 # ap in \rdireg{}, b in %xmm0, c in \rsireg{}, dp in \rdxreg{}
 funct3:
@@ -107,7 +96,6 @@ funct3:
 	vunpcklps	%xmm0, %xmm0, %xmm0	
 	vcvtps2pd	%xmm0, %xmm0  		#   Convert to double
 	ret					#   Return
-/* $end 530-fexpr3-ann-s 29 */
 
 	.size	funct3, .-funct3
 	.globl	d_max
@@ -132,45 +120,35 @@ dz:
 	.globl	simplefun
 	.type	simplefun, @function
 simplefun:
-/* $begin 530-simplefun1-s  69 */
 	vmovsd	.LC1(%rip), %xmm1
 	vandpd	%xmm1, %xmm0, %xmm0
-/* $end 530-simplefun1-s 69 */
 	ret
 	.size	simplefun, .-simplefun
 	.globl	simplefun2
 	.type	simplefun2, @function
 simplefun2:
-/* $begin 530-simplefun2-s 76 */
 	vxorpd	%xmm0, %xmm0, %xmm0
-/* $end 530-simplefun2-s 76 */
 	ret
 	.size	simplefun2, .-simplefun2
 	.globl	simplefun3
 	.type	simplefun3, @function
 simplefun3:
-/* $begin 530-simplefun3-s 82 */
 	vmovsd	.LC2(%rip), %xmm1
 	vxorpd	%xmm1, %xmm0, %xmm0
-/* $end 530-simplefun3-s 82 */
 	ret
 	.size	simplefun3, .-simplefun3
 	.section	.rodata.cst16,"aM",@progbits,16
 	.align 16
-/* $begin 530-simplefun1-s 88 */
 .LC1:
 	.long	4294967295
 	.long	2147483647
 	.long	0
 	.long	0
-/* $end 530-simplefun1-s 88 */
 	.align 16
-/* $begin 530-simplefun3-s 94 */
 .LC2:
 	.long	0
 	.long	-2147483648
 	.long	0
 	.long	0
-/* $end 530-simplefun3-s 94 */
 	.ident	"GCC: (Ubuntu 4.8.1-2ubuntu1~12.04) 4.8.1"
 	.section	.note.GNU-stack,"",@progbits

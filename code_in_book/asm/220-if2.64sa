@@ -2,7 +2,6 @@
 	.text
 	.globl	test
 	.type	test, @function
-/* $begin 220-if2-s 5 */
 # long test(long x, long y)
 # x in \rdireg{}, y in \rsireg{}
 test:
@@ -21,7 +20,6 @@ test:
 	cmpq	$-2, %rsi
 	cmovle	%rdi, %rax
 	ret
-/* $end 220-if2-s 5 */
 	.size	test, .-test
 	.ident	"GCC: (Ubuntu 4.8.1-2ubuntu1~12.04) 4.8.1"
 	.section	.note.GNU-stack,"",@progbits

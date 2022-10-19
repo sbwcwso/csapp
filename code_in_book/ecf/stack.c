@@ -2,7 +2,6 @@
  * environ: makes a map of the arguments and environment variables 
  * when a C program begins execution
  */
-/* $begin environ */
 #include "csapp.h"
 
 int main(int argc, char **argv, char **envp) 
@@ -40,4 +39,3 @@ int main(int argc, char **argv, char **envp)
 
     exit(0);
 }
-/* $end environ */

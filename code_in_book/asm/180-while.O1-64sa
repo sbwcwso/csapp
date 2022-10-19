@@ -20,7 +20,6 @@ loop_while:
 	.size	loop_while, .-loop_while
 	.globl	loop_while2
 	.type	loop_while2, @function
-/* $begin 180-while2-s 23 */
 # a in \rdireg{}, b in \rsireg{}
 loop_while2:
 	testq	%rsi, %rsi
@@ -35,7 +34,6 @@ loop_while2:
 .L8:
 	movq	%rsi, %rax
 	ret ## line:asm:while2:ret2
-/* $end 180-while2-s 23 */
 	.size	loop_while2, .-loop_while2
 	.ident	"GCC: (Ubuntu 4.8.1-2ubuntu1~12.04) 4.8.1"
 	.section	.note.GNU-stack,"",@progbits

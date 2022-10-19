@@ -132,14 +132,12 @@ Disassembly of section .text:
   4004cf:	90                   	nop
 
 00000000004004d0 <loop>:
-/* $begin 120-branch-exe-d 135 */
   4004d0:	48 89 f8             	mov    %rdi,%rax
   4004d3:	eb 03                	jmp    4004d8 <loop+0x8> ## line:asm:branch_exe_d:jmp
   4004d5:	48 d1 f8             	sar    %rax
   4004d8:	48 85 c0             	test   %rax,%rax
   4004db:	7f f8                	jg     4004d5 <loop+0x5> ## line:asm:branch_exe_d:jg
   4004dd:	f3 c3                	repz retq 
-/* $end 120-branch-exe-d 135 */
 
 00000000004004df <main>:
   4004df:	48 c7 c7 fe ff ff ff 	mov    $0xfffffffffffffffe,%rdi

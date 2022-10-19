@@ -112,7 +112,6 @@ combine3:
 	jle	.L15
 	movq	%rax, %rdx
 	leaq	(%rax,%r12,8), %rax
-/* $begin dpb-combine3-s 115 */
 # Inner loop of combine3.  data_t = double, OP = *
 # dest in \rbxreg{}, data+i in \rdxreg{}, data+length in \raxreg{}
 .L17:  	  	     	             # \textbf{loop:}
@@ -122,9 +121,7 @@ combine3:
 	addq	$8, %rdx             #   Increment data+i
 	cmpq	%rax, %rdx           #   Compare to data+length
 	jne	.L17                 #   If !=, goto \textbf{loop}
-/* $end dpb-combine3-s 115 */
 
-/* $begin dpb-combine3-O1-s 115 */
 # Inner loop of combine3.  data_t = double, OP = *.  Compiled -O1
 # dest in \rbxreg{}, data+i in \rdxreg{}, data+length in \raxreg{}
 .L17:  	  	     	             # \textbf{loop:}
@@ -134,7 +131,6 @@ combine3:
 	addq	$8, %rdx             #   Increment data+i
 	cmpq	%rax, %rdx           #   Compare to data+length
 	jne	.L17                 #   If !=, goto \textbf{loop}
-/* $end dpb-combine3-O1-s 115 */
 
 .L15:
 	popq	%rbx
@@ -186,7 +182,6 @@ combine4:
 	movq	%rax, %rdx
 	leaq	(%rax,%rbp,8), %rax
 	vmovsd	.LC0(%rip), %xmm0
-/* $begin dpb-combine4-s 172 */
 # Inner loop of combine4.  data_t = double, OP = *
 # acc in %xmm0, data+i in \rdxreg{}, data+length in \raxreg{}
 .L25:  	  	     	             # \textbf{loop:}
@@ -194,7 +189,6 @@ combine4:
 	addq	$8, %rdx       	     #   Increment data+i
 	cmpq	%rax, %rdx     	     #   Compare to data+length
 	jne	.L25           	     #   If !=, goto \textbf{loop}
-/* $end dpb-combine4-s 172 */
 .L25:
 	vmulsd	(%rdx), %xmm0, %xmm0
 	addq	$8, %rdx
@@ -258,7 +252,6 @@ combine5:
 	vmovsd	.LC0(%rip), %xmm0
 	movl	$0, %edx
 
-/* $begin dpb-combine5-s 234 */
 # Inner loop of combine5.  data_t = double, OP = *
 # i in \rdxreg{}, data \raxreg{}, limit in \rbpreg{}, acc in %xmm0
 .L35:  	  	     	             	     # \textbf{loop:}
@@ -267,7 +260,6 @@ combine5:
 	addq	$2, %rdx	       	     #   Increment i by 2
 	cmpq	%rdx, %rbp		     #   Compare to limit:i
 	jg	.L35  			     #	 If >, goto \textbf{loop}
-/* $end dpb-combine5-s 234 */
 	jmp	.L34
 .L38:
 	vmovsd	.LC0(%rip), %xmm0
@@ -1959,10 +1951,8 @@ unroll10x10a_combine:
 	vmovapd	%xmm1, %xmm0
 	movl	$0, %ecx
 .L250:
-/* $begin unroll10x10-frag-s 2018 */
 # Updating of accumulator acc0 in 10 x 10 urolling
 	vmulsd	(%rdx), %xmm0, %xmm0   # acc0 *= data[i]
-/* $end unroll10x10-frag-s 2018 */
 	vmulsd	8(%rdx), %xmm9, %xmm9  # acc1 *= data[i+1]
 	vmulsd	16(%rdx), %xmm8, %xmm8 # acc2 *= data[i+2]
 	vmulsd	24(%rdx), %xmm7, %xmm7
@@ -4029,12 +4019,10 @@ combine1_descr:
 .Ldebug_line0:
 
 .L222:
-/* $begin unroll20x20-frag-s 1701 */
 # Updating of accumulator acc0 in 20 x 20 unrolling
 	vmovsd	40(%rsp), %xmm0
 	vmulsd	(%rdx), %xmm0, %xmm0
 	vmovsd	%xmm0, 40(%rsp)
-/* $end unroll20x20-frag-s 1701 */
 	vmovsd	8(%rsp), %xmm0
 	vmulsd	48(%rdx), %xmm0, %xmm0
 	vmovsd	%xmm0, 8(%rsp)

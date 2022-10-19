@@ -1,4 +1,3 @@
-/* $begin dd2hex */
 #include "csapp.h"
 
 int main(int argc, char **argv) 
@@ -20,4 +19,3 @@ int main(int argc, char **argv)
     printf("0x%x\n", ntohl(inaddr.s_addr));
     exit(0);
 }
-/* $end dd2hex */

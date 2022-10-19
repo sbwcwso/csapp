@@ -2,7 +2,6 @@
 	.text
 	.globl	cond
 	.type	cond, @function
-/* $begin 140-simple-if-s 5 */
 # void cond(long a, long *p)
 # a in \rdireg{}, p in \rsireg{}
 cond:
@@ -13,7 +12,6 @@ cond:
 	movq	%rdi, (%rsi)
 .L1:
 	rep; ret
-/* $end 140-simple-if-s 5 */
 	.size	cond, .-cond
 	.globl	goto_cond
 	.type	goto_cond, @function

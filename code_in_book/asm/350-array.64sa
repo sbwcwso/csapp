@@ -3,12 +3,10 @@
 	.globl	get_value
 	.type	get_value, @function
 get_value:
-/* $begin 350-arrayaccess-s 6  */
 # A in \rdireg{}, i in \rsireg{}, and j in \rdxreg{}
 	leaq	(%rsi,%rsi,2), %rax   # Compute \(3i\)
 	leaq	(%rdi,%rax,4), %rax   # Compute \(\startaddr{A} + 12i\)
 	movl	(%rax,%rdx,4), %eax   # Read from \(\memref{\startaddr{A} + 12i + 4j}\)
-/* $end 350-arrayaccess-s 6  */
 	ret
 	.size	get_value, .-get_value
 	.globl	get_value2
@@ -115,7 +113,6 @@ new_var_matrix:
 	.size	new_var_matrix, .-new_var_matrix
 	.globl	var_ele
 	.type	var_ele, @function
-/* $begin 350-varele-s 116 */
 # int var_ele(long n, int A[n][n], long i, long j)
 # n in \rdireg{}, A in \rsireg{}, i in \rdxreg{}, j in \rcxreg{}
 var_ele:
@@ -123,7 +120,6 @@ var_ele:
 	leaq	(%rsi,%rdi,4), %rax	# Compute \(\startaddr{A} + 4 (n \cdot i)\)
 	movl	(%rax,%rcx,4), %eax	# Read from \(\memref{\startaddr{A} + 4 (n \cdot i) + 4j}\)
 	ret
-/* $end 350-varele-s 116 */
 	.size	var_ele, .-var_ele
 	.globl	pvar_ele
 	.type	pvar_ele, @function

@@ -1,4 +1,3 @@
-/* $begin dynamicsize */
 #include "csapp.h"
 
 int main() 
@@ -12,4 +11,3 @@ int main()
     free(array);
     exit(0);
 }
-/* $end dynamicsize */

@@ -2,7 +2,6 @@
  * A thread-safe version of echo that counts the total number
  * of bytes received from clients.
  */
-/* $begin echo_cnt */
 #include "csapp.h"
 
 static int byte_cnt;  /* Byte counter */
@@ -21,16 +20,15 @@ void echo_cnt(int connfd)
     rio_t rio;
     static pthread_once_t once = PTHREAD_ONCE_INIT;
 
-    Pthread_once(&once, init_echo_cnt); //line:conc:pre:pthreadonce
-    Rio_readinitb(&rio, connfd);        //line:conc:pre:rioinitb
+    Pthread_once(&once, init_echo_cnt); 
+    Rio_readinitb(&rio, connfd);        
     while((n = Rio_readlineb(&rio, buf, MAXLINE)) != 0) {
 	P(&mutex);
-	byte_cnt += n; //line:conc:pre:cntaccess1
+	byte_cnt += n; 
 	printf("server received %d (%d total) bytes on fd %d\n", 
-	       n, byte_cnt, connfd); //line:conc:pre:cntaccess2
+	       n, byte_cnt, connfd); 
 	V(&mutex);
 	Rio_writen(connfd, buf, n);
     }
 }
-/* $end echo_cnt */
 

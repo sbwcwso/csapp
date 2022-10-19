@@ -1,4 +1,3 @@
-/* $begin kill */
 #include "csapp.h"
 
 int main() 
@@ -16,4 +15,3 @@ int main()
     Kill(pid, SIGKILL);
     exit(0);
 }
-/* $end kill */

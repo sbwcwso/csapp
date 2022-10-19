@@ -3,12 +3,10 @@
 void combine3(vec_ptr v, data_t *dest);
 void combine4(vec_ptr v, data_t *dest);
 
-/* $begin loop-problem-funs */
 long min(long x, long y) { return x < y ? x : y; }
 long max(long x, long y) { return x < y ? y : x; }  
 void incr(long *xp, long v) { *xp += v; }
 long square(long x) { return x*x; }
-/* $end loop-problem-funs */
 
 void fragments() 
 {

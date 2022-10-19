@@ -1,4 +1,3 @@
-/* $begin 150-if-ans-c */
 long test(long x, long y, long z) {
     long val = x+y+z;
     if (x < -3) {
@@ -10,10 +9,8 @@ long test(long x, long y, long z) {
 	val = x*z;
     return val;
 }
-/* $end 150-if-ans-c */
 
 #if 0
-/* $begin 150-if-prob-c */
 long test(long x, long y, long z) {
     long val = ______;
     if (______) {
@@ -25,5 +22,4 @@ long test(long x, long y, long z) {
 	val = ______;
     return val;
 }
-/* $end 150-if-prob-c */
 #endif

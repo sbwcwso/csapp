@@ -1,11 +1,9 @@
 #include <stdio.h>
 /* Different conditionals */
 
-/* $begin max-c */
 long max(long x, long y) {
     return (x < y) ? y : x;
 }
-/* $end max-c */
 
 long wa_max(long x, long y)
 {
@@ -52,11 +50,9 @@ long cdiv2(long x, long y)
     return (y == 1) ? x : x/y;
 }
 
-/* $begin 210-cread-c */
 long cread(long *xp) {
     return (xp ? *xp : 0);
 }
-/* $end 210-cread-c */
 
 long cread_invalid(long *xp) {
     long x = *xp;
@@ -65,22 +61,16 @@ long cread_invalid(long *xp) {
     return x;
 }
 
-/* $begin se_max-c */
 long lcount = 0;
 long se_max(long x, long y) {
     return (x < y) ? (lcount++, y) : x;
 }
-/* $end se_max-c */
 
 #define OP /
 #if 0
-/* $begin 210-arith-c */
 #define OP _____ /* Unknown operator */
 
-/* $end 210-arith-c */
 #endif
-/* $begin 210-arith-c */
 long arith(long x) {
     return x OP 8;
 }
-/* $end 210-arith-c */

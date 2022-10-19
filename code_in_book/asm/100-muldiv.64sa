@@ -2,7 +2,6 @@
 	.text
 	.globl	store_uprod
 	.type	store_uprod, @function
-/* $begin 100-umul-s 5 */
 # void store_uprod(uint128_t *dest, uint64_t x, uint64_t y)
 # dest in \rdireg, x in \rsireg, y in \rdxreg
 store_uprod:
@@ -11,7 +10,6 @@ store_uprod:
 	movq	%rax, (%rdi)   # Store lower 8 bytes at dest   # line:asm:umul:storelo
 	movq	%rdx, 8(%rdi)  # Store upper 8 bytes at dest+8 # line:asm:umul:storehi
 	ret
-/* $end 100-umul-s 5 */
 	.size	store_uprod, .-store_uprod
 	.globl	store_prod
 	.type	store_prod, @function
@@ -31,7 +29,6 @@ store_prod:
 	.size	store_prod, .-store_prod
 	.globl	remdiv
 	.type	remdiv, @function
-/* $begin 100-remdiv-s 30 */
 # void remdiv(long x, long y, long *qp, long *rp)
 # x in \rdireg, y in \rsireg, qp in \rdxreg, rp in \rcxreg
 remdiv:
@@ -42,11 +39,9 @@ remdiv:
 	movq	%rax, (%r8)   # Store quotient at qp #line:asm:remdiv:storeq
 	movq	%rdx, (%rcx)  # Store remainder at rp #line:asm:remdiv:storer
 	ret
-/* $end 100-remdiv-s 30 */
 	.size	remdiv, .-remdiv
 	.globl	uremdiv
 	.type	uremdiv, @function
-/* $begin 100-uremdiv-s 41 */
 # void uremdiv(unsigned long x, unsigned long y,
 #	       unsigned long *qp, unsigned long *rp)
 # x in \rdireg, y in \rsireg, qp in \rdxreg, rp in \rcxreg
@@ -58,7 +53,6 @@ uremdiv:
 	movq	%rax, (%r8)   # Store quotient at qp
 	movq	%rdx, (%rcx)  # Store remainder at rp
 	ret
-/* $end 100-uremdiv-s 41 */
 	.size	uremdiv, .-uremdiv
 	.ident	"GCC: (Ubuntu 4.8.1-2ubuntu1~12.04) 4.8.1"
 	.section	.note.GNU-stack,"",@progbits

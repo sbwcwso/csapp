@@ -8,7 +8,6 @@
 
 
 /* Measure 14.5 CPE on random data, 3.0 on deterministic */
-/* $begin minmax1 */
 /* Rearrange two vectors so that for each i, b[i] >= a[i] */
 void minmax1(long a[], long b[], long n) {
     long i;
@@ -20,10 +19,8 @@ void minmax1(long a[], long b[], long n) {
 	}
     }
 }
-/* $end minmax1 */
 
 /* Measure 5.0 CPE */
-/* $begin minmax2 */
 /* Rearrange two vectors so that for each i, b[i] >= a[i] */
 void minmax2(long a[], long b[], long n) {
     long i;
@@ -34,7 +31,6 @@ void minmax2(long a[], long b[], long n) {
 	b[i] = max;
     }
 }
-/* $end minmax2 */
 
 #define MAXLEN (1<<16)
 /* Need to sets of identical data for comparisons */

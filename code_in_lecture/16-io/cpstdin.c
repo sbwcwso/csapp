@@ -1,4 +1,3 @@
-/* $begin cpstdin */
 #include "csapp.h"
 
 int main(void) 
@@ -9,4 +8,3 @@ int main(void)
 	Write(STDOUT_FILENO, &c, 1);
     exit(0);
 }
-/* $end cpstdin */

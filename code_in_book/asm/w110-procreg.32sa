@@ -2,7 +2,6 @@
 	.text
 	.globl	proc
 	.type	proc, @function
-/* $begin w110-proc-ann-s 5 */
 # void proc(int a2, int *a2p, short a3, short *a3p, char a4, char *a4p)
 # a2 at %ebp+8, a2p at %ebp+12, a3 at %ebp+16, a3p at %ebp+20
 # a4 at %ebp+24, a4p at %ebp+28
@@ -22,9 +21,7 @@ proc:
 	popl	%ebx 			# Restore %ebx
 	popl	%ebp			# Restore %ebp
 	ret
-/* $end w110-proc-ann-s 5 */
 
-/* $begin w110-proc-s 5 */
 # void proc(int a2, int *a2p, short a3, short *a3p, char a4, char *a4p)
 proc:
 	pushl	%ebp
@@ -42,12 +39,10 @@ proc:
 	popl	%ebx
 	popl	%ebp
 	ret
-/* $end w110-proc-s 5 */
 
 	.size	proc, .-proc
 	.globl	call_proc
 	.type	call_proc, @function
-/* $begin w110-call_proc-s 24 */
 # int call_proc()
 call_proc:
 	pushl	%ebp
@@ -72,9 +67,7 @@ call_proc:
 	imull	-4(%ebp), %eax
 	leave
 	ret
-/* $end w110-call_proc-s 24 */
 
-/* $begin w110-call_proc-ann-s 24 */
 # int call_proc()
 call_proc:
 	pushl	%ebp			# Save %ebp	   
@@ -101,7 +94,6 @@ call_proc:
 	imull	-4(%ebp), %eax		# Multiply by x2
 	leave				# Deallocate & restore %ebp
 	ret
-/* $end w110-call_proc-ann-s 24 */
 
 
 	.size	call_proc, .-call_proc

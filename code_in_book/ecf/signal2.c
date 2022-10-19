@@ -1,6 +1,5 @@
 #include "csapp.h"
 
-/* $begin signal2 */
 void handler2(int sig) 
 {
     int olderrno = errno;
@@ -13,7 +12,6 @@ void handler2(int sig)
     Sleep(1);
     errno = olderrno;
 }
-/* $end signal2 */
 
 int main() 
 {

@@ -1,5 +1,4 @@
 #if 0
-/* $begin 340-recurse-proto-c */
 long rfun(unsigned long x) {
     if ( ____ )
 	return _____;
@@ -7,10 +6,8 @@ long rfun(unsigned long x) {
     long rv = rfun(nx);
     return _____;
 }
-/* $end 340-recurse-proto-c */
 #endif
 
-/* $begin 340-recurse-c */
 long rfun(unsigned long x) {
     if (x == 0)
 	return 0;
@@ -18,5 +15,4 @@ long rfun(unsigned long x) {
     long rv = rfun(nx);
     return x + rv;
 }
-/* $end 340-recurse-c */
 

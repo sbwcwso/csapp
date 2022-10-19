@@ -2,16 +2,13 @@
 	.text
 	.globl	procprob
 	.type	procprob, @function
-/* $begin 320-procprob-s 5 */
 procprob:
 	movslq	%edi, %rdi
 	addq	%rdi, (%rdx)			##line:asm:procprob:addq
 	addb	%sil, (%rcx)			##line:asm:procprob:addb
 	movl	$6, %eax
 	ret
-/* $end 320-procprob-s 5 */
 
-/* $begin 320-procprob-ans-s 5 */
 # int procprobl(int a, short b, long *u, char *v)
 # a in %edi, b in %si, u in %rdx, v in %rcx
 procprob:
@@ -20,7 +17,6 @@ procprob:
 	addb	%sil, (%rcx)	# Add low-order byte of b to *v
 	movl	$6, %eax	# Return 4+2
 	ret
-/* $end 320-procprob-ans-s 5 */
 
 	.size	procprob, .-procprob
 	.globl	argprob

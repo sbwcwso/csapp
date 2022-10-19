@@ -2,7 +2,6 @@
 	.text
 	.globl	P
 	.type	P, @function
-/* $begin 285-calleesave2-s 5 */
 # long P(long x)
 # x in \rdireg{}
 P:
@@ -26,7 +25,6 @@ P:
 	movl	$0, %eax
 	call	Q
 #       . . .
-/* $end 285-calleesave2-s 5 */
 	leaq	(%rbx,%r15), %rax
 	addq	%r14, %rax
 	addq	%r13, %rax

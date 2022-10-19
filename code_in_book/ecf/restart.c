@@ -1,4 +1,3 @@
-/* $begin restart */
 #include "csapp.h"
 
 sigjmp_buf buf;
@@ -23,4 +22,3 @@ int main()
     }
     exit(0); /* Control never reaches here */
 }
-/* $end restart */

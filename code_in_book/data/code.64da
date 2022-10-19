@@ -133,9 +133,7 @@ Disassembly of section .text:
 
 00000000004004d0 <sum>:
   4004d0:	8d 04 37             	lea    (%rdi,%rsi,1),%eax
-/* $begin code-d 136 */
   4004d3:	01 05 43 0b 20 00    	add    %eax,0x200b43(%rip)
-/* $end code-d 136 */
   4004d9:	c3                   	retq   
 
 00000000004004da <p>:

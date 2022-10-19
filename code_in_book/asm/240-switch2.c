@@ -1,4 +1,3 @@
-/* $begin 240-switch2-c */
 void switch2(long x, long *dest) {
     long val = 0;
     switch (x) {
@@ -12,8 +11,6 @@ void switch2(long x, long *dest) {
     case 4: val = 4; break;
     case 5: val = 5; break;
     default: val = 7; break;
-/* $begin 240-switch2-c */
     }
     *dest = val;
 }
-/* $end 240-switch2-c */

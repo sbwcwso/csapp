@@ -12,7 +12,6 @@ swap_add:
 	.size	swap_add, .-swap_add
 	.globl	caller
 	.type	caller, @function
-/* $begin 300-swapadd-s 15 */
 # long caller()
 caller:
 	subq	$16, %rsp	# Allocate 16 bytes for stack frame # line:asm:swapadd:allocate
@@ -26,7 +25,6 @@ caller:
 	imulq	%rdx, %rax	# Compute sum * diff  		   # line:asm:swapadd:mult
 	addq	$16, %rsp	# Deallocate stack frame # line:asm:swapadd:deallocate
 	ret	     		# Return
-/* $end 300-swapadd-s 15 */
 	.size	caller, .-caller
 	.ident	"GCC: (Ubuntu 4.8.1-2ubuntu1~12.04) 4.8.1"
 	.section	.note.GNU-stack,"",@progbits

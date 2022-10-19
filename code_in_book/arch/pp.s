@@ -1,4 +1,3 @@
-/* $begin pushtest-s 0 */
 	.text
 .globl pushtest
 pushtest:
@@ -7,9 +6,7 @@ pushtest:
 	popq	%rdx	   # Pop it back
 	subq	%rdx, %rax # Return 0 or 8
 	ret
-/* $end pushtest-s 0 */
 
-/* $begin poptest-s 0 */
 	.text
 .globl poptest
 poptest:
@@ -19,7 +16,6 @@ poptest:
 	movq	%rsp, %rax  # Set popped value as return value
 	movq    %rdi, %rsp  # Restore stack pointer 
 	ret
-/* $end poptest-s 0 */
 
 	.text
 .globl _pushtest

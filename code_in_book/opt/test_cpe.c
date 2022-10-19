@@ -16,7 +16,6 @@ static void setup(long len)
     p = b;
 }
 
-/* $begin psum */
 /* Compute prefix sum of vector a */
 void psum1(float a[], float p[], long n)
 {
@@ -39,9 +38,7 @@ void psum2(float a[], float p[], long n)
     if (i < n)
 	p[i] = p[i-1] + a[i];
 }
-/* $end psum */
 
-/* $begin psum1a */
 void psum1a(float a[], float p[], long n)
 {
     long i;
@@ -54,7 +51,6 @@ void psum1a(float a[], float p[], long n)
 	last_val = val;
     }
 }
-/* $end psum1a */
 
 void tpsum1(long cnt)
 {

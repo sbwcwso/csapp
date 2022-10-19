@@ -1,7 +1,6 @@
 /* 
  * hello.c - Pthreads "hello, world" program 
  */
-/* $begin hello */
 #include "csapp.h"
 void *thread(void *vargp);
 
@@ -20,4 +19,3 @@ void *thread(void *vargp) /* thread routine */
     while(1);
     return NULL;
 }
-/* $end hello */

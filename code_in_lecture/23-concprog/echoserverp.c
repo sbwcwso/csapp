@@ -1,16 +1,15 @@
 /* 
  * echoserverp.c - A concurrent echo server based on processes
  */
-/* $begin echoserverpmain */
 #include "csapp.h"
 void echo(int connfd);
 
-void sigchld_handler(int sig) //line:conc:echoserverp:handlerstart
+void sigchld_handler(int sig) 
 {
     while (waitpid(-1, 0, WNOHANG) > 0)
 	;
     return;
-} //line:conc:echoserverp:handlerend
+} 
 
 int main(int argc, char **argv) 
 {
@@ -30,11 +29,10 @@ int main(int argc, char **argv)
 	connfd = Accept(listenfd, (SA *) &clientaddr, &clientlen);
 	if (Fork() == 0) { 
 	    Close(listenfd); /* Child closes its listening socket */
-	    echo(connfd);    /* Child services client */ //line:conc:echoserverp:echofun
-	    Close(connfd);   /* Child closes connection with client */ //line:conc:echoserverp:childclose
+	    echo(connfd);    /* Child services client */ 
+	    Close(connfd);   /* Child closes connection with client */ 
 	    exit(0);         /* Child exits */
 	}
-	Close(connfd); /* Parent closes connected socket (important!) */ //line:conc:echoserverp:parentclose
+	Close(connfd); /* Parent closes connected socket (important!) */ 
     }
 }
-/* $end echoserverpmain */

@@ -136,7 +136,6 @@ Disassembly of section .text:
   40053e:	90                   	nop
   40053f:	90                   	nop
 
-/* $begin 010-mstore-exe-d 139 */
 # Disassembly of function {\em multstore} in binary file {\em prog}
 0000000000400540 <multstore>:
   400540:	53                   	push   %rbx
@@ -147,23 +146,18 @@ Disassembly of section .text:
   40054d:	c3                   	retq   ## line:asm:mstore_return
   40054e:	90                   	nop ## line:asm:mstore_nop1
   40054f:	90                   	nop ## line:asm:mstore_nop2
-/* $end 010-mstore-exe-d 139 */
 
-/* $begin 010-mstore-call-d 139 */
 # Beginning of function multstore
 0000000000400540 <multstore>:
   400540:	53                   	push   %rbx
   400541:	48 89 d3             	mov    %rdx,%rbx
 # . . .
-/* $end 010-mstore-call-d 139 */
   400544:	e8 3d 00 00 00       	callq  40058b <mult2> 
   400549:	48 89 03             	mov    %rax,(%rbx)
   40054c:	5b                   	pop    %rbx
-/* $begin 010-mstore-call-d 145 */
 # Return from function multstore
   40054d:	c3                   	retq   
 # . . .
-/* $end 010-mstore-call-d 145 */
   40054e:	90                   	nop 
   40054f:	90                   	nop 
 
@@ -173,11 +167,9 @@ Disassembly of section .text:
   400554:	48 8d 54 24 08       	lea    0x8(%rsp),%rdx
   400559:	be 03 00 00 00       	mov    $0x3,%esi
   40055e:	bf 02 00 00 00       	mov    $0x2,%edi
-/* $begin 010-mstore-call-d 154 */
 # Call to multstore from main
   400563:	e8 d8 ff ff ff       	callq  400540 <multstore>
   400568:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
-/* $end 010-mstore-call-d 154 */
   40056d:	be 34 06 40 00       	mov    $0x400634,%esi
   400572:	bf 01 00 00 00       	mov    $0x1,%edi
   400577:	b8 00 00 00 00       	mov    $0x0,%eax

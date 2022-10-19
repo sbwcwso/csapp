@@ -1,4 +1,3 @@
-/* $begin fdprob2 */
 #include "csapp.h"
 
 int main()
@@ -12,4 +11,3 @@ int main()
     printf("fd2 = %d\n", fd2);
     exit(0);
 }
-/* $end fdprob2 */

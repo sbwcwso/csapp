@@ -2,13 +2,11 @@
 typedef int src_t;
 typedef long dest_t;
 
-/* $begin 510-cvt-c */
 dest_t cvt(src_t x)
 {
     dest_t y = (dest_t) x;
     return y;
 }
-/* $end 510-cvt-c */
 
 
 long cvt_sl2sl(long x)

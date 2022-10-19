@@ -1,4 +1,3 @@
-/* $begin dll */
 #include <stdio.h>
 #include <stdlib.h>
 #include <dlfcn.h>
@@ -38,5 +37,4 @@ int main()
     }
     return 0;
 }
-/* $end dll */
 

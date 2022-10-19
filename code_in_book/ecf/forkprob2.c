@@ -1,4 +1,3 @@
-/* $begin forkprob2 */
 #include "csapp.h"
 
 void end(void) 
@@ -18,5 +17,4 @@ int main()
     }
     exit(0);
 }
-/* $end forkprob2 */
 

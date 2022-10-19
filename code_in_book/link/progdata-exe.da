@@ -76,7 +76,5 @@ Disassembly of section .data:
 0000000000601010 <__dso_handle>:
 	...
 
-/* $begin progdata-exe-d 79 */
 0000000000601018 <array>:
   601018:       01 00 00 00 02 00 00 00
-/* $end progdata-exe-d 79 */

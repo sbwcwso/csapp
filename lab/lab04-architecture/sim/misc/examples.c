@@ -5,7 +5,6 @@
  * in Y86-64 assembly language
  */
 
-/* $begin examples */
 /* linked list element */
 typedef struct ELE {
     long val;
@@ -47,4 +46,3 @@ long copy_block(long *src, long *dest, long len)
     }
     return result;
 }
-/* $end examples */

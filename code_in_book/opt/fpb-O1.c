@@ -3,7 +3,6 @@
 /* Combining functions */
 
 char combine1_descr[] = "combine1: Maximum use of data abstraction";
-/* $begin combine1 */
 /* Implementation with maximum use of data abstraction */
 void combine1(vec_ptr v, data_t *dest)
 {
@@ -18,10 +17,8 @@ void combine1(vec_ptr v, data_t *dest)
 	/* $end combineline */
     }
 }
-/* $end combine1 */
 
 char combine2_descr[] = "combine2: Take vec_length() out of loop";
-/* $begin combine2 */
 /* Move call to vec_length out of loop */
 void combine2(vec_ptr v, data_t *dest)
 {
@@ -35,10 +32,8 @@ void combine2(vec_ptr v, data_t *dest)
 	*dest = *dest OP val;
     }
 }
-/* $end combine2 */
 
 char combine3_descr[] = "combine3: Array reference to vector data";
-/* $begin combine3 */
 /* Direct access to vector data */
 void combine3(vec_ptr v, data_t *dest)
 {
@@ -51,10 +46,8 @@ void combine3(vec_ptr v, data_t *dest)
 	*dest = *dest OP data[i];
     }
 }
-/* $end combine3 */
 
 char combine3w_descr[] = "combine3w: Update *dest within loop only with write";
-/* $begin combine3w */
 /* Make sure dest updated on each iteration */
 void combine3w(vec_ptr v, data_t *dest)
 {
@@ -71,10 +64,8 @@ void combine3w(vec_ptr v, data_t *dest)
 	*dest = acc;
     }
 }
-/* $end combine3w */
 
 char combine4_descr[] = "combine4: Array reference, accumulate in temporary";
-/* $begin combine4 */
 /* Accumulate result in local variable */
 void combine4(vec_ptr v, data_t *dest)
 {
@@ -88,10 +79,8 @@ void combine4(vec_ptr v, data_t *dest)
     }
     *dest = acc;
 }
-/* $end combine4 */
 
 char combine4b_descr[] = "combine4b: Include bonds check in loop";
-/* $begin combine4b */
 /* Include bounds check in loop */
 void combine4b(vec_ptr v, data_t *dest)
 {
@@ -106,11 +95,9 @@ void combine4b(vec_ptr v, data_t *dest)
     }
     *dest = acc;
 }
-/* $end combine4b */
 
 
 char combine4p_descr[] = "combine4p: Pointer reference, accumulate in temporary";
-/* $begin combine4p */
 /* Accumulate in local variable, pointer version */
 void combine4p(vec_ptr v, data_t *dest)
 {
@@ -123,11 +110,9 @@ void combine4p(vec_ptr v, data_t *dest)
 	acc = acc OP *data;
     *dest = acc;
 }
-/* $end combine4p */
 
 
 char combine5_descr[] = "combine5: Array code, unrolled by 2";
-/* $begin combine5 */
 /* Unroll loop by 2 */
 void combine5(vec_ptr v, data_t *dest)
 {
@@ -150,7 +135,6 @@ void combine5(vec_ptr v, data_t *dest)
     }
     *dest = acc;
 }
-/* $end combine5 */
 
 char unroll3a_descr[] = "unroll3a: Array code, unrolled by 3";
 void unroll3a_combine(vec_ptr v, data_t *dest)
@@ -177,7 +161,6 @@ void unroll3a_combine(vec_ptr v, data_t *dest)
 
 
 char combine5p_descr[] = "combine5p: Pointer code, unrolled by 2, for loop";
-/* $begin combine5p */
 /* Unroll loop by 2, pointer version */
 void combine5p(vec_ptr v, data_t *dest)
 {
@@ -197,7 +180,6 @@ void combine5p(vec_ptr v, data_t *dest)
     }
     *dest = acc;
 }
-/* $end combine5p */
 
 char unroll2aw_descr[] = "unroll2aw: Array code, unrolled by 2, while loop";
 void unroll2aw_combine(vec_ptr v, data_t *dest)
@@ -247,13 +229,10 @@ void unroll4a_combine(vec_ptr v, data_t *dest)
 
 char unroll5a_descr[] = "unroll5a: Array code, unrolled by 5";
 #if 0
-/* $begin unroll5 */
 void unroll5(vec_ptr v, data_t *dest)
-/* $end unroll5 */
 #else
 void unroll5a_combine(vec_ptr v, data_t *dest)
 #endif
-/* $begin unroll5 */
 {
     long int i;
     long int length = vec_length(v);
@@ -274,7 +253,6 @@ void unroll5a_combine(vec_ptr v, data_t *dest)
     }
     *dest = acc;
 }
-/* $end unroll5 */
 
 char unroll6a_descr[] = "unroll6a: Array code, unrolled by 6";
 void unroll6a_combine(vec_ptr v, data_t *dest)
@@ -562,7 +540,6 @@ void unroll16_combine(vec_ptr v, data_t *dest)
 
 
 char combine6_descr[] = "combine6: Array code, unrolled by 2, Superscalar x2";
-/* $begin combine6 */
 /* Unroll loop by 2, 2-way parallelism */
 void combine6(vec_ptr v, data_t *dest)
 {
@@ -585,7 +562,6 @@ void combine6(vec_ptr v, data_t *dest)
     }
     *dest = acc0 OP acc1;
 }
-/* $end combine6 */
 
 char unroll4x2a_descr[] = "unroll4x2a: Array code, unrolled by 4, Superscalar x2";
 void unroll4x2a_combine(vec_ptr v, data_t *dest)
@@ -1269,7 +1245,6 @@ void unroll8x8_combine(vec_ptr v, data_t *dest)
 }
 
 char combine7_descr[] = "combine7: Array code, unrolled by 2, different associativity";
-/* $begin combine7 */
 /* Change associativity of combining operation */
 void combine7(vec_ptr v, data_t *dest)
 {
@@ -1292,7 +1267,6 @@ void combine7(vec_ptr v, data_t *dest)
     }
     *dest = acc;
 }
-/* $end combine7 */
 
 char unroll3aa_descr[] = "unroll3aa: Array code, unrolled by 3, Different Associativity";
 void unroll3aa_combine(vec_ptr v, data_t *dest)
@@ -1534,28 +1508,21 @@ void unroll12aa_combine(vec_ptr v, data_t *dest)
 
 /* Experiment using GCC support for SSE instructions */
 
-/* $begin simd_vec_sizes */
 /* Number of bytes in a vector */
 #define VBYTES 32
 
 /* Number of elements in a vector */
 #define VSIZE VBYTES/sizeof(data_t)
-/* $end simd_vec_sizes */
 
-/* $begin simd_vec_t */
 /* Vector data type */
 typedef data_t vec_t __attribute__ ((vector_size(VBYTES)));
-/* $end simd_vec_t */
 
-/* $begin simd_pack_t */
 typedef union {
     vec_t v;
     data_t d[VSIZE];
 } pack_t;
-/* $end simd_pack_t */
 
 char simd_v1_descr[] = "simd_v1: SSE code, 1*VSIZE-way parallelism";
-/* $begin simd_combine-c */
 void simd_v1_combine(vec_ptr v, data_t *dest)
 {
     long int i;
@@ -1566,40 +1533,39 @@ void simd_v1_combine(vec_ptr v, data_t *dest)
     data_t result = IDENT;
 
     /* Initialize accum entries to IDENT */
-    for (i = 0; i < VSIZE; i++) //line:opt:simd:initstart
+    for (i = 0; i < VSIZE; i++) 
 	xfer.d[i] = IDENT;
-    accum = xfer.v;             //line:opt:simd:initend
+    accum = xfer.v;             
     /* $end simd_init-c */
 
     /* Single step until have memory alignment */
-    while (((long) data) % VBYTES && cnt) {  //line:opt:simd:startstart
+    while (((long) data) % VBYTES && cnt) {  
 	result = result OP *data++; 
 	cnt--;                              
-    }                              //line:opt:simd:startend
+    }                              
 
     /* Step through data with VSIZE-way parallelism */
-    while (cnt >= VSIZE) {    //line:opt:simd:loopstart
+    while (cnt >= VSIZE) {    
 	vec_t chunk = *((vec_t *) data);
 	accum = accum OP chunk;
 	data += VSIZE;
 	cnt -= VSIZE;       
-    } //line:opt:simd:loopend
+    } 
 
     /* Single-step through remaining elements */
-    while (cnt) { //line:opt:simd:loopfinishstart
+    while (cnt) { 
 	result = result OP *data++;
 	cnt--;  
-    } //line:opt:simd:loopfinishend
+    } 
 
     /* Combine elements of accumulator vector */
-    xfer.v = accum; //line:opt:simd:finishstart
+    xfer.v = accum; 
     for (i = 0; i < VSIZE; i++)
-	result = result OP xfer.d[i]; //line:opt:simd:finishend
+	result = result OP xfer.d[i]; 
 
     /* Store result */
     *dest = result; 
 }
-/* $end simd_combine-c */
 
 
 char simd_v2_descr[] = "simd_v2: SSE code, 2*VSIZE-way parallelism";

@@ -1,4 +1,3 @@
-/* $begin myecho */
 #include "csapp.h"
 
 int main(int argc, char *argv[], char *envp[]) 
@@ -16,4 +15,3 @@ int main(int argc, char *argv[], char *envp[])
 
     exit(0);
 }
-/* $end myecho */

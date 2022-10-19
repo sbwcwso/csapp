@@ -2,7 +2,6 @@
 	.text
 	.globl	vframe
 	.type	vframe, @function
-/* $begin 330-frame-frags-s 5 */
 # long int vframe(long int n, long int idx, long int *q)
 # n in \rdireg{}, idx in \rsireg{}, q in \rdxreg{}
 # Only portions of code shown
@@ -17,12 +16,10 @@ vframe:
 	shrq	$3, %rax
 	leaq	0(,%rax,8), %r8        #   Set %r8 to start of p 
 	movq	%r8, %rcx	       #   Set %rcx to start of p # line:asm:frame:findp
-/* $end 330-frame-frags-s 5 */
 	leaq	-8(%rbp), %r9
 	movq	%r9, 0(,%rax,8)
 	movq	$1, -8(%rbp)
 	jmp	.L2
-/* $begin 330-frame-frags-s 20 */
 #       . . . 
 # Code for loop
 # i in \raxreg{} and on stack, n in \rdireg{}, p in \rcxreg{}, q in \rdxreg{}
@@ -34,14 +31,11 @@ vframe:
 	movq	-8(%rbp), %rax	       #   Retrieve i from stack # line:asm:frame:loadi
 	cmpq	%rdi, %rax	       #   Compare i:n
 	jl	.L3   		       #   If <, goto \textbf{loop}
-/* $end 330-frame-frags-s 20 */
 	movq	(%r8,%rsi,8), %rax
 	movq	(%rax), %rax
-/* $begin 330-frame-frags-s 30 */
 #  	. . .   
 	leave				#   Restore %rbp and %rsp # line:asm:frame:leave
 	ret				#   Return
-/* $end 330-frame-frags-s 30 */
 	.size	vframe, .-vframe
 	.globl	main
 	.type	main, @function

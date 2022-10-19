@@ -1,4 +1,3 @@
-/* $begin readdir */
 #include "csapp.h"
 
 int main(int argc, char **argv)
@@ -24,4 +23,3 @@ int main(int argc, char **argv)
     Closedir(streamp); 
     exit(0);
 }
-/* $end readdir */

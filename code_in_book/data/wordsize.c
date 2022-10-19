@@ -12,7 +12,6 @@
  */
 
 
-/* $begin wordsize */
 /* The following code does not run properly on some machines */
 int bad_int_size_is_32() {
     /* Set most significant bit (msb) of 32-bit machine */
@@ -24,7 +23,6 @@ int bad_int_size_is_32() {
        beyond_msb is zero when word size <= 32  */
     return set_msb && !beyond_msb;
 }
-/* $end wordsize */
 
 int find_word_size() {
     int x = 1L;

@@ -1,4 +1,3 @@
-/* $begin hello32-s 1 */
 .section .data
 string:
 	.ascii "hello, world\n"

@@ -1,13 +1,10 @@
-/* $begin adt */
 /* Create abstract data type for vector */
 typedef struct {
     long len;
     data_t *data;
-/* $end adt */
     long allocated_len; /* NOTE: we don't use this field in the book */
 /* $begin adt */ 
 } vec_rec, *vec_ptr;
-/* $end adt */
 
 /* Create vector */
 vec_ptr new_vec(long len);

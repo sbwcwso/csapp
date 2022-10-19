@@ -1,15 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/* $begin 420-nodestruct-c */
 struct node_s {
     struct node_s *left;
     struct node_s *right;
     double data[2];
 };
-/* $end 420-nodestruct-c */
 
-/* $begin 420-nodeunion-c */
 union node_u { 
     struct {  
 	union node_u *left; 
@@ -17,9 +14,7 @@ union node_u {
     } internal; 
     double data[2]; 
 }; 
-/* $end 420-nodeunion-c */
 
-/* $begin 420-nodeuniontag-c */
 typedef enum { N_LEAF, N_INTERNAL } nodetype_t;
 
 struct node_t { 
@@ -32,7 +27,6 @@ struct node_t {
 	double data[2]; 
     } info; 
 }; 
-/* $end 420-nodeuniontag-c */
 
 void dothings() {
     struct node_s *sp = malloc(sizeof(struct node_s));

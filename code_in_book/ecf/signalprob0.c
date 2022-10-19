@@ -5,7 +5,6 @@
 #include <signal.h>
 #include "csapp.h"
 
-/* $begin signalprob0 */
 volatile long counter = 2;
 
 void handler1(int sig) 
@@ -42,4 +41,3 @@ int main()
 
     exit(0);
 }
-/* $end signalprob0 */

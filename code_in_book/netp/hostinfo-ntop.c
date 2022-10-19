@@ -1,4 +1,3 @@
-/* $begin hostinfo-ntop */
 #include "csapp.h"
 
 int main(int argc, char **argv) 
@@ -34,4 +33,3 @@ int main(int argc, char **argv)
 
     exit(0);
 }
-/* $end hostinfo-ntop */

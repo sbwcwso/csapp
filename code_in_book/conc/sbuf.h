@@ -3,7 +3,6 @@
 
 #include "csapp.h"
 
-/* $begin sbuft */
 typedef struct {
     int *buf;          /* Buffer array */         
     int n;             /* Maximum number of slots */
@@ -13,7 +12,6 @@ typedef struct {
     sem_t slots;       /* Counts available slots */
     sem_t items;       /* Counts available items */
 } sbuf_t;
-/* $end sbuft */
 
 void sbuf_init(sbuf_t *sp, int n);
 void sbuf_deinit(sbuf_t *sp);

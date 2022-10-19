@@ -39,7 +39,6 @@ char *strcpy(char *dest, const char *src)
     return result;
 }
 
-/* $begin 460-bufovf-raw-c */
 /* This is very low-quality code.
    It is intended to illustrate bad programming practices.
    See Practice Problem SLASHrefLBRACKprob:asm:bufovfRBRACK. */
@@ -52,7 +51,6 @@ char *get_line()
     strcpy(result, buf);
     return result;
 }
-/* $end 460-bufovf-raw-c */
 
 int main(int argc, char *argv[])
 {

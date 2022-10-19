@@ -1,5 +1,4 @@
 /* addvec.c */
-/* $begin addvec */
 int addcnt = 0;
 
 void addvec(int *x, int *y,
@@ -12,5 +11,4 @@ void addvec(int *x, int *y,
     for (i = 0; i < n; i++)
 	z[i] = x[i] + y[i];
 }
-/* $end addvec */
 

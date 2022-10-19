@@ -1,4 +1,3 @@
-/* $begin foo5 */
 /* foo5.c */ 
 #include <stdio.h>
 void f(void);
@@ -13,5 +12,4 @@ int main()
 	   x, y); 
     return 0;
 } 
-/* $end foo5 */
  

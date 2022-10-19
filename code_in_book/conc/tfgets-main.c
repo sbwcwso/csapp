@@ -1,4 +1,3 @@
-/* $begin tfgetsmain */
 #include "csapp.h"
 
 char *tfgets(char *s, int size, FILE *stream);
@@ -14,4 +13,3 @@ int main()
 
     exit(0);
 }
-/* $end tfgetsmain */

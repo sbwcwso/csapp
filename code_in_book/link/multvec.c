@@ -1,5 +1,4 @@
 /* multvec.c */
-/* $begin multvec */
 int multcnt = 0;
 
 void multvec(int *x, int *y, 
@@ -12,5 +11,4 @@ void multvec(int *x, int *y,
     for (i = 0; i < n; i++)
 	z[i] = x[i] * y[i];
 }
-/* $end multvec */
 

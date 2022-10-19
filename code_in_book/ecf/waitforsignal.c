@@ -1,4 +1,3 @@
-/* $begin waitforsignal */
 #include "csapp.h"
 
 volatile sig_atomic_t pid;
@@ -41,4 +40,3 @@ int main(int argc, char **argv)
     }
     exit(0);
 }
-/* $end waitforsignal */

@@ -1,11 +1,9 @@
-/* $begin 380-struct-c */
 struct rec {
     int i;
     int j;
     int a[2];
     int *p;
 };
-/* $end 380-struct-c */
 
 void copy(struct rec *r)
 {
@@ -48,12 +46,10 @@ void link_p(struct rec *r)
     r->p = &r->a[r->i + r->j];
 }
 
-/* $begin nodestruct-c */
 struct NODE {
     struct NODE *left;
     struct NODE *right;
     double data;
 };
-/* $begin nodestruct-c */
 
 

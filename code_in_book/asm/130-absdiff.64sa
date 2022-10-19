@@ -2,7 +2,6 @@
 	.text
 	.globl	absdiff
 	.type	absdiff, @function
-/* $begin 130-absdiff-s 5 */
 # long absdiff(long x, long y)
 # x in \rdireg{}, y in \rsireg{}
 absdiff:
@@ -13,7 +12,6 @@ absdiff:
 	cmpq	%rsi, %rdi     # Compare x:y        # line:asm:absdiff:cmpq
 	cmovge	%rdx, %rax     # If >=, rval = eval # line:asm:absdiff:cmovge
 	ret                    # Return rval
-/* $end 130-absdiff-s 5 */
 	.size	absdiff, .-absdiff
 	.globl	cmovdiff
 	.type	cmovdiff, @function

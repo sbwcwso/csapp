@@ -15,12 +15,10 @@ double area(double radius)
     return M_PI * radius * radius;
 }
 
-/* $begin 540-cel2fahr-c */
 double cel2fahr(double temp)
 {
     return 1.8 * temp + 32.0;
 }
-/* $end 540-cel2fahr-c */
      
 
 /* Decode decimal representation of PI */

@@ -3,7 +3,6 @@
 */
 #include "csapp.h"
 
-/* $begin reader0 */
 /* Global variable */
 sem_t w; /* Initially = 1 */
 
@@ -18,9 +17,7 @@ void reader(void)
 	V(&w);
     }
 }
-/* $end reader0 */
 
-/* $begin writer0 */
 
 
 void writer(void) 
@@ -34,4 +31,3 @@ void writer(void)
 	V(&w);
     }
 }
-/* $end writer0 */

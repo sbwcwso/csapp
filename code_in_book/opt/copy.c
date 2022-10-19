@@ -9,7 +9,6 @@
 long data[ASIZE+1];
 long data2[ASIZE+1];
 
-/* $begin write_read */
 /* Write to dest, read from src */
 void write_read(long *src, long *dst, long n)
 {
@@ -22,28 +21,22 @@ void write_read(long *src, long *dst, long n)
 	cnt--;
     }
 }
-/* $end write_read */
 
 
-/* $begin copy_array */
 void copy_array(long *src, long *dest, long n)
 {
     long i;
     for (i = 0; i < n; i++)
 	dest[i] = src[i];
 }
-/* $end copy_array */
 
-/* $begin clear_array */
 /* Set elements of array to 0 */
 void clear_array(long *dest, long n) {
     long i;
     for (i = 0; i < n; i++)
 	dest[i] = 0;
 }
-/* $end clear_array */
 
-/* $begin clear_array_4 */
 /* Set elements of array to 0, Unrolled X 4 */
 void clear_array_4(long *dest, long n) {
     long i;
@@ -57,7 +50,6 @@ void clear_array_4(long *dest, long n) {
     for (; i < n; i++)
 	dest[i] = 0;
 }
-/* $end clear_array_4 */
 
 void array_copy(long *src, long *dest, long n)
 {

@@ -12,7 +12,6 @@ void deletejob(int pid)
 {
 }
 
-/* $begin procmask2 */
 void handler(int sig)
 {
     int olderrno = errno;
@@ -53,4 +52,3 @@ int main(int argc, char **argv)
     }
     exit(0);
 }
-/* $end procmask2 */

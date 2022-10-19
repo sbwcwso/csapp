@@ -24,13 +24,11 @@ thread:
 	.size	thread, .-thread
 	.globl	bad_incr
 	.type	bad_incr, @function
-/* $begin w240-bad_incr-s 27 */
 # void bad_incr(int *ptr)
 # ptr in %rdi
 bad_incr:
 	addl	$1, (%rdi)       # Increment *ptr
 	ret
-/* $end w240-bad_incr-s 27 */
 	.size	bad_incr, .-bad_incr
 	.globl	lock_incr
 	.type	lock_incr, @function

@@ -11,7 +11,6 @@ static void init_ctime_ts(void)
     Sem_init(&mutex, 0, 1);
 }
 
-/* $begin ctime_ts */
 char *ctime_ts(const time_t *timep, char *privatep)
 {
     char *sharedp; 
@@ -22,7 +21,6 @@ char *ctime_ts(const time_t *timep, char *privatep)
     V(&mutex);
     return privatep;
 }
-/* $end ctime_ts */
 
 int main()
 {

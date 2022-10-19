@@ -11,7 +11,6 @@ long rfact(long n)
     return n * rfact(n-1);
 }
 
-/* $begin fact */
 long fact(long n)
 {
     long i;
@@ -21,9 +20,7 @@ long fact(long n)
 	result = result * i;
     return result;
 }
-/* $end fact */
 
-/* $begin fact_u2 */
 long fact_u2a(long n)
 {
     long i;
@@ -36,7 +33,6 @@ long fact_u2a(long n)
 	result *= i;
     return result;
 }
-/* $end fact_u2 */
 
 long fact_u2b(long n)
 {

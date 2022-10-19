@@ -1,5 +1,4 @@
 
-/* $begin twiddle */
 void twiddle1(long *xp, long *yp)
 {
     *xp += *yp;
@@ -10,7 +9,6 @@ void twiddle2(long *xp, long *yp)
 {
     *xp += 2* *yp;
 }
-/* $end twiddle */
 
 void twiddle1x(long *xp)
 {

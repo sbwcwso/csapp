@@ -2,7 +2,6 @@
 	.text
 	.globl	P
 	.type	P, @function
-/* $begin 280-calleesave-s 5 */
 # long P(long x, long y) 
 # x in \rdireg{}, y in \rsireg{}
 P:
@@ -20,7 +19,6 @@ P:
 	popq	%rbx		# Restore %rbx # line:asm:calleesave:rrbx
 	popq	%rbp		# Restore %rbp # line:asm:calleesave:rrbp
 	ret
-/* $end 280-calleesave-s 5 */
 	.size	P, .-P
 	.globl	P2
 	.type	P2, @function

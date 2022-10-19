@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* $begin pointstruct */
 #define N 1000
 
 typedef struct {
@@ -10,9 +9,7 @@ typedef struct {
 } point;
 
 point p[N];
-/* $end pointstruct */
 
-/* $begin clear1 */
 void clear1(point *p, int n) 
 {
     int i, j;
@@ -24,9 +21,7 @@ void clear1(point *p, int n)
 	    p[i].acc[j] = 0;
     }
 }
-/* $end clear1 */
 
-/* $begin clear2 */
 void clear2(point *p, int n) 
 {
     int i, j;
@@ -38,9 +33,7 @@ void clear2(point *p, int n)
 	}
     }
 }
-/* $end clear2 */
 
-/* $begin clear3 */
 void clear3(point *p, int n) 
 {
     int i, j;
@@ -52,7 +45,6 @@ void clear3(point *p, int n)
 	    p[i].acc[j] = 0;
     }
 }
-/* $end clear3 */
 
 int main() 
 {

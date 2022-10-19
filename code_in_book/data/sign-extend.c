@@ -3,7 +3,6 @@
 
 /* Code for Sign Extension Problem */
 
-/* $begin sign-extend */
 int fun1(unsigned word) {
     return (int) ((word << 24) >> 24);
 }
@@ -11,7 +10,6 @@ int fun1(unsigned word) {
 int fun2(unsigned word) {
     return ((int) word << 24) >> 24;    
 }
-/* $end sign-extend */
 
 int main(int argc, char *argv[])
 {

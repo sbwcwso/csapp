@@ -1,4 +1,3 @@
-/* $begin forkprob1 */
 #include "csapp.h"
 
 int main() 
@@ -10,4 +9,3 @@ int main()
     printf("hello\n");
     exit(0);
 }
-/* $end forkprob1 */

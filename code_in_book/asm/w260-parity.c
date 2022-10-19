@@ -20,11 +20,8 @@ int nonzero(unsigned long x) {
 }
 
 
-/* $begin w260-odd_parity-proto-c */
 int odd_parity(unsigned long x);
-/* $end w260-odd_parity-proto-c */
 
-/* $begin w260-odd_parity-c */
 /* Using ASM to access parity flag */
 int odd_parity(unsigned long x) {
     int result = 0;
@@ -41,7 +38,6 @@ int odd_parity(unsigned long x) {
     }
     return result;
 }
-/* $end w260-odd_parity-c */
 
 
 int main(int argc, char *argv[]) {

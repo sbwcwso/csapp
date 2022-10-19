@@ -1,5 +1,4 @@
 
-/* $begin 180-while-solve-c */
 long loop_while(long a, long b)
 {
     long result = 1;
@@ -9,10 +8,8 @@ long loop_while(long a, long b)
     }
     return result;
 }
-/* $end 180-while-solve-c */
 
 #if 0
-/* $begin 180-while-prob-c */
 long loop_while(long a, long b)
 {
     long result = ________;
@@ -22,10 +19,8 @@ long loop_while(long a, long b)
     }
     return result;
 }
-/* $end 180-while-prob-c */
 #endif
 
-/* $begin 180-while2-solve-c */
 long loop_while2(long a, long b)
 {
     long result = b;
@@ -35,10 +30,8 @@ long loop_while2(long a, long b)
     }
     return result;
 }
-/* $end 180-while2-solve-c */
 
 #if 0
-/* $begin 180-while2-prob-c */
 long loop_while2(long a, long b)
 {
     long result = ________;
@@ -48,5 +41,4 @@ long loop_while2(long a, long b)
     }
     return result;
 }
-/* $end 180-while2-prob-c */
 #endif

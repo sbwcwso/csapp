@@ -14,7 +14,6 @@
  *   ...or 
  *   tcsh> (setenv LD_PRELOAD "./mymalloc.so"; ./a.out; unsetenv LD_PRELOAD)
  */
-/* $begin interposer */
 #ifdef RUNTIME
 #define _GNU_SOURCE
 #include <stdio.h>
@@ -55,7 +54,6 @@ void free(void *ptr)
     printf("free(%p)\n", ptr);
 }
 #endif
-/* $end interposer */
 
 /* 
  * Link-time interposition of malloc and free using the static
@@ -66,7 +64,6 @@ void free(void *ptr)
  * __wrap_malloc, free as __wrap_free, __real_malloc as malloc, and
  * __real_free as free.
  */
-/* $begin interposel */
 #ifdef LINKTIME
 #include <stdio.h>
 
@@ -88,14 +85,12 @@ void __wrap_free(void *ptr)
     printf("free(%p)\n", ptr);
 }
 #endif
-/* $end interposel */
 
 /*
  * Compile-time interpositioning of malloc and free using the C
  * preprocessor. A local malloc.h file defines malloc and free as
  * wrappers mymalloc and myfree respectively.
  */
-/* $begin interposec */
 #ifdef COMPILETIME
 #include <stdio.h>
 #include <malloc.h>
@@ -116,4 +111,3 @@ void myfree(void *ptr)
     printf("free(%p)\n", ptr); 
 }
 #endif
-/* $end interposec */

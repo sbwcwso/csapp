@@ -202,7 +202,6 @@ Disassembly of section .text:
   40071c:	75 ef                	jne    40070d <strcpy+0x6>
   40071e:	f3 c3                	repz retq 
 
-/* $begin 460-bufovf-exe-d 205 */
 # char *get_line()
 0000000000400720 <get_line>:
   400720:	53                   	push   %rbx
@@ -211,7 +210,6 @@ Disassembly of section .text:
   400725:	48 89 e7             	mov    %rsp,%rdi
   400728:	e8 73 ff ff ff       	callq  4006a0 <gets>  ##line:asm:bufovf:after
 # Modify diagram to show stack contents at this point 
-/* $end 460-bufovf-exe-d 205 */
   40072d:	48 89 e7             	mov    %rsp,%rdi
   400730:	e8 b9 ff ff ff       	callq  4006ee <my_strlen>
   400735:	48 89 c7             	mov    %rax,%rdi

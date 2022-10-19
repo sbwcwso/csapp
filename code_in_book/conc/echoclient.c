@@ -1,7 +1,6 @@
 /*
  * echoclient.c - An echo client
  */
-/* $begin echoclientmain */
 #include "csapp.h"
 
 int main(int argc, char **argv) 
@@ -28,4 +27,3 @@ int main(int argc, char **argv)
     Close(clientfd);
     exit(0);
 }
-/* $end echoclientmain */

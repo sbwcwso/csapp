@@ -8,7 +8,6 @@
  * Routines for using the cycle counter on x86
  */
 
-/* $begin x86cyclecounter */
 /* Initialize the cycle counter */
 static unsigned cyc_hi = 0;
 static unsigned cyc_lo = 0;
@@ -47,7 +46,6 @@ double get_counter()
     result = (double) hi * (1 << 30) * 4 + lo;
     return result;
 }
-/* $end x86cyclecounter */
 
 double ovhd()
 {
@@ -62,7 +60,6 @@ double ovhd()
     return result;
 }
 
-/* $begin mhz */
 /* Estimate the clock rate by measuring the cycles that elapse */ 
 /* while sleeping for sleeptime seconds */
 double mhz_full(int verbose, int sleeptime)
@@ -76,7 +73,6 @@ double mhz_full(int verbose, int sleeptime)
 	printf("Processor clock rate ~= %.1f MHz\n", rate);
     return rate;
 }
-/* $end mhz */
 
 /* Version using a default sleeptime */
 double mhz(int verbose)

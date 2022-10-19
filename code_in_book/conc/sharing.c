@@ -1,9 +1,8 @@
-/* $begin sharing */
 #include "csapp.h"
 #define N 2
 void *thread(void *vargp);
 
-char **ptr;  /* Global variable */ //line:conc:sharing:ptrdec
+char **ptr;  /* Global variable */ 
 
 int main() 
 {
@@ -23,8 +22,7 @@ int main()
 void *thread(void *vargp) 
 {
     int myid = (int)vargp;
-    static int cnt = 0; //line:conc:sharing:cntdec
-    printf("[%d]: %s (cnt=%d)\n", myid, ptr[myid], ++cnt); //line:conc:sharing:stack
+    static int cnt = 0; 
+    printf("[%d]: %s (cnt=%d)\n", myid, ptr[myid], ++cnt); 
     return NULL;
 }
-/* $end sharing */

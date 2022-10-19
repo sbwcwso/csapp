@@ -76,7 +76,6 @@ void printarray(array a, int n)
 /***************************************************
  * Two different versions of blocked matrix multiply 
  ***************************************************/
-/* $begin bmm-ijk */
 void bijk(array A, array B, array C, int n, int bsize) 
 {
     int i, j, k, kk, jj;
@@ -138,7 +137,6 @@ void bijk(array A, array B, array C, int n, int bsize)
     }
     /* $begin bmm-ijk */
 }
-/* $end bmm-ijk */
 
 void bikj(array A, array B, array C, int n, int bsize) 
 {

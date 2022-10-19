@@ -7,7 +7,6 @@
  * Function unrolls loops by 3.
 */
 
-/* $begin opt-aprod-c */
 double aprod(double a[], long n)
 {
     long i;
@@ -21,7 +20,6 @@ double aprod(double a[], long n)
 	r *= a[i];
     return r;
 }
-/* $end opt-aprod-c */
 
 double aprod1(double a[], long n)
 {

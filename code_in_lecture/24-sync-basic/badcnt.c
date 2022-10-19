@@ -1,7 +1,6 @@
 /* 
  * badcnt.c - An improperly synchronized counter program 
  */
-/* $begin badcnt */
 /* WARNING: This code is buggy! */
 #include "csapp.h"
 
@@ -41,10 +40,9 @@ void *thread(void *vargp)
 {
     long i, niters = *((long *)vargp);
 
-    for (i = 0; i < niters; i++) //line:conc:badcnt:beginloop
-	cnt++;                   //line:conc:badcnt:endloop
+    for (i = 0; i < niters; i++) 
+	cnt++;                   
 
     return NULL;
 }
-/* $end badcnt */
 

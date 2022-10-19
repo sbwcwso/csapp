@@ -312,9 +312,7 @@ Disassembly of section .text:
 00000000004004d0 <main>:
   4004d0:	48 83 ec 08          	sub    $0x8,%rsp
   4004d4:	b8 00 00 00 00       	mov    $0x0,%eax
-/* $begin p1-exe-d 315 */
   4004d9:	e8 0a 00 00 00       	callq  4004e8 <swap>
-/* $end p1-exe-d 315 */
   4004de:	b8 00 00 00 00       	mov    $0x0,%eax
   4004e3:	48 83 c4 08          	add    $0x8,%rsp
   4004e7:	c3                   	retq   

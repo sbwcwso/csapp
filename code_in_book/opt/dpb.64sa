@@ -112,7 +112,6 @@ combine3:
 	jle	.L15
 	movq	%rax, %rdx
 	leaq	(%rax,%r12,8), %rax
-/* $begin dpb-combine3-s 115 */
 # Inner loop of combine3.  data_t = double, OP = *
 # dest in \rbxreg{}, data+i in \rdxreg{}, data+length in \raxreg{}
 .L17:  	  	     	       # loop:
@@ -122,10 +121,8 @@ combine3:
 	addq	$8, %rdx       #   Increment data+i
 	cmpq	%rax, %rdx     #   Compare to data+length
 	jne	.L17           #   If !=, goto loop
-/* $end dpb-combine3-s 115 */
 
 
-/* $begin dpb-combine3-O1-s 115 */
 # Inner loop of combine3.  data_t = double, OP = *.  Compiled -O1
 # dest in \rbxreg{}, data+i in \rdxreg{}, data+length in \raxreg{}
 .L17:  	  	     	       # loop:
@@ -135,7 +132,6 @@ combine3:
 	addq	$8, %rdx       #   Increment data+i
 	cmpq	%rax, %rdx     #   Compare to data+length
 	jne	.L17           #   If !=, goto loop
-/* $end dpb-combine3-O1-s 115 */
 
 .L15:
 	popq	%rbx
@@ -188,7 +184,6 @@ combine4:
 	leaq	(%rax,%rbp,8), %rax
 	movsd	.LC0(%rip), %xmm0
 
-/* $begin dpb-combine4-s 172 */
 # Inner loop of combine4.  data_t = double, OP = *
 # acc in %xmm0, data+i in \rdxreg{}, data+length in \raxreg{}
 .L25:  	  	     	       # loop:
@@ -196,7 +191,6 @@ combine4:
 	addq	$8, %rdx       #   Increment data+i
 	cmpq	%rax, %rdx     #   Compare to data+length
 	jne	.L25           #   If !=, goto loop
-/* $end dpb-combine4-s 172 */
 	jmp	.L24
 .L26:
 	movsd	.LC0(%rip), %xmm0

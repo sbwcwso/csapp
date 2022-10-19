@@ -1,6 +1,5 @@
 #include "csapp.h"
 
-/* $begin waitprob3 */
 int main() 
 {
     if (fork() == 0) {
@@ -14,4 +13,3 @@ int main()
     printf("c"); fflush(stdout);
     exit(0);
 }
-/* $end waitprob3 */

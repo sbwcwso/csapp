@@ -132,7 +132,6 @@ Disassembly of section .text:
   4004cf:	90                   	nop
 
 00000000004004d0 <proca>:
-/* $begin eg-disa-d2 135 */
   4004d0:	48 81 ec e0 02 00 00 	sub    $0x2e0,%rsp             # A.   736
   4004d7:	48 8b 44 24 a8       	mov    -0x58(%rsp),%rax	       # B.   -88
   4004dc:	48 03 47 28          	add    0x28(%rdi),%rax	       # C.    40
@@ -145,7 +144,6 @@ Disassembly of section .text:
   4004fe:	48 89 84 24 c0 00 00 	mov    %rax,0xc0(%rsp)	       # H.   192
   400505:	00 
   400506:	48 8b 44 d4 b8       	mov    -0x48(%rsp,%rdx,8),%rax # I.   -72
-/* $end eg-disa-d2 135 */
   40050b:	48 89 04 f7          	mov    %rax,(%rdi,%rsi,8)
   40050f:	48 81 c4 e0 02 00 00 	add    $0x2e0,%rsp
   400516:	c3                   	retq   

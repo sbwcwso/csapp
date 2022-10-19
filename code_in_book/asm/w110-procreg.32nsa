@@ -2,7 +2,6 @@
 	.text
 	.globl	proc
 	.type	proc, @function
-/* $begin w110-proc-ns 5 */
 # void proc(int a2, int *a2p, short a3, short *a3p, char a4, char *a4p)
 proc:
 	pushl	%ebx  		## line:asm:32ns:proc:stack
@@ -17,9 +16,7 @@ proc:
 	addb	%dl, (%eax)
 	popl	%ebx
 	ret
-/* $end w110-proc-ns 5 */
 
-/* $begin w110-proc-ann-ns 5 */
 # void proc(int a2, int *a2p, short a3, short *a3p, char a4, char *a4p)
 # a2 at %esp+4, a2p at %esp+8, a3 at %esp+12, a3p at %esp+16
 # a4 at %esp+20, a4p at %esp+24
@@ -38,7 +35,6 @@ proc:
 	addb	%dl, (%eax)		# *a4p += a4
 	popl	%ebx 			# Restore %ebx
 	ret
-/* $end w110-proc-ann-ns 5 */
 	.size	proc, .-proc
 	.globl	call_proc
 	.type	call_proc, @function
@@ -47,7 +43,6 @@ proc:
 	.section	.note.GNU-stack,"",@progbits
 
 
-/* $begin w110-call_proc-ns 21 */
 # int call_proc()
 call_proc:
 	subl	$40, %esp
@@ -70,9 +65,7 @@ call_proc:
 	imull	36(%esp), %eax
 	addl	$40, %esp
 	ret
-/* $end w110-call_proc-ns 21 */
 
-/* $begin w110-call_proc-ann-ns 21 */
 call_proc:
 	subl	$40, %esp		# Allocate 40 bytes
 # Allocation: x2 at %esp+36, x3 at %esp+34, x4 at %esp+33
@@ -96,4 +89,3 @@ call_proc:
 	imull	36(%esp), %eax		# Multiply by x2
 	addl	$40, %esp 		# Deallocate 40 bytes
 	ret
-/* $end w110-call_proc-ann-ns 21 */

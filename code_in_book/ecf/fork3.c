@@ -1,6 +1,5 @@
 #include "csapp.h"
 
-/* $begin fork3 */
 int main() 
 {
     Fork();
@@ -9,5 +8,4 @@ int main()
     printf("hello\n");
     exit(0);
 }
-/* $end fork3 */
 

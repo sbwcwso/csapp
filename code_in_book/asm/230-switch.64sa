@@ -2,7 +2,6 @@
 	.text
 	.globl	switch_eg
 	.type	switch_eg, @function
-/* $begin 230-switch-s 5 */
 # void switch_eg(long x, long n, long *dest)
 # x in \rdireg, n in \rsireg, dest in \rdxreg
 switch_eg:
@@ -10,13 +9,9 @@ switch_eg:
 	cmpq	$6, %rsi	    #   Compare index:6
 	ja	.L8 		    #   If >, goto \texttt{loc_def}
 	jmp	*.L4(,%rsi,8)       #   Goto *jt[index] # line:asm:switch:s_jump
-/* $end 230-switch-s 5 */
-/* $begin 230-switch-jt 10 */
 	.section	.rodata
 	.align 8         # Align address to multiple of 8 # line:asm:switch:align
-/* $end 230-switch-jt 10 */
 	.align 4
-/* $begin 230-switch-jt 13 */
 .L4:
 	.quad	.L3	 # Case 100: loc_A
 	.quad	.L8	 # Case 101: loc_def
@@ -25,9 +20,7 @@ switch_eg:
 	.quad	.L7	 # Case 104: loc_D
 	.quad	.L8	 # Case 105: loc_def
 	.quad	.L7	 # Case 106: loc_D
-/* $end 230-switch-jt 13 */
 	.text
-/* $begin 230-switch-s 22 */
 .L3:	  		            # \texttt{loc_A:}
 	leaq	(%rdi,%rdi,2), %rax #   3*x
 	leaq	(%rdi,%rax,4), %rdi #   val = 13*x
@@ -45,7 +38,6 @@ switch_eg:
 .L2:		    		    # \texttt{done:}
 	movq	%rdi, (%rdx)	    #   *dest = val
 	ret	      		    #   Return
-/* $end 230-switch-s 22 */
 	.size	switch_eg, .-switch_eg
 	.globl	switch_eg_impl
 	.type	switch_eg_impl, @function

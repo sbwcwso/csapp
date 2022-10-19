@@ -1,5 +1,4 @@
 /* main2.c */
-/* $begin main2 */
 #include <stdio.h>
 #include "vector.h"
 
@@ -13,5 +12,4 @@ int main()
     printf("z = [%d %d]\n", z[0], z[1]);
     return 0;
 }
-/* $end main2 */
 

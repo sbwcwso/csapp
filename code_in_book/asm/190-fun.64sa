@@ -22,7 +22,6 @@ test_fun_a:
 	.size	test_fun_a, .-test_fun_a
 	.globl	fun_a
 	.type	fun_a, @function
-/* $begin 190-fun_a-s 25 */
 # long fun_a(unsigned long x)
 # x in \rdireg{}
 fun_a:
@@ -36,11 +35,9 @@ fun_a:
 	jne	.L6
 	andl	$1, %eax
 	ret
-/* $end 190-fun_a-s 25 */
 	.size	fun_a, .-fun_a
 	.globl	fun_b
 	.type	fun_b, @function
-/* $begin 190-fun_b-s 39 */
 # long fun_b(unsigned long x)
 # x in \rdireg{}
 fun_b:
@@ -58,7 +55,6 @@ fun_b:
 	cmpq	$63, %rdx
 	jle	.L9
 	rep; ret
-/* $end 190-fun_b-s 39 */
 	.size	fun_b, .-fun_b
 	.globl	test_fun_b
 	.type	test_fun_b, @function

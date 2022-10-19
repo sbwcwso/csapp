@@ -27,7 +27,6 @@ iptoa:
 	.size	iptoa, .-iptoa
 	.globl	intlen
 	.type	intlen, @function
-/* $begin 480-charbuf-sp-s 32 */
 # int intlen(long x)
 # x in \rdireg{}
 intlen:
@@ -39,7 +38,6 @@ intlen:
 	leaq	8(%rsp), %rsi ##line:asm:intlen:sp:v
 	leaq	16(%rsp), %rdi ##line:asm:intlen:sp:buf
 	call	iptoa
-/* $end 480-charbuf-sp-s 32 */
 	leaq	16(%rsp), %rdi
 	call	len
 	movq	40(%rsp), %rdx

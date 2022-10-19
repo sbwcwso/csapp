@@ -3,7 +3,6 @@
 
 /* Example showing bug with unsigned */
 
-/* $begin bad-sum */
 /* WARNING: This is buggy code */
 float sum_elements(float a[], unsigned length) {
     int i;
@@ -13,7 +12,6 @@ float sum_elements(float a[], unsigned length) {
 	result += a[i];
     return result;
 }
-/* $end bad-sum */
 
 float a[5] = { 1.0, 2.0, 3.0, 4.0, 5.0};
 

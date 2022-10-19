@@ -6,7 +6,6 @@
 
 int a[M][N];
 
-/* $begin sumarrayrows */
 int sumarrayrows(int a[M][N]) 
 {  	
     int i, j, sum = 0;
@@ -16,7 +15,6 @@ int sumarrayrows(int a[M][N])
 	    sum += a[i][j];
     return sum;	
 }
-/* $end sumarrayrows */
 
 
 int main()

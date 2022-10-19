@@ -1,14 +1,10 @@
 /* Experiments with floating point code */
 
-/* $begin w270-dmin-proto-c */
 /* Return minimum of x and y */
 double dmin(double x, double y);
-/* $end w270-dmin-proto-c */
 
-/* $begin w270-dsqrt-proto-c */
 /* Return sqrt(x) */
 double dsqrt(double x);
-/* $end w270-dsqrt-proto-c */
 
 
 double mult(double x, double y) {
@@ -24,7 +20,6 @@ double amult(double x, double y) {
     return result;
 }
 
-/* $begin w270-dmin-c */
 /* Return minimum of x and y */
 double dmin(double x, double y) {
     double result;
@@ -34,9 +29,7 @@ double dmin(double x, double y) {
 	);
     return result;
 }
-/* $end w270-dmin-c */
 
-/* $begin w270-dsqrt-c */
 /* Return sqrt(x) */
 double dsqrt(double x) {
     double result;
@@ -47,4 +40,3 @@ double dsqrt(double x) {
     return result;
     
 }
-/* $end w270-dsqrt-c */

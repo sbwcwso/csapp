@@ -1,4 +1,3 @@
-/* $begin sum-c */
 int accum = 0;
 
 int sum(int x, int y)
@@ -7,7 +6,6 @@ int sum(int x, int y)
     accum += t;
     return t;
 }
-/* $end sum-c */
 
 /* Added to get nop at the end of sum */
 int p(int x)

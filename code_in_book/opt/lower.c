@@ -37,7 +37,6 @@ static void unset_len(long len)
   data[len] = 'a' + len%26;
 }
 
-/* $begin strfuns */
 /* Convert string to lowercase: slow */
 void lower1(char *s)
 {
@@ -83,7 +82,6 @@ size_t strlen(const char *s)
     }
     return length;
 }
-/* $end strfuns */
 
 void test_lower1(long *lenp)
 {

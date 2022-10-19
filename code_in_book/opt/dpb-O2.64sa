@@ -107,7 +107,6 @@ combine3:
 	jle	.L23
 	movq	%rax, %rdx
 	leaq	(%rax,%r12,8), %rax
-/* $begin dpb-combine3-O2-s 110 */
 # Inner loop of combine3.  data_t = double, OP = *.  Compiled -O2
 # dest in \rbxreg{}, data+i in \rdxreg{}, data+length in \raxreg{}
 # Accumulated product in %xmm0
@@ -117,7 +116,6 @@ combine3:
 	cmpq	%rax, %rdx	     #   Compare to data+length
 	vmovsd	%xmm0, (%rbx)	     #   Store product at dest
 	jne	.L22   		     #   If !=, goto \textbf{loop}
-/* $end dpb-combine3-O2-s 110 */
 .L23:
 	popq	%rbx
 	popq	%rbp

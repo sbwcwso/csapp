@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* $begin 480-charbuf-c */
 int len(char *s) {
     return strlen(s);
 }
@@ -19,7 +18,6 @@ int intlen(long x) {
     iptoa(buf, &v);
     return len(buf);
 }
-/* $end 480-charbuf-c */
 
 void itoa(char *s, int x)
 {

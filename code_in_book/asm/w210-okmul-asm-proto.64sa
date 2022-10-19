@@ -1,10 +1,7 @@
 	.file	"w210-okmul-asm-proto.c"
 	.text
-/* $begin w210-tmult_ok_asm-proto-s */
 	.globl	tmult_ok_asm
-/* $end w210-tmult_ok_asm-proto-s */
 	.type	tmult_ok_asm, @function
-/* $begin w210-tmult_ok_asm-proto-s */
 tmult_ok_asm:
 	imulq	%rdi, %rsi		
 	movq	%rsi, (%rdx)		
@@ -12,13 +9,9 @@ tmult_ok_asm:
 	setg	%al   			// line:asm:tmult_ok_asm_proto:setg
 	movzbl	%al, %eax
 	ret
-/* $end w210-tmult_ok_asm-proto-s */
 	.size	tmult_ok_asm, .-tmult_ok_asm
-/* $begin w210-umult_ok_asm-proto-s */
 	.globl	umult_ok_asm
-/* $end w210-umult_ok_asm-proto-s */
 	.type	umult_ok_asm, @function
-/* $begin w210-umult_ok_asm-proto-s */
 umult_ok_asm:
 	imulq	%rdi, %rsi
 	movq	%rsi, (%rdx)
@@ -26,7 +19,6 @@ umult_ok_asm:
 	setne	%al
 	movzbl	%al, %eax
 	ret
-/* $end w210-umult_ok_asm-proto-s */
 	.size	umult_ok_asm, .-umult_ok_asm
 	.globl	tmult_sat
 	.type	tmult_sat, @function

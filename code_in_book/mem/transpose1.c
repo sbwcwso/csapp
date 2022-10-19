@@ -1,4 +1,3 @@
-/* $begin transpose1 */
 typedef int array[2][2];
 
 void transpose1(array dst, array src) 
@@ -11,4 +10,3 @@ void transpose1(array dst, array src)
 	}
     }
 }
-/* $end transpose1 */

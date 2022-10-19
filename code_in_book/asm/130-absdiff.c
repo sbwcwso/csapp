@@ -1,4 +1,3 @@
-/* $begin 130-absdiff-c */
 long absdiff(long x, long y)
 {
     long result;
@@ -8,7 +7,6 @@ long absdiff(long x, long y)
 	result = x - y;
     return result;
 }
-/* $end 130-absdiff-c */
 
 /* $begin 130-cmovdiff-c */ 
 long cmovdiff(long x, long y)
@@ -18,7 +16,6 @@ long cmovdiff(long x, long y)
     long ntest = x >= y;
     /* Line below requires
        single instruction: */
-    if (ntest) rval = eval; //line:asm:absdiff:cmovdiff:xfer
+    if (ntest) rval = eval; 
     return rval;
 }
-/* $end 130-cmovdiff-c */

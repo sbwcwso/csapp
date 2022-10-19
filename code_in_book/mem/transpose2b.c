@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* $begin transpose2b */
 typedef int array[4][4];
 
 void transpose2(array dst, array src) 
@@ -14,4 +13,3 @@ void transpose2(array dst, array src)
 	}
     }
 }
-/* $end transpose2b */

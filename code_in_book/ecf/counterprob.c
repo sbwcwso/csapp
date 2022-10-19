@@ -1,4 +1,3 @@
-/* $begin counterprob */
 #include "csapp.h"
 
 int counter = 0;
@@ -28,4 +27,3 @@ int main()
     printf("counter=%d\n", counter); 
     exit(0);
 }
-/* $end counterprob */

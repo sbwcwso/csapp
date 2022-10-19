@@ -1,6 +1,5 @@
 /* Loop illustration using different computations of factorial */
 
-/* $begin 160-fact_do-c */
 long fact_do(long n)
 {
     long result = 1;
@@ -10,9 +9,7 @@ long fact_do(long n)
     } while (n > 1);
     return result;
 }
-/* $end 160-fact_do-c */
 
-/* $begin 160-fact_while-c */
 long fact_while(long n)
 {
     long result = 1;
@@ -22,9 +19,7 @@ long fact_while(long n)
     }
     return result;
 }
-/* $end 160-fact_while-c */
 
-/* $begin 160-fact_for-c */
 long fact_for(long n)
 {
     long i;
@@ -33,9 +28,7 @@ long fact_for(long n)
 	result *= i;
     return result;
 }
-/* $end 160-fact_for-c */
 
-/* $begin 160-fact_for_while-c */
 long fact_for_while(long n)
 {
     long i = 2;
@@ -46,9 +39,7 @@ long fact_for_while(long n)
     }
     return result;
 }
-/* $end 160-fact_for_while-c */
 
-/* $begin 160-fact_do_goto-c */
 long fact_do_goto(long n)
 {
     long result = 1;
@@ -59,9 +50,7 @@ long fact_do_goto(long n)
 	goto loop;
     return result;
 }
-/* $end 160-fact_do_goto-c */
 
-/* $begin 160-fact_while_jm_goto-c */
 long fact_while_jm_goto(long n)
 {
     long result = 1;
@@ -74,9 +63,7 @@ long fact_while_jm_goto(long n)
 	goto loop;
     return result;
 }
-/* $end 160-fact_while_jm_goto-c */
 
-/* $begin 160-fact_while_gd_goto-c */
 long fact_while_gd_goto(long n)
 {
     long result = 1;
@@ -90,10 +77,8 @@ long fact_while_gd_goto(long n)
  done:
     return result;
 }
-/* $end 160-fact_while_gd_goto-c */
 
 
-/* $begin 160-fact_for_jm_goto-c */
 long fact_for_jm_goto(long n)
 {
     long i = 2;
@@ -107,9 +92,7 @@ long fact_for_jm_goto(long n)
 	goto loop;
     return result;
 }
-/* $end 160-fact_for_jm_goto-c */
 
-/* $begin 160-fact_for_gd_goto-c */
 long fact_for_gd_goto(long n)
 {
     long i = 2;
@@ -124,9 +107,7 @@ long fact_for_gd_goto(long n)
  done:
     return result;
 }
-/* $end 160-fact_for_gd_goto-c */
 
-/* $begin 160-rfact-c */
 long rfact(long n)
 {
     long result;
@@ -136,4 +117,3 @@ long rfact(long n)
         result = n * rfact(n-1);
     return result;
 }
-/* $end 160-rfact-c */

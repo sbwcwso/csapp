@@ -1,7 +1,6 @@
 /* 
  * prodconsn.c - generic producers-consumers manipulating a shared buffer 
  */
-/* $begin prodconsnmain */
 #include "csapp.h"
 #include "sbuf.h"
 
@@ -45,4 +44,3 @@ int main()
     sbuf_deinit(&sbuf);
     exit(0);
 }
-/* $end prodconsnmain */

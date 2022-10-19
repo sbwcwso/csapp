@@ -4,31 +4,23 @@
 #include <inttypes.h>
 #include <limits.h>
 
-/* $begin uadd_ok_proto */
 /* Determine whether arguments can be added without overflow */
 int uadd_ok(unsigned x, unsigned y);
-/* $end uadd_ok_proto */
 
-/* $begin uadd_ok */
 /* Determine whether arguments can be added without overflow */
 int uadd_ok(unsigned x, unsigned y) {
     unsigned sum = x+y;
     return sum >= x;
 }
-/* $end uadd_ok */
 
-/* $begin uadd_ovf_proto */
 /* Determine whether adding arguments would cause overflow */
 int uadd_ovf(unsigned x, unsigned y);
-/* $end uadd_ovf_proto */
 
-/* $begin uadd_ovf */
 /* Determine whether adding arguments would cause overflow */
 int uadd_ovf(unsigned x, unsigned y) {
     unsigned sum = x+y;
     return  sum < x;
 }
-/* $end uadd_ovf */
 
 /* Test function */
 int test_uadd_ok(unsigned x, unsigned y) {

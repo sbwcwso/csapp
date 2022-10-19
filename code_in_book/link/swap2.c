@@ -1,4 +1,3 @@
-/* $begin swap2 */
 extern int buf[];
 
 int *bufp0 = &buf[0];
@@ -21,5 +20,4 @@ void swap()
     *bufp0 = *bufp1;
     *bufp1 = temp;
 }
-/* $end swap2 */
 

@@ -1,4 +1,3 @@
-/* $begin mmapcopy */
 #include "csapp.h"
 
 /* 
@@ -36,5 +35,4 @@ int main(int argc, char **argv)
     mmapcopy(fd, stat.st_size);
     exit(0);
 }
-/* $end mmapcopy */
 

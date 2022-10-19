@@ -1,21 +1,19 @@
 /* 
  * hello.c - Pthreads "hello, world" program 
  */
-/* $begin hello */
 #include "csapp.h"
-void *thread(void *vargp);                    //line:conc:hello:prototype
+void *thread(void *vargp);                    
 
-int main()                                    //line:conc:hello:main
+int main()                                    
 {
-    pthread_t tid;                            //line:conc:hello:tid
-    Pthread_create(&tid, NULL, thread, NULL); //line:conc:hello:create
-    Pthread_join(tid, NULL);                  //line:conc:hello:join
-    exit(0);                                  //line:conc:hello:exit
+    pthread_t tid;                            
+    Pthread_create(&tid, NULL, thread, NULL); 
+    Pthread_join(tid, NULL);                  
+    exit(0);                                  
 }
 
-void *thread(void *vargp) /* thread routine */  //line:conc:hello:beginthread
+void *thread(void *vargp) /* thread routine */  
 {
     printf("Hello, world!\n");                 
-    return NULL;                               //line:conc:hello:return
-}                                              //line:conc:hello:endthread
-/* $end hello */
+    return NULL;                               
+}                                              

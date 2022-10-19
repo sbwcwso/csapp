@@ -13,7 +13,6 @@ fact_do:
 	.size	fact_do, .-fact_do
 	.globl	fact_while
 	.type	fact_while, @function
-/* $begin 160-fact_while_gd-s 16 */
 # long fact_while(long n)
 # n in \rdireg{}
 fact_while:
@@ -29,7 +28,6 @@ fact_while:
 .L7:                      #  \textbf{done:}
 	movl	$1, %eax     # Compute result = 1
 	ret                  # Return
-/* $end 160-fact_while_gd-s 16 */
 	.size	fact_while, .-fact_while
 	.globl	fact_for
 	.type	fact_for, @function

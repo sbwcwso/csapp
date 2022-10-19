@@ -1,11 +1,8 @@
-/* $begin 520-float_funct-c */
 double funct(double a, float x, double b, int i)
 {
     return a*x - b/i;
 }
-/* $end 520-float_funct-c */
 
-/* $begin 520-find_range-c */
 typedef enum {NEG, ZERO, POS, OTHER} range_t;
 
 range_t find_range(float x)
@@ -21,7 +18,6 @@ range_t find_range(float x)
 	result = OTHER;
     return result;
 }
-/* $end 520-find_range-c */
 
 typedef struct {
     int ival;

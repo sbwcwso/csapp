@@ -2,13 +2,10 @@
 #include <stdlib.h>
 
 
-/* $begin w250-umult_full-proto-c */
 /* Multiply two 64-bit numbers to get 128-bit result,
 */
 void umult_full(unsigned long x, unsigned long y, unsigned long *dest);
-/* $end w250-umult_full-proto-c */
 
-/* $begin w250-umult_full-c */
 void umult_full(unsigned long x, unsigned long y, unsigned long *dest) 
 { 
     asm("movq %[x],%%rax      # Get x\n\t"
@@ -20,7 +17,6 @@ void umult_full(unsigned long x, unsigned long y, unsigned long *dest)
 	: "%rax", "%rdx"                           /* Overwrites */ 
 	);
 } 
-/* $end w250-umult_full-c */
 
 int main(int argc, char *argv[]) {
     unsigned long ux, uy, udest[2];

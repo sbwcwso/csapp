@@ -5,7 +5,6 @@
 
 int v[N];
 
-/* $begin sumvec */
 int sumvec(int v[N]) 
 {  	
     int i, sum = 0; 
@@ -14,7 +13,6 @@ int sumvec(int v[N])
 	sum += v[i];
     return sum;	
 }
-/* $end sumvec */
 
 int main()
 {

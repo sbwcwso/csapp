@@ -1,13 +1,11 @@
 Flat profile:
 
 Each sample counts as 0.01 seconds.
-/* $begin sprof2-1-header */
   %   cumulative   self              self     total           
  time   seconds   seconds    calls   s/call   s/call  name    
  97.58    203.66   203.66        1   203.66   203.66  sort_words
   2.32    208.50     4.85   965027     0.00     0.00  find_ele_rec
   0.14    208.81     0.30 12511031     0.00     0.00  Strlen
-/* $end sprof2-1-header */
   0.04    208.89     0.08   363039     0.00     0.00  save_string
   0.02    208.93     0.04   965027     0.00     0.00  lower1
   0.01    208.96     0.03   965028     0.00     0.00  get_token
@@ -56,14 +54,12 @@ index % time    self  children    called     name
                 0.04    0.24  965027/965027      lower1 [7]
                 0.02    0.00  965027/965027      h_add [10]
 -----------------------------------------------
-/* $begin sprof2-1-find_ele_rec */
                              158655725             find_ele_rec [5]
                 4.85    0.10  965027/965027      insert_string [4]
 [5]      2.4    4.85    0.10  965027+158655725 find_ele_rec [5]
                 0.08    0.01  363039/363039      save_string [8]
                 0.00    0.01  363039/363039      new_ele [12]
                              158655725             find_ele_rec [5]
-/* $end sprof2-1-find_ele_rec */
 -----------------------------------------------
                 0.01    0.00  363039/12511031     new_ele [12]
                 0.01    0.00  363039/12511031     save_string [8]

@@ -1,4 +1,3 @@
-/* $begin bar6 */
 /* bar6.c */ 
 #include <stdio.h>
 
@@ -8,4 +7,3 @@ void p2()
 {  
     printf("0x%x\n", main);  
 }  
-/* $end bar6 */

@@ -1,4 +1,3 @@
-/* $begin snoozesignal */
 #include "csapp.h"
 
 /* SIGINT handler */
@@ -7,14 +6,12 @@ void handler(int sig)
     return; /* Catch the signal and return */
 }
 
-/* $begin snooze */
 unsigned int snooze(unsigned int secs) {
     unsigned int rc = sleep(secs);
 
     printf("Slept for %d of %d secs.\n", secs-rc, secs);
     return rc;
 }
-/* $end snooze */
 
 int main(int argc, char **argv) {
 
@@ -28,4 +25,3 @@ int main(int argc, char **argv) {
     (void)snooze(atoi(argv[1]));
     exit(0);
 }
-/* $end snoozesignal */

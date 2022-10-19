@@ -3,7 +3,6 @@ write_read:
 	testq	%rdx, %rdx
 	je	.L1
 	movl	$0, %eax
-/* $begin write_read-s 6 */
 # Inner loop of write_read
 # src in \rdireg{}, dst in \rsireg{}, val in \raxreg{}
 .L3:  	 	    	      # \textbf{loop:}
@@ -12,7 +11,6 @@ write_read:
 	addq	$1, %rax      #   val = t+1	    
 	subq	$1, %rdx      #   cnt--
 	jne	.L3 	      #   If != 0, goto \textbf{loop}
-/* $end write_read-s 6 */
 .L1:
 	rep; ret
 array_copy:

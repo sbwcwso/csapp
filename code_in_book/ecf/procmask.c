@@ -12,7 +12,6 @@ void deletejob(int pid)
 {
 }
 
-/* $begin procmask */
 void handler(int sig)
 {
     pid_t pid;
@@ -47,4 +46,3 @@ int main(int argc, char **argv)
     }
     exit(0);
 }
-/* $end procmask */

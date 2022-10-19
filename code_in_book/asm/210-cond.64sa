@@ -113,12 +113,10 @@ cdiv2:
 	.size	cdiv2, .-cdiv2
 	.globl	cread
 	.type	cread, @function
-/* $begin 210-cread-invalid-s 116 */
 # long cread(long *xp)
 # Invalid implementation of function cread
 # xp in register \rdireg{}
 cread:
-/* $end 210-cread-invalid-s 116 */
 	testq	%rdi, %rdi
 	je	.L29
 	movq	(%rdi), %rax
@@ -130,13 +128,11 @@ cread:
 	.globl	cread_invalid
 	.type	cread_invalid, @function
 cread_invalid:
-/* $begin 210-cread-invalid-s 128 */
 	movq	(%rdi), %rax  # v = *xp # line:asm:cread:movq
 	testq	%rdi, %rdi    # Test xp
 	movl	$0, %edx      # Set ve = 0
 	cmove	%rdx, %rax    # If xp==0, v = ve
 	ret                   # Return v
-/* $end 210-cread-invalid-s 128 */
 	.size	cread_invalid, .-cread_invalid
 	.globl	se_max
 	.type	se_max, @function
@@ -151,7 +147,6 @@ se_max:
 	.size	se_max, .-se_max
 	.globl	arith
 	.type	arith, @function
-/* $begin 210-arith-prob-s 147 */
 # long arith(long x)
 # x in \rdireg{}
 arith:
@@ -160,9 +155,7 @@ arith:
 	cmovns	%rdi, %rax
 	sarq	$3, %rax
 	ret
-/* $end 210-arith-prob-s 147 */
 
-/* $begin 210-arith-ann-s 147 */
 # long arith(long x)
 # x in \rdireg{}
 arith:
@@ -171,7 +164,6 @@ arith:
 	cmovns	%rdi, %rax     # If x>= 0, temp = x
 	sarq	$3, %rax       # result = temp >> 3 (= x/8)
 	ret
-/* $end 210-arith-ann-s 147 */
 
 	.size	arith, .-arith
 	.globl	lcount

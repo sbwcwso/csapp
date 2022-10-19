@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 #if 0
-/* $begin switchprob2-prob-c */
 long int switcher(long int a, long int b, long int c)
 {
     long int answer;
@@ -25,10 +24,8 @@ long int switcher(long int a, long int b, long int c)
     }
     return answer;
 }
-/* $end switchprob2-prob-c */
 #endif
 
-/* $begin switchprob2-ans-c */
 long int switcher(long int a, long int b, long int c)
 {
     long int answer;
@@ -51,7 +48,6 @@ long int switcher(long int a, long int b, long int c)
     }
     return answer;
 }
-/* $end switchprob2-ans-c */
 
 int main(int  argc, char *argv[]) {
     int args[3] = {1, 2, 3};

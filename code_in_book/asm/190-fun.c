@@ -8,7 +8,6 @@ long test_fun_a(unsigned long x)
     return val;
 }
 
-/* $begin 190-fun_a-ans-c */
 long fun_a(unsigned long x) {
     long val = 0;
     while (x) {
@@ -17,10 +16,8 @@ long fun_a(unsigned long x) {
     }
     return val & 0x1;
 }
-/* $end 190-fun_a-ans-c */
 
 #if 0
-/* $begin 190-fun_a-proto-c */
 long fun_a(unsigned long x) {
     long val = 0;
     while ( ... ) {
@@ -28,10 +25,8 @@ long fun_a(unsigned long x) {
     }
     return ...;
 }
-/* $end 190-fun_a-proto-c */
 #endif
 
-/* $begin 190-fun_b-ans-c */
 long fun_b(unsigned long x) {
     long val = 0;
     long i;
@@ -41,10 +36,8 @@ long fun_b(unsigned long x) {
     }
     return val;
 }
-/* $end 190-fun_b-ans-c */
 
 #if 0
-/* $begin 190-fun_b-proto-c */
 long fun_b(unsigned long x) {
     long val = 0;
     long i;
@@ -53,7 +46,6 @@ long fun_b(unsigned long x) {
     }
     return val;
 }
-/* $end 190-fun_b-proto-c */
 #endif
 
 long test_fun_b(unsigned long x)
@@ -68,7 +60,6 @@ long test_fun_b(unsigned long x)
     return val;
 }
 
-/* $begin fun_c-ans-c */
 long fun_c(unsigned long x) {
     long val = 0;
     long i;
@@ -80,10 +71,8 @@ long fun_c(unsigned long x) {
     val += (val >> 8);
     return val & 0xFF;
 }
-/* $end fun_c-ans-c */
 
 #if 0
-/* $begin fun_c-proto-c */
 long fun_c(unsigned long x) {
     long val = 0;
     long i;
@@ -93,7 +82,6 @@ long fun_c(unsigned long x) {
     ...
     return ...;
 }
-/* $end fun_c-proto-c */
 #endif
 
 long test_fun_c(unsigned long x)

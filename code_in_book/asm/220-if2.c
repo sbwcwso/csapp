@@ -1,4 +1,3 @@
-/* $begin 220-if2-ans-c */
 long test(long x, long y) {
     long val = 8*x;
     if (y > 0) {
@@ -10,10 +9,8 @@ long test(long x, long y) {
 	val = x+y;
     return val;
 }
-/* $end 220-if2-ans-c */
 
 #if 0
-/* $begin 220-if2-prob-c */
 long test(long x, long y) {
     long val = ______;
     if (______) {
@@ -25,5 +22,4 @@ long test(long x, long y) {
 	val = ______;
     return val;
 }
-/* $end 220-if2-prob-c */
 #endif

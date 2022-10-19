@@ -2,7 +2,6 @@
  * psum-mutex.c - A simple parallel sum program where each thread sums
  *                into a global variable protected by a mutex
  */
-/* $begin psummutex */
 #include "csapp.h"
 #define MAXTHREADS 32    
 
@@ -37,36 +36,33 @@ int main(int argc, char **argv)
     sem_init(&mutex, 0, 1);
 
     /* Create peer threads and wait for them to finish */
-    for (i = 0; i < nthreads; i++) {                  //line:conc:psummutex:createloop1
-	myid[i] = i;                                  //line:conc:psummutex:createloop2
-	Pthread_create(&tid[i], NULL, sum_mutex, &myid[i]); //line:conc:psummutex:createloop3
-    }                                                 //line:conc:psummutex:createloop4
-    for (i = 0; i < nthreads; i++)                    //line:conc:psummutex:waitloop1
-	Pthread_join(tid[i], NULL);                   //line:conc:psummutex:waitloop2
+    for (i = 0; i < nthreads; i++) {                  
+	myid[i] = i;                                  
+	Pthread_create(&tid[i], NULL, sum_mutex, &myid[i]); 
+    }                                                 
+    for (i = 0; i < nthreads; i++)                    
+	Pthread_join(tid[i], NULL);                   
     
     /* Check final answer */
-    if (gsum != (nelems * (nelems-1))/2)     //line:conc:psummutex:check1
-	printf("Error: result=%ld\n", gsum); //line:conc:psummutex:check2
+    if (gsum != (nelems * (nelems-1))/2)     
+	printf("Error: result=%ld\n", gsum); 
 
     exit(0);
 }
-/* $end psummutex */
 
-/* $begin psummutexthread */
 /* Thread routine for psum-mutex.c */
 void *sum_mutex(void *vargp) 
 {
-    long myid = *((long *)vargp);          /* Extract the thread ID */ //line:conc:psummutex:extractid
-    long start = myid * nelems_per_thread; /* Start element index */ //line:conc:psummutex:getstart
-    long end = start + nelems_per_thread;  /* End element index */ //line:conc:psummutex:getend
+    long myid = *((long *)vargp);          /* Extract the thread ID */ 
+    long start = myid * nelems_per_thread; /* Start element index */ 
+    long end = start + nelems_per_thread;  /* End element index */ 
     long i;
 
-    for (i = start; i < end; i++) {        //line:conc:psummutex:threadsumloop1
-        P(&mutex);                     //line:conc:psummutex:lock
-	gsum += i;                     //line:conc:psummutex:threadsumloop2 
-        V(&mutex);                     //line:conc:psummutex:unlock
-    }	                               //line:conc:psummutex:threadsumloop3
+    for (i = start; i < end; i++) {        
+        P(&mutex);                     
+	gsum += i;                     
+        V(&mutex);                     
+    }	                               
     return NULL;
 }
-/* $end psummutexthread */
 

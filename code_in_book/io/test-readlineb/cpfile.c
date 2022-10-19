@@ -1,4 +1,3 @@
-/* $begin cpfile */
 #include "csapp.h"
 
 #define LEN 4
@@ -18,7 +17,6 @@ int main(int argc, char **argv)
     exit(0);
     /* $begin cpfile */
 }
-/* $end cpfile */
 
 
 

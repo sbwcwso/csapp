@@ -1,4 +1,3 @@
-/* $begin hello64-s 1 */
 .section .data
 string:
         .ascii "hello, world\n"
@@ -18,4 +17,3 @@ main:
         movq $60, %rax       # _exit is system call 60     
         movq $0, %rdi        # Arg1: exit status is 0      
         syscall              # Make the system call        
-/* $end hello64-s 1 */

@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* $begin 130-absdiff_se-c */
 long lt_cnt = 0;
 long ge_cnt = 0;
 
@@ -18,25 +17,21 @@ long absdiff_se(long x, long y)
     }
     return result;
 }
-/* $end 130-absdiff_se-c */
 
-/* $begin 130-gotodiff_se-c */
 long gotodiff_se(long x, long y)
 {
     long result;
     if (x >= y) 
-	goto x_ge_y;   //line:asm:abs:goto
-    lt_cnt++; //line:asm:abs:lt
-    result =  y - x; //line:asm:abs:cyx
+	goto x_ge_y;   
+    lt_cnt++; 
+    result =  y - x; 
     return result;
- x_ge_y: //line:asm:abs:xgey
+ x_ge_y: 
     ge_cnt++;
     result = x - y;
     return result;
 } 
-/* $end 130-gotodiff_se-c */
 
-/* $begin 130-gotodiff_se-alt-c */
 long gotodiff_se_alt(long x, long y) {
     long result;
     if (x < y)
@@ -49,7 +44,6 @@ long gotodiff_se_alt(long x, long y) {
     result =  y - x;
     return result;
 } 
-/* $end 130-gotodiff_se-alt-c */
 
 /* Declaration of externally defined versions */
 long absdiff(long x, long y);

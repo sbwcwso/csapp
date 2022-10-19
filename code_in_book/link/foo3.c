@@ -1,4 +1,3 @@
-/* $begin foo3 */
 /* foo3.c */ 
 #include <stdio.h>
 void f(void);
@@ -11,5 +10,4 @@ int main()
     printf("x = %d\n", x); 
     return 0;
 } 
-/* $end foo3 */
  

@@ -1,7 +1,6 @@
 /* 
  * echoservert.c - A concurrent echo server using threads
  */
-/* $begin echoservertmain */
 #include "csapp.h"
 
 void echo(int connfd);
@@ -22,8 +21,8 @@ int main(int argc, char **argv)
 
     while (1) {
         clientlen=sizeof(struct sockaddr_storage);
-	connfdp = Malloc(sizeof(int)); //line:conc:echoservert:beginmalloc
-	*connfdp = Accept(listenfd, (SA *) &clientaddr, &clientlen); //line:conc:echoservert:endmalloc
+	connfdp = Malloc(sizeof(int)); 
+	*connfdp = Accept(listenfd, (SA *) &clientaddr, &clientlen); 
 	Pthread_create(&tid, NULL, thread, connfdp);
     }
 }
@@ -32,10 +31,9 @@ int main(int argc, char **argv)
 void *thread(void *vargp) 
 {  
     int connfd = *((int *)vargp);
-    Pthread_detach(pthread_self()); //line:conc:echoservert:detach
-    Free(vargp);                    //line:conc:echoservert:free
+    Pthread_detach(pthread_self()); 
+    Free(vargp);                    
     echo(connfd);
     Close(connfd);
     return NULL;
 }
-/* $end echoservertmain */

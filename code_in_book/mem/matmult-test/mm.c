@@ -83,7 +83,6 @@ void ijk(array A, array B, array C, int n)
     int i, j, k;
     double sum;
 
-/* $begin mm-ijk */
 for (i = 0; i < n; i++) 
     for (j = 0; j < n; j++) {
 	sum = 0.0;
@@ -91,7 +90,6 @@ for (i = 0; i < n; i++)
             sum += A[i][k]*B[k][j];
         C[i][j] += sum;
     }
-/* $end mm-ijk */
 
 }
 
@@ -100,7 +98,6 @@ void jik(array A, array B, array C, int n)
     int i, j, k;
     double sum;
 
-/* $begin mm-jik */
 for (j = 0; j < n; j++) 
     for (i = 0; i < n; i++) {
 	sum = 0.0;
@@ -108,7 +105,6 @@ for (j = 0; j < n; j++)
 	    sum += A[i][k]*B[k][j];
 	C[i][j] += sum;
     }
-/* $end mm-jik */
 }
 
 void ikj(array A, array B, array C, int n) 
@@ -123,7 +119,6 @@ for (i = 0; i < n; i++)
 	for (j = 0; j < n; j++)
 	    C[i][j] += r*B[k][j];
     }
-/* $end mm-ikj */
 }
 
 void kij(array A, array B, array C, int n)
@@ -138,7 +133,6 @@ for (k = 0; k < n; k++)
 	for (j = 0; j < n; j++)
 	    C[i][j] += r*B[k][j];
     }
-/* $end mm-kij */
 }
 
 void kji(array A, array B, array C, int n)
@@ -146,14 +140,12 @@ void kji(array A, array B, array C, int n)
     int i, j, k;
     double r;
 
-/* $begin mm-kji */
 for (k = 0; k < n; k++)
     for (j = 0; j < n; j++) {
 	r = B[k][j];
 	for (i = 0; i < n; i++)
 	    C[i][j] += A[i][k]*r;
     }
-/* $end mm-kji */
 }
 
 void jki(array A, array B, array C, int n)
@@ -161,14 +153,12 @@ void jki(array A, array B, array C, int n)
     int i, j, k;
     double r;
 
-/* $begin mm-jki */
 for (j = 0; j < n; j++)
     for (k = 0; k < n; k++) {
 	r = B[k][j];
 	for (i = 0; i < n; i++)
 	    C[i][j] += A[i][k]*r;
     }
-/* $end mm-jki */
 }
 
 /* 

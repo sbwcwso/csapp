@@ -136,7 +136,6 @@ Disassembly of section .text:
   40053e:	90                   	nop
   40053f:	90                   	nop
 
-/* $begin 261-fun2-d 139 */
 # Disassembly of last(long u, long v)
 # u in \rdireg{}, v in \rsireg{}
 0000000000400540 <last>:
@@ -151,16 +150,13 @@ Disassembly of section .text:
   40054c:	48 83 ef 01          	sub    $0x1,%rdi       # F2: x-1
   400550:	e8 eb ff ff ff       	callq  400540 <last>   # F3: Call last(x-1,x+1)
   400555:	f3 c3                	repz retq     	       # F4: Return
-/* $end 261-fun2-d 139 */
 
 0000000000400557 <main>:
   400557:	48 83 ec 08          	sub    $0x8,%rsp
   40055b:	bf 0a 00 00 00       	mov    $0xa,%edi
-/* $begin 261-fun2-d 153 */
 # . . .
   400560:	e8 e3 ff ff ff       	callq  400548 <first>  # M1: Call first(10)
   400565:	48 89 c2             	mov    %rax,%rdx       # M2: Resume
-/* $end 261-fun2-d 153 */
   400568:	be 34 06 40 00       	mov    $0x400634,%esi
   40056d:	bf 01 00 00 00       	mov    $0x1,%edi
   400572:	b8 00 00 00 00       	mov    $0x0,%eax

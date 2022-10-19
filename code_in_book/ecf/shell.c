@@ -1,4 +1,3 @@
-/* $begin shell-ans */
 /* 
  * A simple shell with job control 
  * Usage: shell [-v]
@@ -427,7 +426,6 @@ int main(int argc, char **argv)
 
     exit(0);
 }
-/* $end shell-ans */
   
 
 

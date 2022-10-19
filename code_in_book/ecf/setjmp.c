@@ -1,4 +1,3 @@
-/* $begin setjmp */
 #include "csapp.h"
 
 jmp_buf buf;
@@ -39,4 +38,3 @@ void bar(void)
     if (error2)
 	longjmp(buf, 2); 
 }
-/* $end setjmp */

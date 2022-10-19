@@ -3,11 +3,9 @@
 	.globl	copy
 	.type	copy, @function
 copy:
-/* $begin 380-structcopy-s 6 */
         # Registers: r in \rdireg{}
 	movl	(%rdi), %eax	   # Get r->i
 	movl	%eax, 4(%rdi)	   # Store in r->j
-/* $end 380-structcopy-s 6 */
 	ret
 	.size	copy, .-copy
 	.globl	set_i
@@ -37,23 +35,19 @@ find_a:
 	movq	%rdi, q(%rip)
 	movl	%esi, k(%rip)
 	movslq	%esi, %rsi
-/* $begin 380-structptr-s 37 */
         # Registers: r in \rdireg, i \rsireg{}
 	leaq	8(%rdi,%rsi,4), %rax  # Set \raxreg{} to &r->a[i]
-/* $end 380-structptr-s 37 */
 	ret
 	.size	find_a, .-find_a
 	.globl	link_p
 	.type	link_p, @function
 link_p:
-/* $begin 380-structlink-s 43 */
    	# Registers: r in \rdireg{}
 	movl	4(%rdi), %eax		# Get r->j
 	addl	(%rdi), %eax		# Add r->i
 	cltq				# Extend to 8 bytes
 	leaq	8(%rdi,%rax,4), %rax	# Compute &r->a[r->i + r->j]
 	movq	%rax, 16(%rdi)		# Store in r->p
-/* $end 380-structlink-s 43 */
 	ret
 	.size	link_p, .-link_p
 	.comm	k,4,4

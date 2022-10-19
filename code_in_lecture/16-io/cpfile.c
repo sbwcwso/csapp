@@ -1,4 +1,3 @@
-/* $begin cpfile */
 #include "csapp.h"
 
 int main(int argc, char **argv) 
@@ -14,7 +13,6 @@ int main(int argc, char **argv)
     exit(0);
     /* $begin cpfile */
 }
-/* $end cpfile */
 
 
 

@@ -1,4 +1,3 @@
-/* $begin 370-rect-decl-c */
 struct rect {
     long llx;         /* X coordinate of lower-left corner */
     long lly;         /* Y coordinate of lower-left corner */
@@ -6,7 +5,6 @@ struct rect {
     unsigned long height; /* Height (in pixels)                */
     unsigned color;       /* Coding of color                   */
 };
-/* $end 370-rect-decl-c */
 
 
 struct rect nothing() {
@@ -27,13 +25,10 @@ struct rect nothing2() {
     return r;
 }
 
-/* $begin 370-rect-area-c */
 long area(struct rect *rp) {
     return (*rp).width * (*rp).height;
 }
-/* $end 370-rect-area-c */
 
-/* $begin 370-rect-rotate-c */
 void rotate_left(struct rect *rp) {
     /* Exchange width and height */
     long t = rp->height;
@@ -42,4 +37,3 @@ void rotate_left(struct rect *rp) {
     /* Shift to new lower-left corner */
     rp->llx   -= t; 
 }
-/* $end 370-rect-rotate-c */

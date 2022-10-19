@@ -1,5 +1,4 @@
 /* sum.c */
-/* $begin sum */
 int sum(int *a, int n)
 {
     int i, s = 0;
@@ -9,4 +8,3 @@ int sum(int *a, int n)
     }
     return s;
 }        
-/* $end sum */

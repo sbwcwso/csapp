@@ -101,14 +101,11 @@ void *thread(void *vargp)
     return NULL;
 }
 
-/* $begin w240-bad_incr-c */
 void bad_incr(int *ptr)
 {
     (*ptr)++;
 }
-/* $end w240-bad_incr-c */
 
-/* $begin w240-lock_incr-c */
 void lock_incr(int *ptr)
 {
     asm("lock            # Insert lock prefix\n\t"
@@ -116,23 +113,18 @@ void lock_incr(int *ptr)
 	: [p] "+m" (*ptr) /* Output */
 	);
 }
-/* $end w240-lock_incr-c */
 
-/* $begin w240-mutex_incr-c */
 void mutex_incr(int *ptr)
 {
     pthread_mutex_lock(&mutex);
     (*ptr)++;
     pthread_mutex_unlock(&mutex);
 }
-/* $end w240-mutex_incr-c */
 
 
-/* $begin w240-sem_incr-c */
 void sem_incr(int *ptr)
 {
     sem_wait(&sem);
     (*ptr)++;
     sem_post(&sem);
 }
-/* $end w240-sem_incr-c */

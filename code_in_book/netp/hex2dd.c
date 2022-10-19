@@ -1,4 +1,3 @@
-/* $begin hex2dd */
 #include "csapp.h"
 
 int main(int argc, char **argv) 
@@ -20,4 +19,3 @@ int main(int argc, char **argv)
 
     exit(0);
 }
-/* $end hex2dd */

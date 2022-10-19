@@ -1,7 +1,6 @@
 /* 
  * echoservert_pre.c - A prethreaded concurrent echo server
  */
-/* $begin echoservertpremain */
 #include "csapp.h"
 #include "sbuf.h"
 #define NTHREADS  4
@@ -25,9 +24,9 @@ int main(int argc, char **argv)
     }
     listenfd = Open_listenfd(argv[1]);
 
-    sbuf_init(&sbuf, SBUFSIZE); //line:conc:pre:initsbuf
-    for (i = 0; i < NTHREADS; i++)  /* Create worker threads */ //line:conc:pre:begincreate
-	Pthread_create(&tid, NULL, thread, NULL);               //line:conc:pre:endcreate
+    sbuf_init(&sbuf, SBUFSIZE); 
+    for (i = 0; i < NTHREADS; i++)  /* Create worker threads */ 
+	Pthread_create(&tid, NULL, thread, NULL);               
 
     while (1) { 
         clientlen = sizeof(struct sockaddr_storage);
@@ -40,9 +39,8 @@ void *thread(void *vargp)
 {  
     Pthread_detach(pthread_self()); 
     while (1) { 
-	int connfd = sbuf_remove(&sbuf); /* Remove connfd from buffer */ //line:conc:pre:removeconnfd
+	int connfd = sbuf_remove(&sbuf); /* Remove connfd from buffer */ 
 	echo_cnt(connfd);                /* Service client */
 	Close(connfd);
     }
 }
-/* $end echoservertpremain */

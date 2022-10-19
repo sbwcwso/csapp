@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 #if 0
-/* $begin 250-switcher-prob-c */
 void switcher(long a, long b, long c, long *dest)
 {
     long val;
@@ -25,10 +24,8 @@ void switcher(long a, long b, long c, long *dest)
     }
     *dest = val;
 }
-/* $end 250-switcher-prob-c */
 #endif
 
-/* $begin 250-switcher-ans-c */
 void switcher(long a, long b, long c, long *dest)
 {
     long val;
@@ -51,7 +48,6 @@ void switcher(long a, long b, long c, long *dest)
     }
     *dest = val;
 }
-/* $end 250-switcher-ans-c */
 
 int main(int  argc, char *argv[]) {
     long args[3] = {1, 2, 3};

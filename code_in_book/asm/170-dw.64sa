@@ -2,7 +2,6 @@
 	.text
 	.globl	dw_loop
 	.type	dw_loop, @function
-/* $begin 170-dw-prob-s 5 */
 # long dw_loop(long x)
 # x initially in \rdireg{}
 dw_loop:
@@ -16,13 +15,11 @@ dw_loop:
 	testq	%rdx, %rdx
 	jg	.L2
 	rep; ret
-/* $end 170-dw-prob-s 5 */
 	.size	dw_loop, .-dw_loop
 	.ident	"GCC: (Ubuntu 4.8.1-2ubuntu1~12.04) 4.8.1"
 	.section	.note.GNU-stack,"",@progbits
 
 
-/* $begin 170-dw-ans-s 5 */
 # long dw_loop(long x)
 # x initially in \rdireg{}
 dw_loop:
@@ -36,4 +33,3 @@ dw_loop:
 	testq	%rdx, %rdx           # Test n
 	jg	.L2                  # If > 0, goto \textbf{loop}
 	rep; ret                     # Return
-/* $end 170-dw-ans-s 5 */

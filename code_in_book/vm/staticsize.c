@@ -1,4 +1,3 @@
-/* $begin staticsize */
 #include "csapp.h"
 #define MAXN 15213
 
@@ -15,5 +14,4 @@ int main()
         scanf("%d", &array[i]);         
     exit(0);
 }
-/* $end staticsize */
 

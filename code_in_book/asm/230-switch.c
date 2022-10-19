@@ -1,4 +1,3 @@
-/* $begin 230-switch-c */
 void switch_eg(long x, long n,
 	       long *dest)
 { 
@@ -28,15 +27,13 @@ void switch_eg(long x, long n,
     } 
     *dest = val; 
 } 
-/* $end 230-switch-c */
 
 
-/* $begin 230-switch-impl-c */
 void switch_eg_impl(long x, long n,
 		    long *dest)
 {
     /* Table of code pointers */
-    static void *jt[7] = {//line:asm:switch_jumptable
+    static void *jt[7] = {
 	&&loc_A, &&loc_def, &&loc_B,
 	&&loc_C, &&loc_D, &&loc_def,
 	&&loc_D
@@ -47,7 +44,7 @@ void switch_eg_impl(long x, long n,
     if (index > 6)
 	goto loc_def; 
     /* Multiway branch */
-    goto *jt[index]; //line:asm:switch:c_jump
+    goto *jt[index]; 
 
  loc_A:    /* Case 100 */ 
     val = x * 13; 
@@ -66,4 +63,3 @@ void switch_eg_impl(long x, long n,
  done:
     *dest = val;
 } 
-/* $end 230-switch-impl-c */

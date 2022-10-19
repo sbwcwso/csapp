@@ -1,4 +1,3 @@
-/* $begin shellmain */
 #include "csapp.h"
 #define MAXARGS   128
 
@@ -22,9 +21,7 @@ int main()
 	eval(cmdline);
     } 
 }
-/* $end shellmain */
   
-/* $begin eval */
 /* eval - Evaluate a command line */
 void eval(char *cmdline) 
 {
@@ -67,9 +64,7 @@ int builtin_command(char **argv)
 	return 1;
     return 0;                     /* Not a builtin command */
 }
-/* $end eval */
 
-/* $begin parseline */
 /* parseline - Parse the command line and build the argv array */
 int parseline(char *buf, char **argv) 
 {
@@ -101,6 +96,5 @@ int parseline(char *buf, char **argv)
 
     return bg;
 }
-/* $end parseline */
 
 

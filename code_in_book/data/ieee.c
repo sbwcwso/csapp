@@ -1,23 +1,17 @@
 /* Check special values of IEEE format */
 
-/* $begin ieee-defs */
 #define _GNU_SOURCE 1
 #include <math.h>
-/* $end ieee-defs */
 
 #if 0
-/* $begin ieee-prob */
 #define POS_INFINITY 
 #define NEG_INFINITY 
 #define NEG_ZERO 
-/* $end ieee-prob */
 #endif
 
-/* $begin ieee-ans */
 #define POS_INFINITY 1e400
 #define NEG_INFINITY (-POS_INFINITY)
 #define NEG_ZERO (-1.0/POS_INFINITY)
-/* $end ieee-ans */
 
 int main()
 {

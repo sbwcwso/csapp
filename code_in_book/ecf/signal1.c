@@ -1,5 +1,4 @@
 #include "csapp.h"
-/* $begin signal1 */
 /* WARNING: This code is buggy! */
 
 void handler1(int sig) 
@@ -39,4 +38,3 @@ int main()
 
     exit(0);
 }
-/* $end signal1 */

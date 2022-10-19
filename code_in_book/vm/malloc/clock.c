@@ -28,7 +28,6 @@
  *******************************************************/
 
 
-/* $begin x86cyclecounter */
 /* Initialize the cycle counter */
 static unsigned cyc_hi = 0;
 static unsigned cyc_lo = 0;
@@ -70,7 +69,6 @@ double get_counter()
     }
     return result;
 }
-/* $end x86cyclecounter */
 
 #elif defined(__alpha)
 
@@ -180,7 +178,6 @@ double ovhd()
     return result;
 }
 
-/* $begin mhz */
 /* Get the clock rate from /proc */
 double mhz_full(int verbose, int sleeptime)
 {
@@ -211,7 +208,6 @@ double mhz_full(int verbose, int sleeptime)
     return rate;
 #endif
 }
-/* $end mhz */
 
 /* Version using a default sleeptime */
 double mhz(int verbose)

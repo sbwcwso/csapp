@@ -3,18 +3,14 @@
 #include <stdio.h>
 #include <string.h>
 
-/* $begin strlen */
 /* Prototype for library function strlen */
 size_t strlen(const char *s);
-/* $end strlen */
 
-/* $begin strlonger */
 /* Determine whether string s is longer than string t */
 /* WARNING: This function is buggy */
 int strlonger(char *s, char *t) {
     return strlen(s) - strlen(t) > 0;  
 }
-/* $end strlonger */
 
 /* Determine whether string s is longer than string t */
 int strlonger2(char *s, char *t) {
@@ -24,13 +20,11 @@ int strlonger2(char *s, char *t) {
 
 }
 
-/* $begin strshorter */
 /* Determine whether string s is shorter than string t */
 /* WARNING: This function is buggy */
 int strshorter(char *s, char *t) {
     return strlen(s) - strlen(t) < 0;  
 }
-/* $end strshorter */
 
 /* Determine whether string s is shorter than string t */
 int strshorter2(char *s, char *t) {

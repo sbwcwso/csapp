@@ -1,34 +1,29 @@
-/* $begin show-bytes */
 #include <stdio.h>
-/* $end show-bytes */
 #include <stdlib.h>
 #include <string.h>
-/* $begin show-bytes */
 
 typedef unsigned char *byte_pointer;
 
 void show_bytes(byte_pointer start, size_t len) {
     size_t i;
     for (i = 0; i < len; i++)
-	printf(" %.2x", start[i]);    //line:data:show_bytes_printf
+	printf(" %.2x", start[i]);    
     printf("\n");
 }
 
 void show_int(int x) {
-    show_bytes((byte_pointer) &x, sizeof(int)); //line:data:show_bytes_amp1
+    show_bytes((byte_pointer) &x, sizeof(int)); 
 }
 
 void show_float(float x) {
-    show_bytes((byte_pointer) &x, sizeof(float)); //line:data:show_bytes_amp2
+    show_bytes((byte_pointer) &x, sizeof(float)); 
 }
 
 void show_pointer(void *x) {
-    show_bytes((byte_pointer) &x, sizeof(void *)); //line:data:show_bytes_amp3
+    show_bytes((byte_pointer) &x, sizeof(void *)); 
 }
-/* $end show-bytes */
 
 
-/* $begin test-show-bytes */
 void test_show_bytes(int val) {
     int ival = val;
     float fval = (float) ival;
@@ -37,26 +32,21 @@ void test_show_bytes(int val) {
     show_float(fval);
     show_pointer(pval);
 }
-/* $end test-show-bytes */
 
 void simple_show_a() {
-/* $begin simple-show-a */
 int val = 0x87654321;
 byte_pointer valp = (byte_pointer) &val;
 show_bytes(valp, 1); /* A. */
 show_bytes(valp, 2); /* B. */
 show_bytes(valp, 3); /* C. */
-/* $end simple-show-a */
 }
 
 void simple_show_b() {
-/* $begin simple-show-b */
 int val = 0x12345678;
 byte_pointer valp = (byte_pointer) &val;
 show_bytes(valp, 1); /* A. */
 show_bytes(valp, 2); /* B. */
 show_bytes(valp, 3); /* C. */
-/* $end simple-show-b */
 }
 
 void float_eg() {
@@ -75,28 +65,22 @@ void float_eg() {
 }
 
 void string_ueg() {
-/* $begin show-ustring */
 const char *s = "ABCDEF";
 show_bytes((byte_pointer) s, strlen(s)); 
-/* $end show-ustring */
 }
 
 void string_leg() {
-/* $begin show-lstring */
 const char *s = "abcdef";
 show_bytes((byte_pointer) s, strlen(s)); 
-/* $end show-lstring */
 }
 
 void show_twocomp() 
 {
-/* $begin show-twocomp */
     short x = 12345; 
     short mx = -x; 
     
     show_bytes((byte_pointer) &x, sizeof(short)); 
     show_bytes((byte_pointer) &mx, sizeof(short)); 
-/* $end show-twocomp */
 }
 
 int main(int argc, char *argv[])

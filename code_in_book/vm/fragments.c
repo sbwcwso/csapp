@@ -19,17 +19,14 @@ void misc()
     /* $end mmap */
 }
 
-/* $begin garbage */
 void garbage() 
 {
     int *p = (int *)Malloc(15213);
 
     return; /* Array p is garbage at this point */
 }
-/* $end garbage */
 
 
-/* $begin uninitialized */
 /* Return y = Ax */
 int *matvec(int **A, int *x, int n) 
 { 
@@ -42,9 +39,7 @@ int *matvec(int **A, int *x, int n)
             y[i] += A[i][j] * x[j];
     return y;
 }
-/* $end uninitialized */
 
-/* $begin bufoverflow */
 void bufoverflow() 
 {
     char buf[64];
@@ -52,91 +47,76 @@ void bufoverflow()
     gets(buf); /* Here is the stack buffer overflow bug */
     return;
 }
-/* $end bufoverflow */
 
-/* $begin makearray1 */
 /* Create an nxm array */
 int **makeArray1(int n, int m) 
 {
     int i;
-    int **A = (int **)Malloc(n * sizeof(int)); //line:vm:makearray1:sizeof
+    int **A = (int **)Malloc(n * sizeof(int)); 
 
-    for (i = 0; i < n; i++)                    //line:vm:makearray1:loop1
-	A[i] = (int *)Malloc(m * sizeof(int)); //line:vm:makearray1:loop2
+    for (i = 0; i < n; i++)                    
+	A[i] = (int *)Malloc(m * sizeof(int)); 
     return A;
 }   
-/* $end makearray1 */
 
-/* $begin makearray2 */
 /* Create an nxm array */
 int **makeArray2(int n, int m) 
 {
     int i;
-    int **A = (int **)Malloc(n * sizeof(int *)); //line:vm:makearray2:malloc
+    int **A = (int **)Malloc(n * sizeof(int *)); 
 
-    for (i = 0; i <= n; i++)                   //line:vm:makearray2:loop1
-	A[i] = (int *)Malloc(m * sizeof(int)); //line:vm:makearray2:loop2
+    for (i = 0; i <= n; i++)                   
+	A[i] = (int *)Malloc(m * sizeof(int)); 
     return A;
 }   
-/* $end makearray2 */
 
 
-/* $begin binheapdelete */
 int *binheapDelete(int **binheap, int *size)
 {
     int *packet = binheap[0];                
     
     binheap[0] = binheap[*size - 1];         
-    *size--; /* This should be (*size)-- */  //line:vm:heapify
+    *size--; /* This should be (*size)-- */  
     heapify(binheap, *size, 0);              
     return(packet);
 }
-/* $end binheapdelete */
 
-/* $begin search */
 int *search(int *p, int val) 
 {
     while (*p && *p != val)
-	p += sizeof(int); /* Should be p++ */ //line:vm:search1
+	p += sizeof(int); /* Should be p++ */ 
     return p;
 }
-/* $end search */
 
-/* $begin stackref */
 int *stackref () 
 {
     int val;
 
     return &val; 
 }  
-/* $end stackref */
 
 
-/* $begin heapref */
 int *heapref(int n, int m) 
 {
     int i;
     int *x, *y;
 
-    x = (int *)Malloc(n * sizeof(int));                       //line:vm:heapref:mallocx
+    x = (int *)Malloc(n * sizeof(int));                       
 
     /* ... */   /* Other calls to malloc and free go here */
 
-    free(x);                                                  //line:vm:heapref:freex
+    free(x);                                                  
 
     y = (int *)Malloc(m * sizeof(int)); 
     for (i = 0; i < m; i++)
-	y[i] = x[i]++;  /* Oops! x[i] is a word in a free block */ //line:vm:heapref:refx
+	y[i] = x[i]++;  /* Oops! x[i] is a word in a free block */ 
 
     return y;
 }
-/* $end heapref */
 
-/* $begin leak */
 void leak(int n) 
 {
     int *x = (int *)Malloc(n * sizeof(int));
     
     return;  /* x is garbage at this point */
 }
-/* $end leak */

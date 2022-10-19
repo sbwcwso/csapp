@@ -1,4 +1,3 @@
-/* $begin sharing1 */
 #include "csapp.h"
 
 int main()
@@ -13,4 +12,3 @@ int main()
     printf("c = %c\n", c);
     exit(0);
 }
-/* $end sharing1 */

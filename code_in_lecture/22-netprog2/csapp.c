@@ -15,20 +15,16 @@
  *   - rio_readlineb: fixed edge case bug
  *   - rio_readnb: removed redundant EINTR check
  */
-/* $begin csapp.c */
 #include "csapp.h"
 
 /************************** 
  * Error-handling functions
  **************************/
-/* $begin errorfuns */
-/* $begin unixerror */
 void unix_error(char *msg) /* Unix-style error */
 {
     fprintf(stderr, "%s: %s\n", msg, strerror(errno));
     exit(0);
 }
-/* $end unixerror */
 
 void posix_error(int code, char *msg) /* Posix-style error */
 {
@@ -47,7 +43,6 @@ void app_error(char *msg) /* Application error */
     fprintf(stderr, "%s\n", msg);
     exit(0);
 }
-/* $end errorfuns */
 
 void dns_error(char *msg) /* Obsolete gethostbyname error */
 {
@@ -60,7 +55,6 @@ void dns_error(char *msg) /* Obsolete gethostbyname error */
  * Wrappers for Unix process control functions
  ********************************************/
 
-/* $begin forkwrapper */
 pid_t Fork(void) 
 {
     pid_t pid;
@@ -69,7 +63,6 @@ pid_t Fork(void)
 	unix_error("Fork error");
     return pid;
 }
-/* $end forkwrapper */
 
 void Execve(const char *filename, char *const argv[], char *const envp[]) 
 {
@@ -77,7 +70,6 @@ void Execve(const char *filename, char *const argv[], char *const envp[])
 	unix_error("Execve error");
 }
 
-/* $begin wait */
 pid_t Wait(int *status) 
 {
     pid_t pid;
@@ -86,7 +78,6 @@ pid_t Wait(int *status)
 	unix_error("Wait error");
     return pid;
 }
-/* $end wait */
 
 pid_t Waitpid(pid_t pid, int *iptr, int options) 
 {
@@ -97,7 +88,6 @@ pid_t Waitpid(pid_t pid, int *iptr, int options)
     return(retpid);
 }
 
-/* $begin kill */
 void Kill(pid_t pid, int signum) 
 {
     int rc;
@@ -105,7 +95,6 @@ void Kill(pid_t pid, int signum)
     if ((rc = kill(pid, signum)) < 0)
 	unix_error("Kill error");
 }
-/* $end kill */
 
 void Pause() 
 {
@@ -142,7 +131,6 @@ pid_t Getpgrp(void) {
  * Wrappers for Unix signal functions 
  ***********************************/
 
-/* $begin sigaction */
 handler_t *Signal(int signum, handler_t *handler) 
 {
     struct sigaction action, old_action;
@@ -155,7 +143,6 @@ handler_t *Signal(int signum, handler_t *handler)
 	unix_error("Signal error");
     return (old_action.sa_handler);
 }
-/* $end sigaction */
 
 void Sigprocmask(int how, const sigset_t *set, sigset_t *oldset)
 {
@@ -215,7 +202,6 @@ int Sigsuspend(const sigset_t *set)
 
 /* Private sio functions */
 
-/* $begin sioprivate */
 /* sio_reverse - Reverse a string (from K&R) */
 static void sio_reverse(char s[])
 {
@@ -249,30 +235,27 @@ static size_t sio_strlen(char s[])
         ++i;
     return i;
 }
-/* $end sioprivate */
 
 /* Public Sio functions */
-/* $begin siopublic */
 
 ssize_t sio_puts(char s[]) /* Put string */
 {
-    return write(STDOUT_FILENO, s, sio_strlen(s)); //line:csapp:siostrlen
+    return write(STDOUT_FILENO, s, sio_strlen(s)); 
 }
 
 ssize_t sio_putl(long v) /* Put long */
 {
     char s[128];
     
-    sio_ltoa(v, s, 10); /* Based on K&R itoa() */  //line:csapp:sioltoa
+    sio_ltoa(v, s, 10); /* Based on K&R itoa() */  
     return sio_puts(s);
 }
 
 void sio_error(char s[]) /* Put error message and exit */
 {
     sio_puts(s);
-    _exit(1);                                      //line:csapp:sioexit
+    _exit(1);                                      
 }
-/* $end siopublic */
 
 /*******************************
  * Wrappers for the SIO routines
@@ -584,7 +567,6 @@ void Connect(int sockfd, struct sockaddr *serv_addr, int addrlen)
 /*******************************
  * Protocol-independent wrappers
  *******************************/
-/* $begin getaddrinfo */
 void Getaddrinfo(const char *node, const char *service, 
                  const struct addrinfo *hints, struct addrinfo **res)
 {
@@ -593,7 +575,6 @@ void Getaddrinfo(const char *node, const char *service,
     if ((rc = getaddrinfo(node, service, hints, res)) != 0) 
         gai_error(rc, "Getaddrinfo error");
 }
-/* $end getaddrinfo */
 
 void Getnameinfo(const struct sockaddr *sa, socklen_t salen, char *host, 
                  size_t hostlen, char *serv, size_t servlen, int flags)
@@ -634,7 +615,6 @@ void Inet_pton(int af, const char *src, void *dst)
  * getaddrinfo and getnameinfo instead
  ***********************************/
 
-/* $begin gethostbyname */
 struct hostent *Gethostbyname(const char *name) 
 {
     struct hostent *p;
@@ -643,7 +623,6 @@ struct hostent *Gethostbyname(const char *name)
 	dns_error("Gethostbyname error");
     return p;
 }
-/* $end gethostbyname */
 
 struct hostent *Gethostbyaddr(const char *addr, int len, int type) 
 {
@@ -681,14 +660,12 @@ void Pthread_join(pthread_t tid, void **thread_return) {
 	posix_error(rc, "Pthread_join error");
 }
 
-/* $begin detach */
 void Pthread_detach(pthread_t tid) {
     int rc;
 
     if ((rc = pthread_detach(tid)) != 0)
 	posix_error(rc, "Pthread_detach error");
 }
-/* $end detach */
 
 void Pthread_exit(void *retval) {
     pthread_exit(retval);
@@ -731,7 +708,6 @@ void V(sem_t *sem)
 /*
  * rio_readn - Robustly read n bytes (unbuffered)
  */
-/* $begin rio_readn */
 ssize_t rio_readn(int fd, void *usrbuf, size_t n) 
 {
     size_t nleft = n;
@@ -752,12 +728,10 @@ ssize_t rio_readn(int fd, void *usrbuf, size_t n)
     }
     return (n - nleft);         /* return >= 0 */
 }
-/* $end rio_readn */
 
 /*
  * rio_writen - Robustly write n bytes (unbuffered)
  */
-/* $begin rio_writen */
 ssize_t rio_writen(int fd, void *usrbuf, size_t n) 
 {
     size_t nleft = n;
@@ -776,7 +750,6 @@ ssize_t rio_writen(int fd, void *usrbuf, size_t n)
     }
     return n;
 }
-/* $end rio_writen */
 
 
 /* 
@@ -787,7 +760,6 @@ ssize_t rio_writen(int fd, void *usrbuf, size_t n)
  *    entry, rio_read() refills the internal buffer via a call to
  *    read() if the internal buffer is empty.
  */
-/* $begin rio_read */
 static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
 {
     int cnt;
@@ -814,24 +786,20 @@ static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
     rp->rio_cnt -= cnt;
     return cnt;
 }
-/* $end rio_read */
 
 /*
  * rio_readinitb - Associate a descriptor with a read buffer and reset buffer
  */
-/* $begin rio_readinitb */
 void rio_readinitb(rio_t *rp, int fd) 
 {
     rp->rio_fd = fd;  
     rp->rio_cnt = 0;  
     rp->rio_bufptr = rp->rio_buf;
 }
-/* $end rio_readinitb */
 
 /*
  * rio_readnb - Robustly read n bytes (buffered)
  */
-/* $begin rio_readnb */
 ssize_t rio_readnb(rio_t *rp, void *usrbuf, size_t n) 
 {
     size_t nleft = n;
@@ -848,12 +816,10 @@ ssize_t rio_readnb(rio_t *rp, void *usrbuf, size_t n)
     }
     return (n - nleft);         /* return >= 0 */
 }
-/* $end rio_readnb */
 
 /* 
  * rio_readlineb - Robustly read a text line (buffered)
  */
-/* $begin rio_readlineb */
 ssize_t rio_readlineb(rio_t *rp, void *usrbuf, size_t maxlen) 
 {
     int n, rc;
@@ -877,7 +843,6 @@ ssize_t rio_readlineb(rio_t *rp, void *usrbuf, size_t maxlen)
     *bufp = 0;
     return n-1;
 }
-/* $end rio_readlineb */
 
 /**********************************
  * Wrappers for robust I/O routines
@@ -930,7 +895,6 @@ ssize_t Rio_readlineb(rio_t *rp, void *usrbuf, size_t maxlen)
  * 
  *     On error, returns -1 and sets errno.  
  */
-/* $begin open_clientfd */
 int open_clientfd(char *hostname, char *port) {
     int clientfd;
     struct addrinfo hints, *listp, *p;
@@ -951,7 +915,7 @@ int open_clientfd(char *hostname, char *port) {
         /* Connect to the server */
         if (connect(clientfd, p->ai_addr, p->ai_addrlen) != -1) 
             break; /* Success */
-        Close(clientfd); /* Connect failed, try another */  //line:netp:openclientfd:closefd
+        Close(clientfd); /* Connect failed, try another */  
     } 
 
     /* Clean up */
@@ -961,7 +925,6 @@ int open_clientfd(char *hostname, char *port) {
     else    /* The last connect succeeded */
         return clientfd;
 }
-/* $end open_clientfd */
 
 /*  
  * open_listenfd - Open and return a listening socket on port. This
@@ -969,7 +932,6 @@ int open_clientfd(char *hostname, char *port) {
  *
  *     On error, returns -1 and sets errno.
  */
-/* $begin open_listenfd */
 int open_listenfd(char *port) 
 {
     struct addrinfo hints, *listp, *p;
@@ -989,7 +951,7 @@ int open_listenfd(char *port)
             continue;  /* Socket failed, try the next */
 
         /* Eliminates "Address already in use" error from bind */
-        Setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR,    //line:netp:csapp:setsockopt
+        Setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR,    
                    (const void *)&optval , sizeof(int));
 
         /* Bind the descriptor to the address */
@@ -1010,7 +972,6 @@ int open_listenfd(char *port)
     }
     return listenfd;
 }
-/* $end open_listenfd */
 
 /****************************************************
  * Wrappers for reentrant protocol-independent helpers
@@ -1033,7 +994,6 @@ int Open_listenfd(char *port)
     return rc;
 }
 
-/* $end csapp.c */
 
 
 

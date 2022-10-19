@@ -4,7 +4,6 @@
 */
 #include "csapp.h"
 
-/* $begin reader1 */
 /* Global variables */
 int readcnt;    /* Initially = 0 */
 sem_t mutex, w; /* Both initially = 1 */
@@ -28,9 +27,7 @@ void reader(void)
 	V(&mutex);
     }
 }
-/* $end reader1 */
 
-/* $begin writer1 */
 
 
 
@@ -46,4 +43,3 @@ void writer(void)
 	V(&w);
     }
 }
-/* $end writer1 */

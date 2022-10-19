@@ -2,7 +2,6 @@
 	.text
 	.globl	funct
 	.type	funct, @function
-/* $begin 520-float_funct-s 5 */
 # double funct(double a, float x, double b, int i)
 # a in %xmm0, x in %xmm1, b in %xmm2, i in \edireg{}
 funct:
@@ -14,11 +13,9 @@ funct:
 	vdivsd	%xmm1, %xmm2, %xmm2  	    # Compute b/i
 	vsubsd	%xmm2, %xmm0, %xmm0	    # Subtract from a*x
 	ret	       	      		    # Return
-/* $end 520-float_funct-s 5 */
 	.size	funct, .-funct
 	.globl	find_range
 	.type	find_range, @function
-/* $begin 520-find_range-s 16 */
 # range_t find_range(float x)
 # x in %xmm0
 find_range:
@@ -39,7 +36,6 @@ find_range:
 	movl	$0, %eax		   #   Result = NEG
 .L3:		    			   # \textbf{done:}
 	rep; ret			   #   Return
-/* $end 520-find_range-s 16 */
 	.size	find_range, .-find_range
 	.globl	xfer
 	.type	xfer, @function

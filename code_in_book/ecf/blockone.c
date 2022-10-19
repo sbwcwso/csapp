@@ -2,7 +2,6 @@
 
 int main(int argc, char **argv)
 {
-/* $begin blockone */
     sigset_t mask, prev_mask;
 
     Sigemptyset(&mask);
@@ -16,6 +15,5 @@ int main(int argc, char **argv)
     /* Restore previous blocked set, unblocking SIGINT */
     Sigprocmask(SIG_SETMASK, &prev_mask, NULL); 
 
-/* $end blockone */
     exit(0);
 }

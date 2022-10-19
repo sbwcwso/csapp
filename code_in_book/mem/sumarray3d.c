@@ -5,7 +5,6 @@
 
 int a[N][N][N];
 
-/* $begin sumarray3d */
 int sumarray3d(int a[N][N][N]) 
 {  	
     int i, j, k, sum = 0;
@@ -19,7 +18,6 @@ int sumarray3d(int a[N][N][N])
     }
     return sum;	
 }
-/* $end sumarray3d */
 
 
 int main()

@@ -1,7 +1,6 @@
 /*
  * csapp.h - prototypes and definitions for the CS:APP3e book
  */
-/* $begin csapp.h */
 #ifndef __CSAPP_H__
 #define __CSAPP_H__
 
@@ -30,18 +29,13 @@
 #include <arpa/inet.h>
 
 /* Default file permissions are DEF_MODE & ~DEF_UMASK */
-/* $begin createmasks */
 #define DEF_MODE   S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH
 #define DEF_UMASK  S_IWGRP|S_IWOTH
-/* $end createmasks */
 
 /* Simplifies calls to bind(), connect(), and accept() */
-/* $begin sockaddrdef */
 typedef struct sockaddr SA;
-/* $end sockaddrdef */
 
 /* Persistent state for the robust I/O (Rio) package */
-/* $begin rio_t */
 #define RIO_BUFSIZE 8192
 typedef struct {
     int rio_fd;                /* Descriptor for this internal buf */
@@ -49,7 +43,6 @@ typedef struct {
     char *rio_bufptr;          /* Next unread byte in internal buf */
     char rio_buf[RIO_BUFSIZE]; /* Internal buffer */
 } rio_t;
-/* $end rio_t */
 
 /* External variables */
 extern int h_errno;    /* Defined by BIND for DNS errors */ 
@@ -196,4 +189,3 @@ int Open_listenfd(char *port);
 
 
 #endif /* __CSAPP_H__ */
-/* $end csapp.h */

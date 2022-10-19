@@ -1,7 +1,6 @@
 /* 
  * Readers-writers solution with strong reader priority
 */
-/* $begin rw2 */
 #include "csapp.h"
 
 /* Global variables */
@@ -41,4 +40,3 @@ void writer(void)
 	V(&wg);
     }
 }
-/* $end rw2 */

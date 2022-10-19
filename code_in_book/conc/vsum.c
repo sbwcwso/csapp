@@ -1,7 +1,6 @@
 /* 
  * vsum.c - A simple parallel sum program
  */
-/* $begin vsum */
 #include "csapp.h"
 
 #define MAXTHREADS 32    
@@ -59,10 +58,8 @@ int main(int argc, char **argv)
 
     exit(0);
 }
-/* $end psum */
 
 /* Thread routine */
-/* $begin psum-thread */
 void *sum(void *vargp) 
 {
     int myid = *((int *)vargp);             /* Extract the thread ID */
@@ -77,5 +74,4 @@ void *sum(void *vargp)
 
     return NULL;
 }
-/* $end psum-thread */
 

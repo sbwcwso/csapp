@@ -5,7 +5,6 @@
 #define N 60
 #endif
 
-/* $begin missrate */
 typedef int array_t[N][N];
 
 int sumA(array_t a)
@@ -41,4 +40,3 @@ int sumC(array_t a)
 	}
     return sum;
 }
-/* $end missrate */

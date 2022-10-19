@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include "combine.h"
 
-/* $begin vec */
 /* Create vector of specified length */
 vec_ptr new_vec(long len)
 {
@@ -11,10 +10,8 @@ vec_ptr new_vec(long len)
     if (!result)
         return NULL;  /* Couldn't allocate storage */
     result->len = len;
-/* $end vec */
     /* We don't show this in the book */
     result->allocated_len = len;
-/* $begin vec */
     /* Allocate array */
     if (len > 0) {
         data = (data_t *)calloc(len, sizeof(data_t));
@@ -52,15 +49,12 @@ long vec_length(vec_ptr v)
 {
     return v->len;
 }
-/* $end vec */
 
 
-/* $begin get_vec_start */
 data_t *get_vec_start(vec_ptr v)
 {
     return v->data;
 }
-/* $end get_vec_start */
 
 
 /*
