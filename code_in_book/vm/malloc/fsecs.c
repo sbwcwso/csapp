@@ -12,9 +12,6 @@ static double Mhz;  /* estimated CPU clock frequency */
 
 extern int verbose; /* -v option in mdriver.c */
 
-/*
- * init_fsecs - initialize the timing package
- */
 void init_fsecs(void)
 {
     Mhz = 0; /* keep gcc -Wall happy */
@@ -39,9 +36,6 @@ void init_fsecs(void)
 #endif
 }
 
-/*
- * fsecs - Return the running time of a function f (in seconds)
- */
 double fsecs(fsecs_test_funct f, void *argp) 
 {
 #if USE_FCYC

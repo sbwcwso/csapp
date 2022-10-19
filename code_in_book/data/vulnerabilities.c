@@ -47,9 +47,6 @@ void* copy_elements(void *ele_src[], int ele_cnt, size_t ele_size) {
     return result;
 }
 
-/* 
- * Failed attempt at safe version of copy_elements
- */
 void* not_safe_copy_elements(void *ele_src[], int ele_cnt, size_t ele_size) {
     /*
      * Allocate buffer for ele_cnt objects, each of ele_size bytes
@@ -75,9 +72,6 @@ void* not_safe_copy_elements(void *ele_src[], int ele_cnt, size_t ele_size) {
 }
 
 
-/* 
- * Safe version of copy_elements
- */
 void* safe_copy_elements(void *ele_src[], int ele_cnt, size_t ele_size) {
     /*
      * Allocate buffer for ele_cnt objects, each of ele_size bytes

@@ -1,6 +1,3 @@
-/*
- * execs.c - Examples of exec command
- */
 #include "csapp.h"
 
 /*

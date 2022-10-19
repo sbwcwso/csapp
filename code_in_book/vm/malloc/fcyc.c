@@ -44,9 +44,6 @@ static int samplecount = 0;
 static double *samples = NULL;
 #endif
 
-/* 
- * init_sampler - Start new sampling process 
- */
 static void init_sampler()
 {
     if (values)
@@ -61,9 +58,6 @@ static void init_sampler()
     samplecount = 0;
 }
 
-/* 
- * add_sample - Add new sample  
- */
 static void add_sample(double val)
 {
     int pos = 0;
@@ -87,9 +81,6 @@ static void add_sample(double val)
     }
 }
 
-/* 
- * has_converged- Have kbest minimum measurements converged within epsilon? 
- */
 static int has_converged()
 {
     return
@@ -97,9 +88,6 @@ static int has_converged()
 	((1 + epsilon)*values[0] >= values[kbest-1]);
 }
 
-/* 
- * clear - Code to clear cache 
- */
 static volatile int sink = 0;
 
 static void clear()
@@ -123,9 +111,6 @@ static void clear()
     sink = x;
 }
 
-/*
- * fcyc - Use K-best scheme to estimate the running time of function f
- */
 double fcyc(test_funct f, void *argp)
 {
     double result;

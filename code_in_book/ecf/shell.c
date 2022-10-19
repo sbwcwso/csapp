@@ -157,9 +157,6 @@ void listjobs(struct job_t *jobs) {
  * end utility routines
  **********************/
 
-/* 
- * parseline - parse the command line and build the argv array 
- */
 int parseline(const char *cmdline, char **argv) 
 {
     char array[MAXLINE]; /* holds local copy of command line */
@@ -194,9 +191,6 @@ int parseline(const char *cmdline, char **argv)
     return bg;
 }
 
-/* 
- * waitfg - block until FG job pid terminates or stops.
- */
 void waitfg(pid_t pid)
 {
     int status;
@@ -225,9 +219,6 @@ void waitfg(pid_t pid)
     }
 }
 
-/* 
- * builtin_command - if builtin, run it and return true
- */
 int builtin_command(char **argv) {
     char *cmd = argv[0];
 
@@ -340,9 +331,6 @@ void sigtstp_handler(int sig)
 	printf("sigtstp_handler: shell caught SIGTSTP\n");
 }
 
-/* 
- * eval - evaluate a command line
- */
 void eval(char *cmdline) 
 {
     char *argv[MAXARGS]; /* argv for execve() */
@@ -390,9 +378,6 @@ void usage()
     exit(0);
 }
 
-/*
- * main - shell main routine 
- */
 int main(int argc, char **argv) 
 {
     char cmdline[MAXLINE]; /* command line */

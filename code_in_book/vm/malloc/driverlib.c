@@ -26,18 +26,12 @@
  * Private helper functions 
  **************************/
 
-/*
- * sigalrm_handler - handles SIGALRM timeout signals
- */
 
 void sigalrm_handler(int sig) {
     fprintf(stderr, "Program timed out after %d seconds\n", AUTOGRADE_TIMEOUT);
     exit(1);
 }
 
-/*
- * rio_readinitb - Associate a descriptor with a read buffer and reset buffer
- */
 typedef struct sockaddr SA;
 static void rio_readinitb(rio_t *rp, int fd) 
 {
@@ -82,9 +76,6 @@ static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
     return cnt;
 }
 
-/* 
- * rio_readlineb - robustly read a text line (buffered)
- */
 static ssize_t rio_readlineb(rio_t *rp, void *usrbuf, size_t maxlen) 
 {
     int n, rc;
@@ -107,9 +98,6 @@ static ssize_t rio_readlineb(rio_t *rp, void *usrbuf, size_t maxlen)
     return n;
 }
 
-/*
- * rio_writen - Robustly write n bytes (unbuffered)
- */
 static ssize_t rio_writen(int fd, void *usrbuf, size_t n) 
 {
     size_t nleft = n;
@@ -130,9 +118,6 @@ static ssize_t rio_writen(int fd, void *usrbuf, size_t n)
 }
 
 
-/*
- * urlencode - URL-encodes the src input string into dst
- */
 static int urlencode(unsigned char *src, unsigned char *dst)
 {
     int len = strlen((char *)src);
@@ -173,9 +158,6 @@ static int urlencode(unsigned char *src, unsigned char *dst)
 }
 
 
-/*
- * submitr - Submit a client result string to the autolab server.
- */
 int submitr(char *hostname,    /* Server domain name */
 	    int port,          /* Server port */
 	    char *course,      /* Course name */
@@ -320,9 +302,6 @@ void init_timeout(int timeout) {
     alarm(timeout); 
 }
 
-/* 
- * init_driver - Initialize the driverlib package
- */
 int init_driver(char *status_msg) 
 {
     int clientfd;                  /* Socket descriptor */

@@ -1,6 +1,3 @@
-/* 
- * vsum.c - A simple parallel sum program
- */
 #include "csapp.h"
 
 #define MAXTHREADS 32    

@@ -53,9 +53,6 @@ double ftimer_gettod(ftimer_test_funct f, void *argp, int n)
 }
 
 
-/*
- * Routines for manipulating the Unix interval timer
- */
 
 /* The initial value of the interval timer */
 #define MAX_ETIME 86400   

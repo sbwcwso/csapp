@@ -1,6 +1,3 @@
-/*
- * csapp.h - prototypes and definitions for the CS:APP3e book
- */
 #ifndef __CSAPP_H__
 #define __CSAPP_H__
 

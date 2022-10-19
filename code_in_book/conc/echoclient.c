@@ -1,6 +1,3 @@
-/*
- * echoclient.c - An echo client
- */
 #include "csapp.h"
 
 int main(int argc, char **argv) 

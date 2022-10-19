@@ -1,8 +1,5 @@
 #include "csapp.h"
 
-/* 
- * mmapcopy - uses mmap to copy file fd to stdout 
- */
 void mmapcopy(int fd, int size) 
 {
     char *bufp; /* ptr to memory-mapped VM area */

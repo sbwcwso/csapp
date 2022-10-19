@@ -1,6 +1,3 @@
-/* 
- * prodconsn.c - generic producers-consumers manipulating a shared buffer 
- */
 #include "csapp.h"
 #include "sbuf.h"
 

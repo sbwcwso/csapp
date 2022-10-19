@@ -1,6 +1,3 @@
-/* 
- * cnt.c - Different approaches to handling races
- */
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>

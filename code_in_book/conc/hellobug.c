@@ -1,6 +1,3 @@
-/* 
- * hellobug.c - "hello, world" program with a bug
- */
 /* WARNING: This code is buggy! */
 #include "csapp.h"
 void *thread(void *vargp);

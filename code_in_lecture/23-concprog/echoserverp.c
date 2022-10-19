@@ -1,6 +1,3 @@
-/* 
- * echoserverp.c - A concurrent echo server based on processes
- */
 #include "csapp.h"
 void echo(int connfd);
 

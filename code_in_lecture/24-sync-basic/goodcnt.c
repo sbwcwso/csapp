@@ -1,6 +1,3 @@
-/* 
- * goodcnt.c - A correctly synchronized counter program 
- */
 #include "csapp.h"
 
 void *thread(void *vargp); /* Thread routine prototype */

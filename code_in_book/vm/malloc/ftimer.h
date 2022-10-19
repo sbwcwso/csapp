@@ -1,6 +1,3 @@
-/* 
- * Function timers 
- */
 typedef void (*ftimer_test_funct)(void *); 
 
 /* Estimate the running time of f(argp) using the Unix interval timer.

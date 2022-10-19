@@ -1,8 +1,5 @@
 #include "combine.h"
 
-/* 
- * Combining functions contained in the solutions to problems
- */
 
 char combine5px8_descr[] = "GNU pointer code, unrolled by 8";
 void combine5px8(vec_ptr v, data_t *dest)

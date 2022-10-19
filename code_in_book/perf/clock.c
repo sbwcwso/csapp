@@ -4,9 +4,6 @@
 #include <sys/times.h>
 #include "clock.h"
 
-/* 
- * Routines for using the cycle counter on x86
- */
 
 /* Initialize the cycle counter */
 static unsigned cyc_hi = 0;

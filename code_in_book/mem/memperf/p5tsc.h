@@ -6,9 +6,6 @@ typedef unsigned long uint32;
 
 /* Cycle Counter */
 
-/*
- *  Write <hi>:<lo> into MSR number <msr>.
- */
 
 extern __inline__ void
 wrmsr (const uint32 msr, uint32 hi, uint32 lo)

@@ -1,6 +1,3 @@
-/* 
- * race.c - demonstrates a race condition
- */
 #include "csapp.h"
 #define N 4
 

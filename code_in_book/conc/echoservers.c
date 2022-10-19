@@ -1,6 +1,3 @@
-/* 
- * echoservers.c - A concurrent echo server based on select
- */
 #include "csapp.h"
 
 typedef struct { /* Represents a pool of connected descriptors */ 

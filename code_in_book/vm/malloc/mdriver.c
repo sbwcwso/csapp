@@ -565,9 +565,6 @@ static int add_range(range_t **ranges, char *lo, int size,
     return 1;
 }
 
-/*
- * remove_range - Free the range record of block whose payload starts at lo
- */
 static void remove_range(range_t **ranges, char *lo)
 {
     range_t *p;
@@ -583,9 +580,6 @@ static void remove_range(range_t **ranges, char *lo)
     }
 }
 
-/*
- * clear_ranges - free all of the range records for a trace
- */
 static void clear_ranges(range_t **ranges)
 {
     range_t *p;
@@ -664,9 +658,6 @@ static void check_index(const trace_t *trace, int opnum, int index) {
  * The following routines manipulate tracefiles
  *********************************************/
 
-/*
- * read_trace - read a trace file and store it in memory
- */
 static trace_t *read_trace(stats_t *stats, const char *tracedir,
                            const char *filename)
 {
@@ -766,9 +757,6 @@ static trace_t *read_trace(stats_t *stats, const char *tracedir,
     return trace;
 }
 
-/*
- * reinit_trace - get the trace ready for another run.
- */
 static void reinit_trace(trace_t *trace)
 {
     memset(trace->blocks, 0, trace->num_ids * sizeof(*trace->blocks));
@@ -794,9 +782,6 @@ static void free_trace(trace_t *trace)
  * and throughput of the libc and mm malloc packages.
  **********************************************************************/
 
-/*
- * eval_mm_valid - Check the mm malloc package for correctness
- */
 static int eval_mm_valid(trace_t *trace, range_t **ranges)
 {
     int i;
@@ -1180,9 +1165,6 @@ static void eval_libc_speed(void *ptr)
  ************************************/
 
 
-/*
- * printresults - prints a performance summary for some malloc package
- */
 static void printresults(int n, stats_t *stats)
 {
     int i;
@@ -1242,9 +1224,6 @@ static void printresults(int n, stats_t *stats)
 
 }
 
-/*
- * app_error - Report an arbitrary application error
- */
 void app_error(const char *fmt, ...) {
     va_list ap;
     va_start(ap, fmt);
@@ -1253,9 +1232,6 @@ void app_error(const char *fmt, ...) {
     exit(1);
 }
 
-/*
- * unix_error - Report the error and its errno.
- */
 void unix_error(const char *fmt, ...) {
     va_list ap;
     va_start(ap, fmt);
@@ -1265,9 +1241,6 @@ void unix_error(const char *fmt, ...) {
     exit(1);
 }
 
-/*
- * malloc_error - Report an error returned by the mm_malloc package
- */
 void malloc_error(const trace_t *trace, int opnum, const char *fmt, ...)
 {
     va_list ap;
@@ -1282,9 +1255,6 @@ void malloc_error(const trace_t *trace, int opnum, const char *fmt, ...)
     va_end(ap);
 }
 
-/*
- * usage - Explain the command line arguments
- */
 static void usage(void)
 {
     fprintf(stderr, "Usage: mdriver [-hlVdD] [-f <file>]\n");

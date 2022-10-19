@@ -505,9 +505,6 @@ void V(sem_t *sem)
 /*********************************************************************
  * The Rio package - robust I/O functions
  **********************************************************************/
-/*
- * rio_readn - robustly read n bytes (unbuffered)
- */
 ssize_t rio_readn(int fd, void *usrbuf, size_t n) 
 {
     size_t nleft = n;
@@ -529,9 +526,6 @@ ssize_t rio_readn(int fd, void *usrbuf, size_t n)
     return (n - nleft);         /* return >= 0 */
 }
 
-/*
- * rio_writen - robustly write n bytes (unbuffered)
- */
 ssize_t rio_writen(int fd, void *usrbuf, size_t n) 
 {
     size_t nleft = n;
@@ -587,9 +581,6 @@ static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
     return cnt;
 }
 
-/*
- * rio_readinitb - Associate a descriptor with a read buffer and reset buffer
- */
 void rio_readinitb(rio_t *rp, int fd) 
 {
     rp->rio_fd = fd;  
@@ -597,9 +588,6 @@ void rio_readinitb(rio_t *rp, int fd)
     rp->rio_bufptr = rp->rio_buf;
 }
 
-/*
- * rio_readnb - Robustly read n bytes (buffered)
- */
 ssize_t rio_readnb(rio_t *rp, void *usrbuf, size_t n) 
 {
     size_t nleft = n;
@@ -621,9 +609,6 @@ ssize_t rio_readnb(rio_t *rp, void *usrbuf, size_t n)
     return (n - nleft);         /* return >= 0 */
 }
 
-/* 
- * rio_readlineb - robustly read a text line (buffered)
- */
 ssize_t rio_readlineb(rio_t *rp, void *usrbuf, size_t maxlen) 
 {
     int n, rc;

@@ -1,6 +1,3 @@
-/* 
- * echoservert_pre.c - A prethreaded concurrent echo server
- */
 #include "csapp.h"
 #include "sbuf.h"
 #define NTHREADS  4

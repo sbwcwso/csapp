@@ -1,6 +1,3 @@
-/*
- * Program that prints out some interesting parts of the memory map
- */
 #include <stdio.h>
 #include <stdlib.h>
 

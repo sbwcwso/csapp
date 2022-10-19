@@ -1,6 +1,3 @@
-/* 
- * badcnt.c - An improperly synchronized counter program 
- */
 /* WARNING: This code is buggy! */
 #include "csapp.h"
 

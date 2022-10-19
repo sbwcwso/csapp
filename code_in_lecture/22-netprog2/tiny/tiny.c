@@ -38,9 +38,6 @@ int main(int argc, char **argv)
     }
 }
 
-/*
- * doit - handle one HTTP request/response transaction
- */
 void doit(int fd) 
 {
     int is_static;
@@ -88,9 +85,6 @@ void doit(int fd)
     }
 }
 
-/*
- * read_requesthdrs - read HTTP request headers
- */
 void read_requesthdrs(rio_t *rp) 
 {
     char buf[MAXLINE];
@@ -134,9 +128,6 @@ int parse_uri(char *uri, char *filename, char *cgiargs)
     }
 }
 
-/*
- * serve_static - copy a file back to the client 
- */
 void serve_static(int fd, char *filename, int filesize) 
 {
     int srcfd;
@@ -161,9 +152,6 @@ void serve_static(int fd, char *filename, int filesize)
     Munmap(srcp, filesize);                 
 }
 
-/*
- * get_filetype - derive file type from file name
- */
 void get_filetype(char *filename, char *filetype) 
 {
     if (strstr(filename, ".html"))
@@ -178,9 +166,6 @@ void get_filetype(char *filename, char *filetype)
 	strcpy(filetype, "text/plain");
 }  
 
-/*
- * serve_dynamic - run a CGI program on behalf of the client
- */
 void serve_dynamic(int fd, char *filename, char *cgiargs) 
 {
     char buf[MAXLINE], *emptylist[] = { NULL };
@@ -200,9 +185,6 @@ void serve_dynamic(int fd, char *filename, char *cgiargs)
     Wait(NULL); /* Parent waits for and reaps child */ 
 }
 
-/*
- * clienterror - returns an error message to the client
- */
 void clienterror(int fd, char *cause, char *errnum, 
 		 char *shortmsg, char *longmsg) 
 {

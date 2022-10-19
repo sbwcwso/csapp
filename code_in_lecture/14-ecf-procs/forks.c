@@ -1,6 +1,3 @@
-/*
- * forks.c - Examples of Unix process control
- */
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -74,9 +71,6 @@ void fork3()
     printf("Bye\n");
 }
 
-/* 
- * fork4 - Nested forks in parents
- */
 void fork4()
 {
     printf("L0\n");
@@ -89,9 +83,6 @@ void fork4()
     printf("Bye\n");
 }
 
-/*
- * fork5 - Nested forks in children
- */
 void fork5()
 {
     printf("L0\n");
@@ -156,9 +147,6 @@ void fork8()
     }
 }
 
-/*
- * fork9 - synchronizing with and reaping children (wait)
- */
 void fork9()
 {
     int child_status;
@@ -227,9 +215,6 @@ void fork11()
  * Signals
  *********/
 
-/*
- * fork12 - Sending signals with the kill() function
- */
 void fork12()
 {
     pid_t pid[N];
@@ -257,18 +242,12 @@ void fork12()
     }
 }
 
-/*
- * int_handler - SIGINT handler
- */
 void int_handler(int sig)
 {
     printf("Process %d received signal %d\n", getpid(), sig); /* Unsafe */
     exit(0);
 }
 
-/*
- * fork13 - Simple signal handler example
- */
 void fork13()
 {
     pid_t pid[N];
@@ -299,9 +278,6 @@ void fork13()
 }
 
 
-/*
- * child_handler - SIGCHLD handler that reaps one terminated child
- */
 int ccount = 0;
 void child_handler(int sig)
 {
@@ -312,9 +288,6 @@ void child_handler(int sig)
     fflush(stdout); /* Unsafe */
 }
 
-/*
- * fork14 - Signal funkiness: Pending signals are not queued
- */
 void fork14()
 {
     pid_t pid[N];
@@ -333,9 +306,6 @@ void fork14()
 }
 
 
-/*
- * child_handler2 - SIGCHLD handler that reaps all terminated children
- */
 void child_handler2(int sig)
 {
     int child_status;
@@ -347,9 +317,6 @@ void child_handler2(int sig)
     }
 }
 
-/*
- * fork15 - Using a handler that reaps multiple children
- */
 void fork15()
 {
     pid_t pid[N];
@@ -369,9 +336,6 @@ void fork15()
     }
 }
 
-/* 
- * fork16 - Demonstration of using /bin/kill program 
- */
 void fork16() 
 {
     if (fork() == 0) {
@@ -384,9 +348,6 @@ void fork16()
     }
 } 
 
-/* 
- * Demonstration of using ctrl-c and ctrl-z 
- */
 void fork17() 
 {
     if (fork() == 0) {

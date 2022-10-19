@@ -11,14 +11,8 @@
 #ifndef __DRIVERLIB_H__
 #define __DRIVERLIB_H__
 
-/* 
- * How many bytes is the client allowed to send to the server at one time
- */
 #define SUBMITR_MAXBUF 8192
 
-/* 
- * Persistent state for the robust I/O (Rio) package 
- */
 #define RIO_BUFSIZE 8192
 typedef struct {
     int rio_fd;                /* descriptor for this internal buf */
@@ -27,9 +21,6 @@ typedef struct {
     char rio_buf[RIO_BUFSIZE]; /* internal buffer */
 } rio_t;
 
-/* 
- * Package interface
- */
 
 /* init_timeout - Start a timout timer */
 void init_timeout(int timeout);

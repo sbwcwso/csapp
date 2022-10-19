@@ -23,9 +23,6 @@ static char *mem_heap;     /* Points to first byte of heap */
 static char *mem_brk;      /* Points to last byte of heap plus 1 */
 static char *mem_max_addr; /* Max legal heap addr plus 1*/ 
 
-/* 
- * mem_init - Initialize the memory system model
- */
 void mem_init(void)
 {
     mem_heap = (char *)Malloc(MAX_HEAP);
@@ -51,48 +48,30 @@ void *mem_sbrk(int incr)
     return (void *)old_brk;
 }
 
-/* 
- * mem_deinit - free the storage used by the memory system model
- */
 void mem_deinit(void)
 {
 }
 
-/*
- * mem_reset_brk - reset the simulated brk pointer to make an empty heap
- */
 void mem_reset_brk()
 {
     mem_brk = (char *)mem_heap;
 }
 
-/*
- * mem_heap_lo - return address of the first heap byte
- */
 void *mem_heap_lo()
 {
     return (void *)mem_heap;
 }
 
-/* 
- * mem_heap_hi - return address of last heap byte
- */
 void *mem_heap_hi()
 {
     return (void *)(mem_brk - 1);
 }
 
-/*
- * mem_heapsize() - returns the heap size in bytes
- */
 size_t mem_heapsize() 
 {
     return (size_t)((void *)mem_brk - (void *)mem_heap);
 }
 
-/*
- * mem_pagesize() - returns the page size of the system
- */
 size_t mem_pagesize()
 {
     return (size_t)getpagesize();

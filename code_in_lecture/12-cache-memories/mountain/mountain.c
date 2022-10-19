@@ -58,9 +58,6 @@ void init_data(long *data, int n)
 	data[i] = i;
 }
 
-/* test - Iterate over first "elems" elements of array "data" with
- *        stride of "stride", using 4x4 loop unrolling.
- */
 int test(int elems, int stride)
 {
     long i, sx2 = stride*2, sx3 = stride*3, sx4 = stride*4;

@@ -1,6 +1,3 @@
-/* 
- * hello.c - Pthreads "hello, world" program 
- */
 #include "csapp.h"
 void *thread(void *vargp);
 

@@ -1,6 +1,3 @@
-/* 
- * norace.c - fixes the race in race.c
- */
 #include "csapp.h"
 #define N 4
 

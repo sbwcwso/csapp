@@ -11,9 +11,6 @@
 #include "mm.h"
 #include "memlib.h"
 
-/*
- * If NEXT_FIT defined use next fit search, else use first-fit search 
- */
 #define NEXT_FITx
 
 /* Basic constants and macros */
@@ -57,9 +54,6 @@ static void printblock(void *bp);
 static void checkheap(int verbose);
 static void checkblock(void *bp);
 
-/* 
- * mm_init - Initialize the memory manager 
- */
 int mm_init(void) 
 {
     /* Create the initial empty heap */
@@ -83,9 +77,6 @@ int mm_init(void)
     return 0;
 }
 
-/* 
- * mm_malloc - Allocate a block with at least size bytes of payload 
- */
 void *mm_malloc(size_t size) 
 {
     size_t asize;      /* Adjusted block size */
@@ -121,9 +112,6 @@ void *mm_malloc(size_t size)
     return bp;
 } 
 
-/* 
- * mm_free - Free a block 
- */
 void mm_free(void *bp)
 {
     /* $end mmfree */
@@ -143,9 +131,6 @@ void mm_free(void *bp)
     coalesce(bp);
 }
 
-/*
- * coalesce - Boundary tag coalescing. Return ptr to coalesced block
- */
 static void *coalesce(void *bp) 
 {
     size_t prev_alloc = GET_ALLOC(FTRP(PREV_BLKP(bp)));
@@ -187,9 +172,6 @@ static void *coalesce(void *bp)
     return bp;
 }
 
-/*
- * mm_realloc - Naive implementation of realloc
- */
 void *mm_realloc(void *ptr, size_t size)
 {
     size_t oldsize;
@@ -224,21 +206,12 @@ void *mm_realloc(void *ptr, size_t size)
     return newptr;
 }
 
-/* 
- * mm_checkheap - Check the heap for correctness
- */
 void mm_checkheap(int verbose)  
 { 
     checkheap(verbose);
 }
 
-/* 
- * The remaining routines are internal helper routines 
- */
 
-/* 
- * extend_heap - Extend heap with free block and return its block pointer
- */
 static void *extend_heap(size_t words) 
 {
     char *bp;
@@ -279,9 +252,6 @@ static void place(void *bp, size_t asize)
     }
 }
 
-/* 
- * find_fit - Find a fit for a block with asize bytes 
- */
 static void *find_fit(size_t asize)
 {
     /* $end mmfirstfit */
@@ -343,9 +313,6 @@ static void checkblock(void *bp)
         printf("Error: header does not match footer\n");
 }
 
-/* 
- * checkheap - Minimal check of the heap for consistency 
- */
 void checkheap(int verbose) 
 {
     char *bp = heap_listp;
