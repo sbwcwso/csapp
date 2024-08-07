@@ -10,7 +10,7 @@ static void init_ctime_ts(void)
 
 char *ctime_ts(const time_t *timep, char *privatep)
 {
-    char *sharedp; 
+    char *sharedp;
 
     P(&mutex);
     sharedp = ctime(timep);

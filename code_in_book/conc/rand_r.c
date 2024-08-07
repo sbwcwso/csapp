@@ -17,4 +17,3 @@ int main()
     printf("%d\n", rand_r(&next));
     exit(0);
 }
-

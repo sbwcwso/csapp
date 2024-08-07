@@ -5,15 +5,15 @@ unsigned next_seed = 1;
 /* rand - return pseudorandom integer in the range 0..32767 */
 unsigned rand(void)
 {
-    next_seed = next_seed*1103515245 + 12543;
-    return (unsigned)(next_seed>>16) % 32768;
+    next_seed = next_seed * 1103515245 + 12543;
+    return (unsigned)(next_seed >> 16) % 32768;
 }
 
 /* srand - set the initial seed for rand() */
 void srand(unsigned new_seed)
 {
     next_seed = new_seed;
-} 
+}
 
 int main()
 {
@@ -23,4 +23,3 @@ int main()
     printf("%d\n", rand());
     return 0;
 }
-
